@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :messages, only:[:create]
   end
   resources :pets, only:[:new, :create]
-  resources :pet_sitters, only:[:index, :show, :new, :create] do
+  resources :petsittings, only:[:index, :show, :new, :create] do
     resources :bookings, only:[:create]
   end
   resources :bookings, only:[:index, :update]
