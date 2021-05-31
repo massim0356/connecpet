@@ -3,12 +3,12 @@ class BookingsController < ApplicationController
 
   def index
     #non-pundit
-    #@bookings = Booking.all
+    @bookings = Booking.all
 
     #pundit
-    @bookings = policy_scope(Booking).where(user: current_user)
-    # as an owner
-    @bookings_as_owner = policy_scope(Booking).where(petsitting: current_user.petsitting.bookings)
+    # @bookings = policy_scope(Booking).where(user: current_user)
+    # # as an owner
+    # @bookings_as_owner = policy_scope(Booking).where(petsitting: current_user.petsitting)
   end
 
 
@@ -17,14 +17,14 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     # pundit
     authorize @booking
-
   end
 
   def create
     @booking = Booking.new(booking_params)
-    authorize @booking
+    # authorize @booking
     set_petsitting
-    @booking.user = current_user
+    # pundit ----
+    # @booking.user = current_user
     @booking.petsitting = @petsitting
     if @booking.save
       redirect_to bookings_path
@@ -33,9 +33,22 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:petsitting_id])
+    # pundit
+    # authorize @booking
+    if @booking.update(booking_params)
+      redirect_to bookings_path
+    else
+      render :bookings_path
+    end
+  end
+
+
+private
 
   def set_petsitting
-    @petsitting = Petsitting.find(params[:id])
+    @petsitting = Petsitting.find(params[:petsitting_id])
   end
 
   def booking_params
