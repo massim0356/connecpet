@@ -8,12 +8,12 @@ class AnnouncementsController < ApplicationController
 
   def new
     @annoucement = Announcement.new
-    autorize @anouncement
+    authorize @announcement
   end
 
   def create
     @announcement = Announcement.new(announcement_params)
-    autorize @anouncement
+    authorize @announcement
     @announcement.pet = @pet
     @announcement.user = current_user
     if annoucement.save
