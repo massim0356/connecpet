@@ -6,10 +6,10 @@
       <% current_user.requested_friends.each do |request| %>
         <%= request.first_name %>
         <%= request.last_name %>
-        <% link_to friend_accept_request_path do %>
+        <% link_to friend_accept_request_path(request) do %>
           <button type="button" class="btn btn-info">Info</button>
         <% end %>
-        <% link_to friend_reject_request_path do %>
+        <% link_to friend_decline_request_path(request) do %>
           <button type="button" class="btn btn-warning">Warning</button>
         <% end %>
       <% end %>

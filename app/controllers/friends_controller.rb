@@ -5,7 +5,9 @@ class FriendsController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @friend = @user.friends[id: params[:friend_id]]
+    @friend = User.find(params[:id])
+    @messages = current_user.messages_with(@friend)
+    @message = Message.new
+    authorize @friend
   end
 end
