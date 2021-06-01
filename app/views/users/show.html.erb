@@ -1,17 +1,17 @@
-<div class="all d-flex flex-column justify-content-center align-items-center mt-5">
-  <div class="card-user">
+<div class="d-flex flex-row justify-content-center align-items-center mt-5" style="width: 700px;">
+  <div class="card-user d-flex flex-column align-items-center justify-content-center" style="width: 300px;">
     <div class="container-img">
       <%= cl_image_tag(@user.photo.key) %>
     </div>
-    <div class="user-info d-flex flex-space-around">
-      <%= @user.first_name %> <%= @user.last_name %>
-      <%= @user.city %>
+    <div class="user-info d-flex flex-column">
+      <p><%= @user.first_name %> <%= @user.last_name %></p>
+      <p><%= @user.city %></p>
     </div>
     <div class="user-bio">
       <%= @user.bio %>
     </div>
   </div>
-  <div class="card-pet">
+  <div class="card-pet d-flex flex-column align-items-center justify-content-center pt-5">
     <%= render "pets/pets" %>
   </div>
 </div>
