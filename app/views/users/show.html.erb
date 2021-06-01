@@ -1,2 +1,17 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="all d-flex flex-column justify-content-center align-items-center mt-5">
+  <div class="card-user">
+    <div class="container-img">
+      <%= cl_image_tag(@user.photo.key) %>
+    </div>
+    <div class="user-info d-flex flex-space-around">
+      <%= @user.first_name %> <%= @user.last_name %>
+      <%= @user.city %>
+    </div>
+    <div class="user-bio">
+      <%= @user.bio %>
+    </div>
+  </div>
+  <div class="card-pet">
+    <%= render "pets/pets" %>
+  </div>
+</div>

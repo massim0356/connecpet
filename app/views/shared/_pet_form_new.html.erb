@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Add your pet here</h1>
+  <%= simple_form_for @pet do |f| %>
+    <%= f.input :pet_name %>
+    <%= f.input :birthdate %>
+    <%= f.input :species %>
+    <%= f.input :breed %>
+    <%= f.input :photo, as: :file, inline_label: 'photo', label: false %>
+    <%= f.submit 'Add your pet', class: 'btn btn-flat' %>
+  <% end %>
+</div>
