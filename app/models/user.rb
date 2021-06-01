@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :bookings_as_owner, through: :petsittings, source: :bookings
   has_many :messages
+  has_one_attached :photo
 end
