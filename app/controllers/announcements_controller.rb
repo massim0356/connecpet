@@ -2,15 +2,18 @@ class AnnouncementsController < ApplicationController
   before_action :set_pet, only: [:new, :create]
 
   def index
-    @annoucements = Announcement.all
+    @announcement = policy_scope(Announcement).where(user: current_user)
+    @announcements_as_owner = policy_scope(Announcement).where(announcement: current_user.pet)
   end
 
   def new
     @annoucement = Announcement.new
+    authorize @announcement
   end
 
   def create
     @announcement = Announcement.new(announcement_params)
+    authorize @announcement
     @announcement.pet = @pet
     @announcement.user = current_user
     if annoucement.save
