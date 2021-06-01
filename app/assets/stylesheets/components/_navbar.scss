@@ -1,5 +1,6 @@
 .navbar-lewagon {
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   background: white;
 }
 
@@ -8,5 +9,9 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 200px;
+}
+
+.nav-item {
+  font-size: 25px;
 }
