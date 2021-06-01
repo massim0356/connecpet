@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Add your pet here</h1>
-  <%= simple_form_for [@pet] do |f| %>
+  <%= simple_form_for @pet do |f| %>
     <%= f.input :pet_name %>
     <%= f.input :birthdate %>
     <%= f.input :species %>
