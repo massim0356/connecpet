@@ -1,36 +1,17 @@
 <div class="all d-flex flex-column justify-content-center align-items-center mt-5">
   <div class="card-user">
     <div class="container-img">
-      <%= @user.photo %>
+      <%= cl_image_tag(@user.photo.key) %>
     </div>
     <div class="user-info d-flex flex-space-around">
       <%= @user.first_name %> <%= @user.last_name %>
       <%= @user.city %>
-    </div>
-    <div class="form-pets">
-      <div class="modal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Add your pet</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="x"></button>
-            </div>
-            <div class="modal-body">
-              <%= render "shared/form" %>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-              <button type="button" class="btn btn-primary">Add</button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div class="user-bio">
       <%= @user.bio %>
     </div>
   </div>
   <div class="card-pet">
-    <%= render pets %>
+    <%= render "pets/pets" %>
   </div>
 </div>

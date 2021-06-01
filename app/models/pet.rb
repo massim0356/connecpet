@@ -4,6 +4,6 @@ class Pet < ApplicationRecord
   has_one_attached :photo
 
   def get_age
-    Date.today - @pet.birthdate
+    Date.today - self.birthdate
   end
 end
