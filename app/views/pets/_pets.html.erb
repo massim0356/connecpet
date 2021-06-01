@@ -1,8 +1,10 @@
 <% @user.pets.each do |pet| %>
-  <div class="container-img">
+  <div class="pet-img ">
     <%= pet.photo.attached? ? cl_image_tag(pet.photo.key) : cl_image_tag("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png") %>
   </div>
-  <p>Name: <%= pet.pet_name %>  Age: <%= pet.get_age %></p>
-  <p><%= pet.species%> <%= pet.breed %></p>
-  <p><%= pet.description %></p>
+  <div class="pet-info d-flex flex-row justify-content-center align-items-center">
+    <p> <strong><%= pet.pet_name %></strong></br><strong><%= pet.get_age %> years old</strong></br>
+    <%= pet.breed %> </br>
+    "<%= pet.description %>"</p>
+  </div>
 <% end %>
