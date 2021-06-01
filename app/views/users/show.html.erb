@@ -1,2 +1,24 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="all d-flex flex-column justify-content-center align-items-center mt-5">
+  <div class="card-user">
+    <div class="container-img">
+      <%= @user.photo %>
+    </div>
+    <div class="user-info d-flex flex-space-around">
+      <%= @user.first_name %> <%= @user.last_name %>
+      <%= @user.city %>
+    </div>
+    <div class="user-bio">
+      <%= @user.bio %>
+    </div>
+  </div>
+  <div class="card-pet">
+    <% @user.pets.each do |pet| %>
+      <div class="container-img">
+        <%= pet.photo.attached? ? cl_image_tag(pet.photo.key) : cl_image_tag("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png") %>
+      </div>
+      <p>Name: <%= pet.name %>  Age: <%= pet.get_age %></p>
+      <p><%= pet.species%> <%= pet.breed %></p>
+      <p><%= pet.description %></p>
+      <% end %>
+  </div>
+</div>
