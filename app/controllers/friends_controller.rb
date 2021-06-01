@@ -1,3 +1,10 @@
 class FriendsController < ApplicationController
-  #empty
+  def index
+    skip_policy_scope
+    @users = current_user.friends
+  end
+
+  def show
+    # direct messages page with friend
+  end
 end
