@@ -11,6 +11,13 @@ class FriendsController < ApplicationController
     authorize @friend
   end
 
+  def request_friendship
+    @user = User.find(params[:friend_id])
+    current_user.friend_request(@user)
+    authorize @user
+    redirect_to user_path(@user)
+  end
+
   def accept_request
     #find user by params
     # current user should accept request of the user

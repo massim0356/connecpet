@@ -17,4 +17,8 @@ class UserPolicy < ApplicationPolicy
     true
     # user == current_user
   end
+
+  def request_friendship?
+    true
+  end
 end
