@@ -1,0 +1,12 @@
+<%= link_to user_path(friend) do %>
+  <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+<% end  %>
+<div class="notification-content">
+  <%= friend.first_name %>
+  <%= friend.last_name %>
+</div>
+<%= link_to friend_path(friend) do %>
+  <div class="notification-actions">
+    <a href="#"><i class="far fa-comment-alt fa-2x"></i></a>
+  </div>
+<% end %>
