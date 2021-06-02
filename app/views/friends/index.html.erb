@@ -4,16 +4,16 @@
 <div class="container d-flex flex-column mt-2 pl-10 justify-content-center">
   <% if current_user.requested_friends.any? %>
     <% current_user.requested_friends.each do |friend| %>
-      <div class="notification"
-          <%= render "friends/friend_request", friend: friend %>
-        </div>
-      <% end  %>
+      <div class="notification">
+        <%= render "friends/friend_request", friend: friend %>
+      </div>
     <% end  %>
-    <% if current_user.friends.any? %>
-      <% current_user.friends.each do |friend| %>
-        <div class="notification">
-          <%= render "friends/friend", friend: friend %>
-        </div>
-      <% end  %>
-    <% end %>
-  </div>
+  <% end  %>
+  <% if current_user.friends.any? %>
+    <% current_user.friends.each do |friend| %>
+      <div class="notification">
+        <%= render "friends/friend", friend: friend %>
+      </div>
+    <% end  %>
+  <% end %>
+</div>
