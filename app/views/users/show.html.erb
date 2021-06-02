@@ -1,17 +1,22 @@
-<div class="d-flex flex-row justify-content-center align-items-center mt-5" style="width: 700px;">
-  <div class="card-user d-flex flex-column align-items-center justify-content-center" style="width: 300px;">
+<div id="main" class="d-flex flex-row justify-content-center align-items-start mt-5">
+  <div class="card-user d-flex flex-column align-items-center justify-content-start" style="width: 300px;">
     <div class="container-img">
-      <%= @user.photo.attached? ? cl_image_tag(@user.photo.key) : "add photo" %>
+      <%= @user.photo.attached? ? cl_image_tag(@user.photo.key) : cl_img_tag("") %>
     </div>
-    <div class="user-info d-flex flex-column">
+    <div class="user-info d-flex flex-column text-center">
       <p><%= @user.first_name %> <%= @user.last_name %></p>
       <p><%= @user.city %></p>
     </div>
-    <div class="user-bio">
+    <div class="user-bio text-center">
       <%= @user.bio %>
     </div>
+    <button id="new-pet" type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#petNew">
+      Add your pet!
+    </button>
+    <%= render "pets/pets_pop" %>
   </div>
   <div class="card-pet d-flex flex-column align-items-center justify-content-center pt-5">
     <%= render "pets/pets" %>
   </div>
 </div>
+</br>
