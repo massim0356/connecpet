@@ -13,7 +13,7 @@ class UserPolicy < ApplicationPolicy
     # user == current_user
   end
 
-  def reject_request?
+  def decline_request?
     true
     # user == current_user
   end
