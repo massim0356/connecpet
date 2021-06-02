@@ -9,10 +9,12 @@ class UserPolicy < ApplicationPolicy
   end
 
   def accept_request?
-    user == current_user
+    true
+    # user == current_user
   end
 
   def reject_request?
-    user == current_user
+    true
+    # user == current_user
   end
 end
