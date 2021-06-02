@@ -1,5 +1,5 @@
- <% link_to user_path(friend) do %>
-  <%= friend.photo.attached? ? cl_image_tag(friend.photo.key) : cl_image_tag('https://kitt.lewagon.com/placeholder/users/arthur-littm') class: "avatar-large" %>
+<%= link_to user_path(friend) do %>
+  <%= friend.photo.attached? ? cl_image_tag(friend.photo.key, class: "avatar-large") : cl_image_tag('https://kitt.lewagon.com/placeholder/users/arthur-littm', class: "avatar-large") %>
 <% end  %>
 <div class="notification-content" id="friend-request-div">
   <% current_user.requested_friends.each do |request| %>
