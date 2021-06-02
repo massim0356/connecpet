@@ -1,7 +1,7 @@
 <div id="main" class="d-flex flex-row flex-wrap justify-content-center align-items-start mt-5">
   <div class="card-user d-flex flex-column align-items-center justify-content-start">
     <div class="container-img">
-      <%= @user.photo.attached? ? cl_image_tag(@user.photo.key) : cl_img_tag("") %>
+      <%= @user.photo.attached? ? cl_image_tag(@user.photo.key) : "no photo :(" %>
     </div>
     <div class="user-info d-flex flex-column text-center">
       <p><%= @user.first_name %> <%= @user.last_name %></p>
@@ -11,13 +11,13 @@
       <%= @user.bio %>
     </div>
     <%= simple_form_for @user, url: friend_request_friendship_path(@user), method: "post" do |f| %>
-    <%= f.submit 'add', class: 'btn btn-flat'%>
+      <%= f.submit 'add', class: 'btn btn-flat'%>
     <% end %>
   </div>
-    <button id="new-pet" type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#petNew">
-      Add your pet!
-    </button>
-    <%= render "pets/pets_pop" %>
+  <button id="new-pet" type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#petNew">
+    Add your pet!
+  </button>
+  <%= render "pets/pets_pop" %>
   <div class="card-pet d-flex flex-row align-items-center justify-content-center">
     <%= render "pets/pets" %>
   </div>
