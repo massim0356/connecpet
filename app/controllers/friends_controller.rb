@@ -5,7 +5,10 @@ class FriendsController < ApplicationController
   end
 
   def show
-    # direct messages page with friend
+    @friend = User.find(params[:id])
+    @messages = current_user.messages_with(@friend)
+    @message = Message.new
+    authorize @friend
   end
 
   def accept_friend_request
