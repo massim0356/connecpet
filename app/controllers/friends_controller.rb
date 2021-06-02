@@ -27,7 +27,7 @@ class FriendsController < ApplicationController
     @user = User.find(params[:friend_id])
     current_user.accept_request(@user)
     authorize @user
-    redirect_to friend_path(@user)
+    redirect_to friends_path
     # if it's a nested id, it takes the name of the thing before it
   end
 
