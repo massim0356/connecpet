@@ -3,6 +3,7 @@ class PetsController < ApplicationController
 
   def new
     @pet = Pet.new
+    @pet.user = @user
     authorize @pet
   end
 
