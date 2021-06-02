@@ -14,9 +14,9 @@ massim_img = URI.open("https://avatars.githubusercontent.com/u/65900884?v=4")
 massim = User.create!(first_name: "Massim", last_name: "Shah", email: "massim@test.com" , password: "000000", city: "Dumpster", bio: "I enjoy consuming dust")
 massim.photo.attach(io: massim_img, filename: 'massim.png', content_type: 'image/png')
 
-# user_1_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622188810/z9oabmvgmc14zhxeohgtunyfmkks.png")
-# user_1 = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "000000", city: "Meguro", bio: Faker::ChuckNorris.fact)
-# user_1.photo.attach(io: user_1_img, filename: 'jose.png', content_type: 'image/png')
+user_1_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622473594/bpegi7stcwe0u680m6k728ajev1c.png")
+user_1 = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "000000", city: "Meguro", bio: Faker::ChuckNorris.fact)
+user_1.photo.attach(io: user_1_img, filename: 'jose.png', content_type: 'image/png')
 
 user_2_img = URI.open("https://avatars.githubusercontent.com/u/65900884?v=4")
 user_2 = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "000000", city: "Shibuya", bio: Faker::ChuckNorris.fact)
