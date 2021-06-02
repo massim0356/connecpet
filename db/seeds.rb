@@ -6,8 +6,13 @@ Pet.destroy_all
 
 puts "creating users and pets.."
 
+test_img = URI.open("https://i.pinimg.com/736x/4d/8e/cc/4d8ecc6967b4a3d475be5c4d881c4d9c.jpg")
 test_user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "test@test.com" , password: "000000", city: "Meguro", bio: Faker::ChuckNorris.fact)
+test_user.photo.attach(io: test_img, filename: 'test.jpg', content_type: 'image/jpg')
+
+massim_img = URI.open("https://avatars.githubusercontent.com/u/65900884?v=4")
 massim = User.create!(first_name: "Massim", last_name: "Shah", email: "massim@test.com" , password: "000000", city: "Dumpster", bio: "I enjoy consuming dust")
+massim.photo.attach(io: massim_img, filename: 'massim.png', content_type: 'image/png')
 
 user_1_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622188810/z9oabmvgmc14zhxeohgtunyfmkks.png")
 user_1 = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "000000", city: "Meguro", bio: Faker::ChuckNorris.fact)

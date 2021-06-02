@@ -4,6 +4,6 @@ class Pet < ApplicationRecord
   has_one_attached :photo
 
   def get_age
-    Date.today - self.birthdate
+    ((Time.zone.now - self.birthdate.to_time) / 1.year.seconds).floor
   end
 end

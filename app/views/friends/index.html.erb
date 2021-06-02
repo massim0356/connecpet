@@ -24,9 +24,18 @@
           <%= friend.last_name %>
         <% end %>
       <% end  %>
+      <% if current_user.friends.any? %>
+        <div class="notification">
+          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+          <div class="notification-content">
+            <% current_user.friends.each do |friend| %>
+              <%= friend.first_name %>
+              <%= friend.last_name %>
+            <% end %>
+          </div>
+          <div class="notification-actions">
+            <a href="#"><i class="far fa-comment-alt fa-2x"></i></a>
+          </div>
+        <% end  %>
+      </div>
     </div>
-    <div class="notification-actions">
-      <a href="#"><i class="far fa-comment-alt fa-lg"></i></a>
-    </div>
-  </div>
-</div>

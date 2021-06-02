@@ -1,13 +1,16 @@
 .notification {
   display: flex;
-  justify-content: center;
   align-items: center;
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-bottom: 8px;
   background: white;
   padding: 8px 16px;
   border: 1px solid rgb(235,235,235);
-  margin-left: 10px;
-  margin-right: 10px;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
 .notification .notification-content {
@@ -43,4 +46,8 @@
 
 .notification .notification-actions a:hover {
   color: #555555;
+}
+
+#friend-request-div {
+  display: inline;
 }
