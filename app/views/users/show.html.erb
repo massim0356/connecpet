@@ -1,5 +1,5 @@
-<div id="main" class="d-flex flex-row justify-content-center align-items-start mt-5">
-  <div class="card-user d-flex flex-column align-items-center justify-content-start" style="width: 300px;">
+<div id="main" class="d-flex flex-row flex-wrap justify-content-center align-items-start mt-5">
+  <div class="card-user d-flex flex-column align-items-center justify-content-start">
     <div class="container-img">
       <%= @user.photo.attached? ? cl_image_tag(@user.photo.key) : cl_img_tag("") %>
     </div>
