@@ -5,7 +5,7 @@
   max-height: 250px;
   overflow: hidden;
   line-height: 20px;
-  box-shadow: 0 0 16px rgba(0,0,0,0.1);
+  border: 1px solid #ccc;
 }
 
 .card-pet img {
@@ -20,7 +20,7 @@
   height: 600px;
   width: 400px;
   line-height: 25px;
-  box-shadow: 0 0 16px rgba(0,0,0,0.1);
+  border: 1px solid #ccc;
 }
 
 .card-user img {
