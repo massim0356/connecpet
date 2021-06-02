@@ -1,7 +1,7 @@
 <div id="main" class="d-flex flex-row flex-wrap justify-content-center align-items-start mt-5">
   <div class="card-user d-flex flex-column align-items-center justify-content-start">
     <div class="container-img">
-      <%= @user.photo.attached? ? cl_image_tag(@user.photo.key) : cl_img_tag("") %>
+      <%= @user.photo.attached? ? cl_image_tag(@user.photo.key) : cl_img_tag("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622615495/cat_plain_pkgsn5.png") %>
     </div>
     <div class="user-info d-flex flex-column text-center">
       <p><%= @user.first_name %> <%= @user.last_name %></p>
@@ -14,6 +14,7 @@
     <%= f.submit 'add', class: 'btn btn-flat'%>
     <% end %>
   </div>
+    <div>
     <button id="new-pet" type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#petNew">
       Add your pet!
     </button>
