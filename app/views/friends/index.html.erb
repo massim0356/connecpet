@@ -1,41 +1,38 @@
-<div class="container d flex mt-3 justify-content-center col-6"></div>
-<% if current_user.requested_friends.any? %>
-  <div class="notification">
-    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-    <div class="notification-content">
-      <% current_user.requested_friends.each do |request| %>
-        <%= request.first_name %>
-        <%= request.last_name %>
-        <% link_to friend_accept_request_path(request) do %>
-          <button type="button" class="btn btn-info">Info</button>
-        <% end %>
-        <% link_to friend_decline_request_path(request) do %>
-          <button type="button" class="btn btn-warning">Warning</button>
-        <% end %>
-      <% end %>
+<div class="container d-flex mt-3 justify-content-center">
+  <% if current_user.requested_friends.any? %>
+    <div class="notification">
+      <% @user.friends.each do |friend| %>
+        <% link_to user_path(friend) do %>
+          <%= friend.photo.attached? ? cl_image_tag(friend.photo.key) : cl_image_tag('https://kitt.lewagon.com/placeholder/users/arthur-littm') class: "avatar-large" %>
+        <% end  %>
+        <div class="notification-content" id="friend-request-div">
+          <% current_user.requested_friends.each do |request| %>
+            <%= request.first_name %>
+            <%= request.last_name %>
+            <%= form_for :user, url: friend_accept_request_path(request) do |f| %>
+              <%= f.submit "accept", class: "btn btn-primary" %>
+            <% end %>
+            <%= form_for :user, url: friend_decline_request_path(request) do |f| %>
+              <%= f.submit "reject", class: "btn btn-warning" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end  %>
+    <% if current_user.friends.any? %>
+      <div class="notification">
+        <% link_to user_path(@user) do %>
+          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+        <% end  %>
+        <div class="notification-content">
+          <% current_user.friends.each do |friend| %>
+            <%= friend.first_name %>
+            <%= friend.last_name %>
+          <% end %>
+        </div>
+        <div class="notification-actions">
+          <a href="#"><i class="far fa-comment-alt fa-2x"></i></a>
+        </div>
+      </div>
     <% end  %>
   </div>
-  <div class="notification">
-    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-    <div class="notification-content">
-      <% if current_user.friends.any? %>
-        <% current_user.friends.each do |friend| %>
-          <%= friend.first_name %>
-          <%= friend.last_name %>
-        <% end %>
-      <% end  %>
-      <% if current_user.friends.any? %>
-        <div class="notification">
-          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-          <div class="notification-content">
-            <% current_user.friends.each do |friend| %>
-              <%= friend.first_name %>
-              <%= friend.last_name %>
-            <% end %>
-          </div>
-          <div class="notification-actions">
-            <a href="#"><i class="far fa-comment-alt fa-2x"></i></a>
-          </div>
-        <% end  %>
-      </div>
-    </div>
