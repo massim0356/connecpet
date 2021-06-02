@@ -1,0 +1,13 @@
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+}
+
+#message_content {
+  border-radius: 16px;
+  width: 60vw;
+}
