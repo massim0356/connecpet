@@ -10,15 +10,16 @@
     <div class="user-bio text-center">
       <%= @user.bio %>
     </div>
+    <%= simple_form_for @user, url: friend_request_friendship_path(@user), method: "post" do |f| %>
+    <%= f.submit 'add', class: 'btn btn-flat'%>
+    <% end %>
   </div>
-    <div class="form-pets-new d-flex flex-column align-items-center">
-      <div class="card-pet d-flex flex-row align-items-center justify-content-center">
-        <%= render "pets/pets" %>
-      </div>
-      <button id="new-pet" type="button" class="btn btn-flat mt-3" data-toggle="modal" data-target="#petNew">
-       Add Your Pet
-      </button>
-     <%= render "pets/pets_pop" %>
+    <button id="new-pet" type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#petNew">
+      Add your pet!
+    </button>
+    <%= render "pets/pets_pop" %>
+  <div class="card-pet d-flex flex-row align-items-center justify-content-center">
+    <%= render "pets/pets" %>
   </div>
 </div>
 </br>
