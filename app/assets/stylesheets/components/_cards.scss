@@ -3,7 +3,6 @@
   width: 400px;
   min-height: 150px;
   max-height: 300px;
-  overflow: hidden;
   line-height: 20px;
   border: 1px solid #ccc;
 }
@@ -17,15 +16,15 @@
 
 .card-user {
   border-radius: 15px;
-  height: 600px;
+  height: 500px;
   width: 400px;
   line-height: 25px;
   border: 1px solid #ccc;
 }
 
 .card-user img {
-  height: 250px;
-  width: 250px;
+  height: 275px;
+  width: 275px;
   margin-top: 20px;
   padding: 20px;
   border-radius: 50%;

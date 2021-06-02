@@ -1,5 +1,5 @@
-<div id="main" class="d-flex flex-row justify-content-center align-items-start mt-5">
-  <div class="card-user d-flex flex-column align-items-center justify-content-start" style="width: 300px;">
+<div id="main" class="d-flex flex-row flex-wrap justify-content-center align-items-start mt-5">
+  <div class="card-user d-flex flex-column align-items-center justify-content-start">
     <div class="container-img">
       <%= @user.photo.attached? ? cl_image_tag(@user.photo.key) : cl_img_tag("") %>
     </div>
@@ -10,13 +10,15 @@
     <div class="user-bio text-center">
       <%= @user.bio %>
     </div>
-    <button id="new-pet" type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#petNew">
-      Add your pet!
-    </button>
-    <%= render "pets/pets_pop" %>
   </div>
-  <div class="card-pet d-flex flex-row align-items-center justify-content-center">
-    <%= render "pets/pets" %>
+    <div class="form-pets-new d-flex flex-column align-items-center">
+      <div class="card-pet d-flex flex-row align-items-center justify-content-center">
+        <%= render "pets/pets" %>
+      </div>
+      <button id="new-pet" type="button" class="btn btn-flat mt-3" data-toggle="modal" data-target="#petNew">
+       Add Your Pet
+      </button>
+     <%= render "pets/pets_pop" %>
   </div>
 </div>
 </br>
