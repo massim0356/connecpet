@@ -1,10 +1,11 @@
 .card-pet {
-  border-radius: 15px;
+  border-radius: 8px;
   width: 400px;
   min-height: 150px;
   max-height: 300px;
   line-height: 20px;
   border: 1px solid #ccc;
+  background-color: white;
 }
 
 .card-pet img {
@@ -15,11 +16,12 @@
 }
 
 .card-user {
-  border-radius: 15px;
+  border-radius: 8px;
   height: 500px;
   width: 400px;
   line-height: 25px;
   border: 1px solid #ccc;
+  background-color: white;
 }
 
 .card-user img {
