@@ -3,18 +3,13 @@ h1 {
 }
 
 .container-users {
-  // width: 600px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   justify-content: space-around;
   padding: 100px;
-}
-
-.card-user-location {
-
-
+  padding-top: 10px;
 }
 
 .card-user {
@@ -23,14 +18,12 @@ h1 {
   flex-grow: 1;
   overflow: hidden;
   background: white;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border: 1px solid #ccc;
   border-radius: 8px;
-  // margin-bottom: 12px;
 }
 
 .card-user > img {
-  height: 250px;
+  height: 330px;
   width: 100%;
   object-fit: cover;
 }
@@ -56,14 +49,11 @@ h1 {
 
 .name-text h2 {
   font-size: 18px;
-
 }
 
 #user-location {
     font-size: 14px;
   }
-
-
 
 .link:hover{
   text-decoration: none;
@@ -76,14 +66,10 @@ h1 {
   margin-right: 8px;
   }
 
-
-
 .card-user-info h2, h3:hover {
     text-decoration: none;
 
   }
-
-
 
 @media(max-width: 992px) {
   .container-users {
@@ -95,13 +81,6 @@ h1 {
   .container-users {
     grid-template-columns: 1fr 1fr;
   }
-  // .card-user-name h2 {
-  //   font-size: 24px;
-  // }
-
-  // #user-location {
-  //   font-size: 18px;
-  // }
 
   .name-text h2 {
   font-size: 20px;

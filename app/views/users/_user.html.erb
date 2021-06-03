@@ -6,7 +6,7 @@
       <% end %>
         <div class="card-user-info d-flex align-items-end">
           <div class="card-user-name d-flex align-items-center">
-            <%= user.photo.attached? ? cl_image_tag(user.photo.key, class: "card-user-avatar") : cl_image_tag("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png", class: "card-user-avatar") %>
+            <%= cl_image_tag(user.photo.key, class: "card-user-avatar")%>
             <div class="name-text d-flex">
               <h2><%= user.first_name %></h2>
               <h2><%= user.last_name %></h2>

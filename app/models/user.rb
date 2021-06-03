@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_one_attached :photo, dependent: :destroy
   before_destroy :destroy_messages
 
+  validates :photo, presence: true
+
   def messages_with(friend)
     Message.where(sender: friend, receiver: self).or(Message.where(sender: self, receiver: friend))
   end
