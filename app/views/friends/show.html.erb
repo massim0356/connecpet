@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-md-8">
+      <div id="messages" data-user-id="<%= @friend.id %>">
+        <% if @messages.any? %>
+          <%= render @messages %>
+        <% else %>
+          <div class="message-container">
+            <p>No messages with <%= @friend.first_name %> yet. Send the first message!</p>
+          </div>
+        <% end %>
+        <%= simple_form_for [ @friend, @message ], remote: true do |f| %>
+          <%= f.input :content, label: false, placeholder: "Message" %>
+          <%= f.submit "Send", :class => "btn btn-primary", :id => "message-button" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

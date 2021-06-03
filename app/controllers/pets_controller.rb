@@ -1,17 +1,18 @@
 class PetsController < ApplicationController
-  before_action :set_user, only: [:new, :create]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def new
     @pet = Pet.new
+    @pet.user = current_user
     authorize @pet
   end
 
   def create
-    @pet = Pet.new(pet_params)
+    @pet = Pet.create(pet_params)
+    @pet.user = current_user
     authorize @pet
-    @pet.user = @user
     if @pet.save
-      redirect_to pets_path
+      redirect_to user_path
     else
       render :new
     end

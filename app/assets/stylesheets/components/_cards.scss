@@ -1,0 +1,37 @@
+.card-pet {
+  border-radius: 8px;
+  width: 320px;
+  min-height: 150px;
+  max-height: 300px;
+  line-height: 20px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+.card-pet img {
+  height: 100px;
+  width: 100px;
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
+.card-user {
+  border-radius: 8px;
+  height: 500px;
+  width: 320px;
+  line-height: 25px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+.card-user img {
+  height: 275px;
+  width: 275px;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+#main {
+  gap: 20px;
+}

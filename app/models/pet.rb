@@ -4,6 +4,8 @@ class Pet < ApplicationRecord
   has_one_attached :photo
 
   def get_age
-    Date.today - self.birthdate
+    return nil unless birthdate
+
+    ((Time.zone.now - birthdate.to_time) / 1.year.seconds).floor
   end
 end

@@ -1,0 +1,13 @@
+<%= link_to user_path(friend) do %>
+  <%= friend.photo.attached? ? cl_image_tag(friend.photo.key, class: "avatar-large") : cl_image_tag('https://kitt.lewagon.com/placeholder/users/arthur-littm', class: "avatar-large") %>
+<% end  %>
+<div class="notification-content" id="friend-request-div">
+  <%= friend.first_name %>
+  <%= friend.last_name %>
+  <%= form_for :user, url: friend_accept_request_path(friend) do |f| %>
+    <%= f.submit "accept", class: "btn btn-primary" %>
+  <% end %>
+  <%= form_for :user, url: friend_decline_request_path(friend), method: :delete do |f| %>
+    <%= f.submit "reject", class: "btn btn-warning" %>
+  <% end %>
+</div>
