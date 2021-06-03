@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   background: white;
-  border: 1px solid #ccc;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -14,10 +13,8 @@
 }
 
 .nav-item {
-  border: 1px solid #ccc;
   font-size: 16px;
   color: #76D0C0;
-  border-radius: 8px;
 }
 
 .nav-link {
