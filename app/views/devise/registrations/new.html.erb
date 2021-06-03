@@ -22,6 +22,7 @@
     <%= f.input :bio,
                 required: true,
                 input_html: { autocomplete: "off" } %>
+    <%= f.input :photo, as: :file, inline_label: 'photo', label: false %>
   </div>
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
