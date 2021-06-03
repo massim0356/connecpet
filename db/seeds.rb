@@ -31,17 +31,7 @@ test_user = User.create!(
   )
 test_user.photo.attach(io: user_img, filename: 'massim.png', content_type: 'image/png')
 
-otter_img = URI.open("https://www.gannett-cdn.com/-mm-/7cfa0cdce1b602172c2e2961197d42679ab2b3cc/c=0-278-2520-1702/local/-/media/2017/01/28/USATODAY/USATODAY/636211875995222622-GettyImages-462548187.jpg")
-otter = Pet.create!(
-  pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-  birthdate: Faker::Date.birthday, species: "Otter",
-  breed: "Asian Small-clawed Otter",
-  description: "I love fish",
-  user: test_admin
-  )
-otter.photo.attach(io: otter_img, filename: 'otter.jpg', content_type: 'image/jpg')
-
-50.times do
+5.times do
   file = URI.open('https://thispersondoesnotexist.com/image')
   user = User.create!(
     first_name: Faker::Name.first_name,
@@ -52,109 +42,6 @@ otter.photo.attach(io: otter_img, filename: 'otter.jpg', content_type: 'image/jp
     bio: BIO.sample
     )
   user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
-end
-
-10.times do
-  cat_img = URI.open("https://cdn.geekwire.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-09-at-4.34.29-PM.png")
-  cat = Pet.create!(
-    pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-    birthdate: Faker::Date.birthday,
-    species: "Cat",
-    breed: "American Short Hair",
-    description: "She likes fish",
-    user: User.all.sample
-    )
-  cat.photo.attach(io: cat_img, filename: 'cat.png', content_type: 'image/png')
-end
-
-10.times do
-  birman_img = URI.open("https://cdn.geekwire.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-09-at-4.34.29-PM.png")
-  birman = Pet.create!(
-    pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-    birthdate: Faker::Date.birthday,
-    species: "Cat",
-    breed: "Birman",
-    description: "He likes boxes",
-    user: User.all.sample
-    )
-  birman.photo.attach(io: birman_img, filename: 'birman.png', content_type: 'image/png')
-end
-
-10.times do
-  dog_img = URI.open("https://i.imgflip.com/4/4t0m5.jpg")
-  dog = Pet.create!(
-    pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-    birthdate: Faker::Date.birthday, species: "Dog",
-    breed: "Shibe",
-    description: "He's stubborn",
-    user: User.all.sample
-    )
-  dog.photo.attach(io: dog_img, filename: 'dog.jpg', content_type: 'image/jpg')
-end
-
-10.times do
-  golden_img = URI.open("https://i.pinimg.com/originals/39/d7/b9/39d7b92471192ae8e445a54f7d85b508.jpg")
-  golden = Pet.create!(
-    pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-    birthdate: Faker::Date.birthday,
-    species: "Dog",
-    breed: "Golden Retreiver",
-    description: "She is a sweetheart",
-    user: User.all.sample
-    )
-  golden.photo.attach(io: golden_img, filename: 'golden.jpg', content_type: 'image/jpg')
-end
-
-10.times do
-  pig_img = URI.open("http://tamuvetmed.wpengine.com/news/wp-content/uploads/sites/9/2018/05/pig-300x210.png")
-  pig = Pet.create!(
-    pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-    birthdate: Faker::Date.birthday,
-    species: "Pig",
-    breed: "Mini Pig",
-    description: "She loves mud",
-    user: User.all.sample
-    )
-  pig.photo.attach(io: pig_img, filename: 'pig.png', content_type: 'image/png')
-end
-
-10.times do
-  owl_img = URI.open("https://farm9.staticflickr.com/8659/16167077194_d4a7a433d8_b.jpg")
-  owl = Pet.create!(
-    pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-    birthdate: Faker::Date.birthday,
-    species: "Owl",
-    breed: "Snowy Owl",
-    description: "He likes flying",
-    user: User.all.sample
-    )
-  owl.photo.attach(io: owl_img, filename: 'owl.jpg', content_type: 'image/jpg')
-end
-
-5.times do
-  sugar_img = URI.open("https://149366112.v2.pressablecdn.com/wp-content/uploads/2016/03/shutterstock_123694948-scaled.jpg")
-  sugar = Pet.create!(
-    pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-    birthdate: Faker::Date.birthday,
-    species: "Sugar Glider",
-    breed: "Sugar Glider",
-    description: "He likes nuts",
-    user: User.all.sample
-    )
-  sugar.photo.attach(io: sugar_img, filename: 'sugar.jpg', content_type: 'image/jpg')
-end
-
-5.times do
-  hamster_img = URI.open("https://i.pinimg.com/originals/b5/fe/35/b5fe35f4595339a89e304a6470f17ae3.jpg")
-  hamster = Pet.create!(
-    pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-    birthdate: Faker::Date.birthday,
-    species: "Hamster",
-    breed: "Golden Hamster",
-    description: "She sleeps 24/7",
-    user: User.all.sample
-    )
-  hamster.photo.attach(io: hamster_img, filename: 'hamster.jpg', content_type: 'image/jpg')
 end
 
 5.times do

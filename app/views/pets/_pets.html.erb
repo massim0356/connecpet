@@ -6,8 +6,7 @@
       <small><strong><%= pet.description %></strong></small></p>
     </div>
     <div class="pet-img">
-      <%  %>
-      <%= cl_image_tag(pet.photo.key) %>
+      <%= pet.photo.attached? ? cl_image_tag(pet.photo.key) : "easter egg" %>
     </div>
   </div>
 <% end %>
