@@ -1,11 +1,8 @@
 .message-container {
   display: flex;
   flex-direction: column;
-  border-radius: 40px;
   height: 120px;
   font-family: "Poppins", sans-serif;
-  //border-radius: 28px 28px 0px 28px;
-
 }
 
 #message_content {
@@ -16,6 +13,29 @@
 #written-message {
   padding-left: 3rem;
 }
+
+#new_message {
+  .btn {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: large;
+    height: 50px;
+  }
+}
+
+.right-bubble {
+  border-radius: 38px 38px 0px 38px;
+  margin-left: 32px;
+  background-color: #76D0C0;
+}
+
+.left-bubble {
+  border-radius: 38px 38px 38px 0px;
+  margin-right: 32px;
+  background-color: white;
+
+}
+
 
 
 
