@@ -1,0 +1,11 @@
+<div class="mobile-nav">
+  <a href="#"><i class="far fa-bell"></i></a>
+  <a href="#"><i class="fas fa-search"></i></a>
+  <%= link_to user_path(current_user) do %>
+    <i class="far fa-user-circle"></i>
+  <% end %>
+  <%= link_to users_path do %>
+    <i class="fas fa-user-friends"></i>
+  <% end %>
+  <a href="#"><i class="fas fa-dog"></i></a>
+</div>
