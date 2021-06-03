@@ -1,13 +1,41 @@
 .message-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  flex-grow: 1;
-  width: 100%;
+  height: 120px;
+  font-family: "Poppins", sans-serif;
 }
 
 #message_content {
+  margin-top: 20px;
   border-radius: 16px;
-  width: 60vw;
 }
+
+#written-message {
+  padding-left: 3rem;
+}
+
+#new_message {
+  .btn {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: large;
+    height: 50px;
+  }
+}
+
+.right-bubble {
+  border-radius: 38px 38px 0px 38px;
+  margin-left: 32px;
+  background-color: #76D0C0;
+}
+
+.left-bubble {
+  border-radius: 38px 38px 38px 0px;
+  margin-right: 32px;
+  background-color: white;
+
+}
+
+
+
+
