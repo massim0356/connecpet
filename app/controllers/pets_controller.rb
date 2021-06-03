@@ -12,9 +12,9 @@ class PetsController < ApplicationController
     @pet.user = current_user
     authorize @pet
     if @pet.save
-      redirect_to user_path
+      redirect_to user_path(@pet.user)
     else
-      render :new
+      render "pets/pets"
     end
   end
 
