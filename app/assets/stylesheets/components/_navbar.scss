@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   background: white;
-  border: 1px solid #ccc;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -14,7 +13,7 @@
 }
 
 .nav-item {
-  font-size: 20px;
+  font-size: 16px;
   color: #76D0C0;
 }
 
@@ -28,4 +27,16 @@
 
 .dropdown-item  {
   padding: 0px;
+}
+
+.nav-item {
+
+.btn {
+  margin: 0 !important;
+}
+
+a {
+  font-size: 20px;
+}
+
 }
