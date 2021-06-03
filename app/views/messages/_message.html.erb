@@ -1,7 +1,8 @@
-<div class="message-container" id="message-<%= message.id %>">
+<div class="message-container <%= current_user == message.sender ? "p-2 pr-3 mb-4 bg-info text-white align-items-end" : "p-2 pl-3 mb-4 bg-light align-items-start" %>" id="message-<%= message.id %>">
+  <small><%= message.created_at&.strftime("%a %b %e at %l:%M%p") %></small>
   <i class="author">
-    <span><%= message.sender.first_name %></span>
-    <small><%= message.created_at&.strftime("%a %b %e at %l:%M%p") %></small>
+    <%= @friend.photo.attached? ? cl_image_tag(@friend.photo.key, class: "avatar") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "avatar") %>
+    <span><b><%= message.sender.first_name %></b></span>
   </i>
-  <p><%= message.content %></p>
+  <p id="written-message"><%= message.content %></p>
 </div>

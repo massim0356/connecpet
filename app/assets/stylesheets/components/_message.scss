@@ -1,12 +1,21 @@
 .message-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  flex-grow: 1;
-  width: 100%;
+  border-radius: 40px;
+  height: 120px;
+  font-family: "Poppins", sans-serif;
+  //border-radius: 28px 28px 0px 28px;
+
 }
 
 #message_content {
+  margin-top: 20px;
   border-radius: 16px;
 }
+
+#written-message {
+  padding-left: 3rem;
+}
+
+
+
