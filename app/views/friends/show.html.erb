@@ -9,7 +9,7 @@
             <p>No messages with <%= @friend.first_name %> yet. Send the first message!</p>
           </div>
         <% end %>
-        <%= simple_form_for [ @friend, @message ], remote: true do |f| %>
+        <%= simple_form_for [ @friend, @message ], remote: true, html: { class: "send-message"} do |f| %>
           <%= f.input :content, label: false, placeholder: "Message" %>
           <%= f.submit "Send", :class => "btn btn-primary", :id => "message-button" %>
         <% end %>
