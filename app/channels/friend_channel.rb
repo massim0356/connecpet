@@ -2,6 +2,7 @@ class FriendChannel < ApplicationCable::Channel
   def subscribed
     # stream_from "some_channel"
     receiver = User.find(params[:id])
+    p receiver
     stream_for receiver
   end
 
