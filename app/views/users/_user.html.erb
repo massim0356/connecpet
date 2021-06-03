@@ -1,7 +1,9 @@
 <% @users.each do |user| %>
     <%= link_to user_path(user), class: "link" do %>
     <div class="card-user">
-        <%= render user.pets %>
+      <% if user.pets.present? %>
+      <%= image_tag user.pets.first.photo, alt: "pet", class: "card-user-avatar" %>
+      <% end %>
         <div class="card-user-info d-flex align-items-end">
           <div class="card-user-name d-flex align-items-center">
             <%= user.photo.attached? ? cl_image_tag(user.photo.key, class: "card-user-avatar") : cl_image_tag("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1621747327/homeless-chic_n3ntvs.png", class: "card-user-avatar") %>
