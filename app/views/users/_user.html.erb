@@ -1,23 +1,19 @@
-<% @users.each do |user| %>
-    <%= link_to user_path(user), class: "link" do %>
-    <div class="card-user">
-      <% if user.pets.present? %>
+<%= link_to user_path(user), class: "link" do %>
+  <div class="card-user">
+    <% if user.pets.present? %>
       <%= image_tag user.pets.first.photo, alt: "pet", class: "card-user-avatar" %>
-      <% end %>
-        <div class="card-user-info d-flex align-items-end">
-          <div class="card-user-name d-flex align-items-center">
-            <%= cl_image_tag(user.photo.key, class: "card-user-avatar")%>
-            <div class="name-text d-flex">
-              <h2><%= user.first_name %></h2>
-              <h2><%= user.last_name %></h2>
-            </div>
-          </div>
-          <div class="d-flex align-items-end">
-            <h3 id="user-location"><%= user.city %></h3>
-          </div>
+    <% end %>
+    <div class="card-user-info d-flex align-items-end">
+      <div class="card-user-name d-flex align-items-center">
+        <%= cl_image_tag(user.photo.key, class: "card-user-avatar")%>
+        <div class="name-text d-flex">
+          <h2><%= user.first_name %></h2>
+          <h2><%= user.last_name %></h2>
         </div>
+      </div>
+      <div class="d-flex align-items-end">
+        <h3 id="user-location"><%= user.city %></h3>
+      </div>
     </div>
-  <% end %>
+  </div>
 <% end %>
-
-
