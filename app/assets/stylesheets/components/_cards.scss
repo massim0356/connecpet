@@ -1,6 +1,6 @@
 .card-pet {
   border-radius: 8px;
-  width: 400px;
+  width: 320px;
   min-height: 150px;
   max-height: 300px;
   line-height: 20px;
@@ -9,16 +9,16 @@
 }
 
 .card-pet img {
-  height: 150px;
-  width: 150px;
-  padding: 20px;
+  height: 100px;
+  width: 100px;
+  margin-left: 10px;
   border-radius: 50%;
 }
 
 .card-user {
   border-radius: 8px;
   height: 500px;
-  width: 400px;
+  width: 320px;
   line-height: 25px;
   border: 1px solid #ccc;
   background-color: white;
