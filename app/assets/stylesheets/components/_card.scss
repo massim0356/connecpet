@@ -29,7 +29,7 @@ h1 {
 }
 
 .card-user .card-user-info {
-  padding: 16px;
+  padding: 12px;
   display: flex;
   align-items: center;
   color: black;
@@ -39,7 +39,6 @@ h1 {
 
 .card-user-name {
   margin-bottom: 0px;
-  // margin-left: 72px;
   width: 50%;
 
   h2 {
@@ -48,11 +47,12 @@ h1 {
 }
 
 .name-text h2 {
-  font-size: 18px;
+  font-size: 14px;
+  margin: 0;
 }
 
 #user-location {
-    font-size: 14px;
+    font-size: 12px;
   }
 
 .link:hover{
