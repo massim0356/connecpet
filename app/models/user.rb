@@ -25,4 +25,10 @@ class User < ApplicationRecord
   def messages
     Message.where(receiver: self).or(Message.where(sender: self))
   end
+
+  def pet_photos
+    pets.map do |pet|
+      pet.photo.key
+    end
+  end
 end
