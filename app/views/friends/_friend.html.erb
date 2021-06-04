@@ -1,12 +1,13 @@
 <%= link_to user_path(friend) do %>
-  <%= friend.photo.attached? ? cl_image_tag(friend.photo.key, class: "avatar-large") : cl_image_tag('https://kitt.lewagon.com/placeholder/users/arthur-littm', class: "avatar-large") %>
+  <%= friend.photo.attached? ? cl_image_tag(friend.photo.key, class: "avatar-large") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "avatar-large") %>
 <% end  %>
 <div class="notification-content">
-  <%= friend.first_name %>
-  <%= friend.last_name %>
+  <p>Your friend</p>
+  <b><%= friend.first_name %></b>
+  <b><%= friend.last_name %></b>
 </div>
 <%= link_to friend_path(friend) do %>
   <div class="notification-actions">
-    <i class="far fa-comment fa-2x"></i>
+    <i class="fas fa-comment-dots fa-2x"></i>
   </div>
 <% end %>

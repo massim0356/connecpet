@@ -11,8 +11,9 @@
   padding: 8px 16px;
   border: 1px solid rgb(235,235,235);
   width: 90%;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  border-radius: 12px;
+  overflow: hidden
+  // box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
 
@@ -20,6 +21,7 @@
 .notification .notification-content {
   flex-grow: 1;
   padding: 0 24px;
+  overflow: hidden;
 }
 
 .notification p {
@@ -54,14 +56,16 @@
 //    text-decoration: none;
 // }
 
-
+a:hover {
+  text-decoration: none;
+}
 
 #friend-request-div {
   display: inline;
 }
 
 .title-container {
-  margin-top: 6rem;
+  margin-top: 4rem;
 }
 
 
