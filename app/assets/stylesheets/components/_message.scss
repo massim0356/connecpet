@@ -2,7 +2,9 @@
   display: flex;
   flex-direction: column;
   height: 120px;
-  font-family: "Poppins", sans-serif;
+  margin-top: 30px;
+  border: 1px lightgrey;
+  transition: 0.5s ease;
 }
 
 #message_content {
@@ -26,7 +28,7 @@
 .right-bubble {
   border-radius: 38px 38px 0px 38px;
   margin-left: 32px;
-  background-color: #76D0C0;
+  background-color: #bcddd7;
 }
 
 .left-bubble {
@@ -40,6 +42,28 @@
   margin-bottom: 50px;
 }
 
+.created-at {
+  font-style: rgb(182, 181, 181);
+  font-style: italic;
+}
 
+.author {
+  text-decoration: none;
+}
+
+
+.message-content-div {
+  padding-left: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.message-top {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  
+}
 
 
