@@ -6,8 +6,8 @@ Pet.destroy_all
 
 puts "creating users and pets.."
 
-CITY = %w[Meguro Shibuya Shinagawa Shimokitazawa Kichijyoji Ichikawa Yokohama Tachikawa Kameari Hibiya Matusdo]
-BIO = ["I love cats" "I love dogs", "I want to find my pet a friend", "Looking for someone to walk dogs with", "I love jogging with my dog", "My cat enjoys going for a walk"]
+CITY = %w[Meguro Shibuya Shinagawa Shimokitazawa Kichijyoji Ichikawa Yokohama Tachikawa Kameari Hibiya Matusdo Gotanda, Meidaimae, Kameido, Tsujido, Ikebukuro]
+BIO = ["I love all animals", "I want to find a friend for my pet", "Looking for someone to walk my pet with", "I want some advice on raising a pet!", "I am a pet-lover"]
 
 alex_img = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1618495010/r3mmdrp9imzjv9yxejgx.jpg")
 alex = User.create!(
@@ -40,7 +40,8 @@ brady = User.create!(
   email: "brady@test.com",
   password: "121212",
   city: "Yokohama",
-  bio: "I am Brady"
+  bio: "I am Brady",
+  admin: true
   )
 brady.photo.attach(io: brady_img, filename: 'brady.png', content_type: 'image/png')
 
@@ -51,21 +52,56 @@ machiko = User.create!(
   email: "machiko@test.com",
   password: "121212",
   city: "Yokohama",
-  bio: "I am Machiko"
+  bio: "I am Machiko",
+  admin: true
   )
 machiko.photo.attach(io: machiko_img, filename: 'machiko.png', content_type: 'image/png')
 
-otter_img = URI.open("https://www.gannett-cdn.com/-mm-/7cfa0cdce1b602172c2e2961197d42679ab2b3cc/c=0-278-2520-1702/local/-/media/2017/01/28/USATODAY/USATODAY/636211875995222622-GettyImages-462548187.jpg")
+cat_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622823585/IMG_5622_idf0t2.jpg")
+cat = Pet.create!(
+  pet_name: "Haku",
+  birthdate: Faker::Date.birthday(min_age: 1, max_age: 25),
+  species: "Cat",
+  breed: "American Short Hair",
+  description: "I love fish",
+  user: alex
+  )
+cat.photo.attach(io: cat_img, filename: 'cat.jpg', content_type: 'image/jpg')
+
+otter_img = URI.open("https://i.pinimg.com/564x/ac/85/5e/ac855e87a7cc748dae2684344ec0c1e1.jpg")
 otter = Pet.create!(
-  pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-  birthdate: Faker::Date.birthday, species: "Otter",
+  pet_name: "Jose",
+  birthdate: Faker::Date.birthday(min_age: 1, max_age: 15),
+  species: "Otter",
   breed: "Asian Small-clawed Otter",
   description: "I love fish",
   user: massim
   )
 otter.photo.attach(io: otter_img, filename: 'otter.jpg', content_type: 'image/jpg')
 
-45.times do
+pig_img = URI.open("https://i.pinimg.com/564x/fd/05/c6/fd05c6a91c5045d3fed11785fc51555d.jpg")
+pig = Pet.create!(
+  pet_name: "Dylan",
+  birthdate: Faker::Date.birthday(min_age: 1, max_age: 25),
+  species: "Pig",
+  breed: "Mini Pig",
+  description: "She loves tomatoes",
+  user: brady
+  )
+pig.photo.attach(io: pig_img, filename: 'pig.jpg', content_type: 'image/jpg')
+
+kitty_img = URI.open("https://i.pinimg.com/564x/71/95/60/7195601aabb8f2fbf2a28ee28d3b3cc0.jpg")
+kitty = Pet.create!(
+  pet_name: "Maruetsu",
+  birthdate: Faker::Date.birthday(min_age: 1, max_age: 25),
+  species: "Cat",
+  breed: "Not sure",
+  description: "Meow",
+  user: machiko
+  )
+kitty.photo.attach(io: kitty_img, filename: 'kitty.jpg', content_type: 'image/jpg')
+
+36.times do
   file = URI.open('https://thispersondoesnotexist.com/image')
   user = User.create!(
     first_name: Faker::Name.first_name,
@@ -80,26 +116,26 @@ end
 
 pets = [
     {
-      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-      birthdate: Faker::Date.birthday,
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 20),
       species: "Cat",
       breed: "American Short Hair",
       description: "She likes fish",
-      url: "https://cdn.geekwire.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-09-at-4.34.29-PM.png"
+      url: "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622820429/IMG_6758_lmperx.jpg"
     },
 
     {
-      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-      birthdate: Faker::Date.birthday,
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 20),
       species: "Cat",
       breed: "Scottish Fold",
       description: "He likes boxes",
-      url: "https://i.pinimg.com/564x/34/2c/c6/342cc6b8b782d386d6001f03411be523.jpg"
+      url: "https://i.pinimg.com/564x/78/77/5d/78775de9e54393e79709d3055c48ad34.jpg"
     },
 
     {
-      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-      birthdate: Faker::Date.birthday,
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 20),
       species: "Cat",
       breed: "Ragdoll",
       description: "She likes to cuddle",
@@ -107,17 +143,17 @@ pets = [
     },
 
     {
-      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-      birthdate: Faker::Date.birthday,
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 20),
       species: "Cat",
       breed: "Persian",
       description: "She likes a good belly rub",
-      url: "https://i.pinimg.com/originals/55/65/48/5565482849dc9f8b01ef22c7c03db28f.jpg"
+      url: "https://i.pinimg.com/564x/47/50/30/47503036f3deadd5e0e260cf3061de5b.jpg"
     },
 
     {
-      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-      birthdate: Faker::Date.birthday,
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 20),
       species: "Cat",
       breed: "Munchkin",
       description: "Tiny legs",
@@ -125,8 +161,8 @@ pets = [
     },
 
     {
-      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-      birthdate: Faker::Date.birthday,
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 20),
       species: "Dog",
       breed: "Shiba",
       description: "He's stubborn",
@@ -134,17 +170,17 @@ pets = [
     },
 
     {
-      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-      birthdate: Faker::Date.birthday,
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 25),
       species: "Dog",
       breed: "Golden Retreiver",
       description: "She is a sweetheart",
-      url: "https://i.pinimg.com/564x/2f/53/e3/2f53e3c6b8609cd8dc0531767a2f47b4.jpg"
+      url: "https://i.pinimg.com/564x/78/31/ea/7831eae41673e755dbb89894d53b5bd1.jpg"
     },
 
     {
-      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-      birthdate: Faker::Date.birthday,
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 25),
       species: "Dog",
       breed: "Poodle",
       description: "A little floof",
@@ -152,8 +188,8 @@ pets = [
     },
 
     {
-      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-      birthdate: Faker::Date.birthday,
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 25),
       species: "Dog",
       breed: "Mix",
       description: "My little shaggy dog",
@@ -161,17 +197,17 @@ pets = [
     },
 
     {
-      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-      birthdate: Faker::Date.birthday,
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 25),
       species: "Dog",
       breed: "Chihuahua",
       description: "My little shaggy dog",
-      url: "https://i.pinimg.com/564x/9d/e5/16/9de5168de32d3b856b8266c698edc119.jpg"
+      url: "https://i.pinimg.com/564x/a2/e6/fb/a2e6fba111b5fe6a953c78268d8056dd.jpg"
     },
 
     {
-      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-      birthdate: Faker::Date.birthday,
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 25),
       species: "Pig",
       breed: "Mini Pig",
       description: "She loves mud",
@@ -179,26 +215,17 @@ pets = [
     },
 
     {
-      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-      birthdate: Faker::Date.birthday,
-      species: "Owl",
-      breed: "Snowy Owl",
-      description: "He likes flying",
-      url: "https://farm9.staticflickr.com/8659/16167077194_d4a7a433d8_b.jpg",
-    },
-
-    {
-      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-      birthdate: Faker::Date.birthday,
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 7),
       species: "Hamster",
       breed: "Golden Hamster",
       description: "She sleeps 24/7",
-      url: "https://i.pinimg.com/originals/b5/fe/35/b5fe35f4595339a89e304a6470f17ae3.jpg"
+      url: "https://i.pinimg.com/564x/45/7d/7d/457d7d52c51b0aca32a2f92f9d8c9521.jpg"
     },
 
     {
-      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-      birthdate: Faker::Date.birthday,
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 20),
       species: "Lizard",
       breed: "Beared Lizard",
       description: "He likes flowers",
@@ -206,25 +233,61 @@ pets = [
     },
 
     {
-      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-      birthdate: Faker::Date.birthday,
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 15),
       species: "Rabbit",
       breed: "Netherland Dwarf",
       description: "She likes daisies",
-      url: "https://i.pinimg.com/564x/39/be/5c/39be5cea18aeeea8b56003b84292f26a.jpg"
+      url: "https://i.pinimg.com/564x/da/dc/db/dadcdbe32890d8682400f917fd6a6cb7.jpg"
     },
 
     {
-      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
-      birthdate: Faker::Date.birthday,
-      species: "Lizard",
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 15),
+      species: "Rabbit",
       breed: "Holland Loop",
       description: "He likes to nap like this",
       url: "https://i.pinimg.com/564x/9d/82/42/9d82428df38c6c0c8b822d61f252302d.jpg"
+    },
+
+    {
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 15),
+      species: "Guinnea Pig",
+      breed: "American Guinnea Pig",
+      description: "He also likes to nap like this",
+      url: "https://i.pinimg.com/564x/6c/8c/b6/6c8cb6d9c3c99addb244032121b5ad40.jpg"
+    },
+
+    {
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 15),
+      species: "Bird",
+      breed: "Parakeet",
+      description: "She loves to sing!",
+      url: "https://i.pinimg.com/564x/a7/7d/1c/a77d1c4c687a58e2aed4787838e4cf91.jpg"
+    },
+
+    {
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 15),
+      species: "Bird",
+      breed: "Duck",
+      description: "He loves ice water",
+      url: "https://i.pinimg.com/564x/39/ba/68/39ba6870a9199f318a27d2c034b76b83.jpg"
+    },
+
+    {
+      pet_name: Faker::Creature::Dog.name,
+      birthdate: Faker::Date.birthday(min_age: 1, max_age: 15),
+      species: "Ferret",
+      breed: "North-American",
+      description: "He is a little trouble maker",
+      url: "https://i.pinimg.com/564x/86/f4/08/86f408e2be7129d9f8a283d3641fa5ec.jpg"
     }
 ]
 
-User.all.in_groups(pets.length).each_with_index do |group, index|
+User.where(admin: nil).in_groups(pets.length).each_with_index do |group, index|
   group.each do |user|
     pet_hash = pets[index]
     pet = Pet.new(pet_hash)
