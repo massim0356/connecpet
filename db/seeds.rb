@@ -6,14 +6,14 @@ Pet.destroy_all
 
 puts "creating users and pets.."
 
-CITY = %w[Meguro, Shibuya, Shinagawa, Shimokitazawa, Kichijyoji, Ichikawa, Yokohama, Tachikawa, Kameari, Hibiya, Matusdo]
-BIO = ["I love cats", "I love dogs", "I love owls", "I have pet rocks", "Looking for someone to walk dogs with", "I have 12 cats"]
+CITY = %w[Meguro Shibuya Shinagawa Shimokitazawa Kichijyoji Ichikawa Yokohama Tachikawa Kameari Hibiya Matusdo]
+BIO = ["I love cats" "I love dogs", "I love owls", "I have pet rocks", "Looking for someone to walk dogs with", "I have 12 cats"]
 
 alex_img = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1618495010/r3mmdrp9imzjv9yxejgx.jpg")
 alex = User.create!(
   first_name: "Alexis",
   last_name: "An",
-  email: "alex@test.com" ,
+  email: "alex@test.com",
   password: "121212",
   city: "Kyodo",
   bio: "I am Alex",
