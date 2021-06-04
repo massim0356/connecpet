@@ -11,7 +11,7 @@ BIO = ["I love cats", "I love dogs", "I love owls", "I have pet rocks", "Looking
 
 alex_img = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1618495010/r3mmdrp9imzjv9yxejgx.jpg")
 alex = User.create!(
-  first_name: "Alexis"
+  first_name: "Alexis",
   last_name: "An",
   email: "alex@test.com" ,
   password: "121212",
@@ -28,7 +28,7 @@ massim = User.create!(
   email: "massim@test.com",
   password: "121212",
   city: CITY.sample,
-  bio: "I am Massim"
+  bio: "I am Massim",
   admin: true
   )
 massim.photo.attach(io: massim_img, filename: 'massim.png', content_type: 'image/png')
