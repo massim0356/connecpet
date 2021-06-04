@@ -27,8 +27,7 @@
       <div class="card-user-name d-flex align-items-center">
         <%= user.photo.attached? ? cl_image_tag(user.photo.key, class: "card-user-avatar") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "card-user-avatar") %>
         <div class="name-text d-flex">
-          <h2><%= user.first_name %></h2>
-          <h2><%= user.last_name %></h2>
+          <h2><%= user.first_name %> <%= user.last_name %></h2>
         </div>
       </div>
       <div class="d-flex align-items-end">
