@@ -1,6 +1,12 @@
-<div class="heard d-flex justify-content-center">
-  <div class="link-connect">
-    <p>Log in or sign up to
-      <%= link_to 'Connect Today!', users_path, class: "btn btn-flat mr-5" %></p>
+<div class="d-flex flex-column justify-content-center align-items-center bg-white">
+  <div class="container">
+  <div id="images" class="d-flex justify-content-center align-items-end">
+    <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622785364/image_hqzzu5.png", alt: "left" %>
+    <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622785498/image_3_ddb3zg.png", alt: "center" %>
+    <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622785498/image_4_ukypbi.png", alt: "right" %>
+    </div>
+  </div>
+    <div class="link-connect">
+     <%= link_to 'Connect Today!', users_path, class: "btn btn-flat mr-5" %></p>
   </div>
 </div>
