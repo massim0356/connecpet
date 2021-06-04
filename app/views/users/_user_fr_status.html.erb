@@ -1,0 +1,13 @@
+<% if current_user.requested_friends.include?(@user) %>
+  <button class="btn btn-flat"> Pending </button>
+<% elsif current_user.pending_friends.include?(@user) %>
+  <button class="btn btn-flat"> Request Sent </button>
+<% elsif current_user.friends_with?(@user) %>
+  <button class="btn btn-flat"> Unfriend </button>
+<% else %>
+  <% unless @user == current_user %>
+    <%= simple_form_for @user, url: friend_request_friendship_path(@user), method: "post" do |f| %>
+      <%= f.submit 'Friend Request +', class: 'btn btn-flat inactive'%>
+    <% end %>
+  <% end %>
+<% end %>

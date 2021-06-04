@@ -3,6 +3,8 @@ class Pet < ApplicationRecord
   has_many :announcements
   has_one_attached :photo
 
+  # validates :photo, presence: true
+
   def get_age
     return nil unless birthdate
 
