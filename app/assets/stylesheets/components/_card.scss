@@ -68,8 +68,11 @@ h1 {
 
 .card-user-info h2, h3:hover {
     text-decoration: none;
-
   }
+
+.carousel-control-prev, .carousel-control-next {
+  border-radius: 8px;
+}
 
 @media(max-width: 992px) {
   .container-users {
@@ -121,5 +124,3 @@ h1 {
   }
 
 }
-
-
