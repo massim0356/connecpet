@@ -1,12 +1,20 @@
 <div class="d-flex flex-column justify-content-center align-items-center bg-white">
+  <div class="logo mt-5">
+    <%= link_to "/" do  %>
+      <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622550543/logo_qobxhf.png", alt: "logo", class: "logo"%>
+    <% end %>
+  </div>
   <div class="container">
-  <div id="images" class="d-flex justify-content-center align-items-end">
-    <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622785364/image_hqzzu5.png", alt: "left" %>
-    <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622785498/image_3_ddb3zg.png", alt: "center" %>
-    <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622785498/image_4_ukypbi.png", alt: "right" %>
+    <div id="images" class="d-flex justify-content-center align-items-center flex-wrap">
+      <div class="slogan text-center">
+        <h2>Connecting Pets</br>
+        Connecting Pet People</h2>
+      </div>
+      <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622785364/image_hqzzu5.png", alt: "left", class: "easter-eggs" %>
+      <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622785498/image_3_ddb3zg.png", alt: "right", class: "mt-4" %>
+      </div>
     </div>
-  </div>
-    <div class="link-connect">
-     <%= link_to 'Connect Today!', users_path, class: "btn btn-flat mr-5" %></p>
-  </div>
+    <div class="connect-button">
+     <%= link_to 'Connect Today!', users_path, class: "btn btn-flat mt-5" %>
+    </div>
 </div>

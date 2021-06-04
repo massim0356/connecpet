@@ -1,7 +1,33 @@
 .container {
-  margin-top: 120px;
+  margin-top: 80px;
 }
 
 #images {
-  gap: 30px;
+  width: 100%;
+}
+
+.logo img {
+  width: 200px;
+}
+
+.slogan {
+  margin-top: 20px;
+  font-family: 'Pacifico', cursive;
+  color: #4D4D4D;
+}
+
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (max-width: 576px) {
+  .easter-eggs {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .logo {
+    display: none !important;
+  }
 }
