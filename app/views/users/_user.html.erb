@@ -1,8 +1,26 @@
-<%= link_to user_path(user), class: "link" do %>
-  <div class="card-user">
-    <% if user.pets.present? %>
-      <%= image_tag user.pets.first.photo, alt: "pet", class: "card-user-avatar" %>
-    <% end %>
+<div class="card-user">
+  <% if user.pets.present? %>
+    <div id="carousel-<%=user.id%>" class="carousel" data-interval="false" data-ride="carousel">
+      <% if user.pet_photos.any? %>
+        <div class="carousel-inner">
+          <% user.pet_photos.each_with_index do |key, index| %>
+            <div class="carousel-item <%= 'active' if index.zero? %>">
+              <%= cl_image_tag key, alt: "pet", class: "card-user-avatar d-block w-100"%>
+            </div>
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carousel-<%=user.id%>" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-<%=user.id%>" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      <% end %>
+    </div>
+  <% end %>
+  <%= link_to user_path(user), class: "link" do %>
     <div class="card-user-info d-flex align-items-end">
       <div class="card-user-name d-flex align-items-center">
         <%= cl_image_tag(user.photo.key, class: "card-user-avatar")%>
@@ -15,5 +33,5 @@
         <h3 id="user-location"><%= user.city %></h3>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
