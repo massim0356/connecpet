@@ -9,13 +9,13 @@ h1 {
   grid-gap: 20px;
   justify-content: space-around;
   padding: 100px;
-  padding-top: 10px;
+  padding-top: 3px;
 }
 
 .card-user {
   display: grid;
   grid-template-columns: 1fr;
-  flex-grow: 1;
+  flex-grow: 0;
   background: white;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -84,43 +84,16 @@ h1 {
   .container-users {
     grid-template-columns: 1fr 1fr;
   }
-
-  .name-text h2 {
-  font-size: 20px;
-  }
-
-  #user-location {
-    font-size: 16px;
-  }
-
 }
 
 @media(max-width: 576px) {
   .container-users {
     grid-template-columns: 1fr 1fr;
   }
-
-  .name-text h2 {
-  font-size: 18px;
-  }
-
-  #user-location {
-    font-size: 16px;
-  }
-
-
 }
 
 @media(max-width: 480px) {
   .container-users {
     grid-template-columns: 1fr;
-
   }
-  .card-user-name h2 {
-    font-size: 20px;
-  }
-  #user-location {
-    font-size: 16px;
-  }
-
 }
