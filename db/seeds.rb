@@ -7,7 +7,7 @@ Pet.destroy_all
 puts "creating users and pets.."
 
 CITY = %w[Meguro Shibuya Shinagawa Shimokitazawa Kichijyoji Ichikawa Yokohama Tachikawa Kameari Hibiya Matusdo]
-BIO = ["I love cats" "I love dogs", "I love owls", "I have pet rocks", "Looking for someone to walk dogs with", "I have 12 cats"]
+BIO = ["I love cats" "I love dogs", "I want to find my pet a friend", "Looking for someone to walk dogs with", "I love jogging with my dog", "My cat enjoys going for a walk"]
 
 alex_img = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1618495010/r3mmdrp9imzjv9yxejgx.jpg")
 alex = User.create!(
@@ -65,7 +65,7 @@ otter = Pet.create!(
   )
 otter.photo.attach(io: otter_img, filename: 'otter.jpg', content_type: 'image/jpg')
 
-50.times do
+45.times do
   file = URI.open('https://thispersondoesnotexist.com/image')
   user = User.create!(
     first_name: Faker::Name.first_name,
@@ -92,18 +92,45 @@ pets = [
       pet_name: Faker::JapaneseMedia::StudioGhibli.character,
       birthdate: Faker::Date.birthday,
       species: "Cat",
-      breed: "Birman",
+      breed: "Scottish Fold",
       description: "He likes boxes",
-      url: "https://cdn.geekwire.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-09-at-4.34.29-PM.png"
+      url: "https://i.pinimg.com/564x/34/2c/c6/342cc6b8b782d386d6001f03411be523.jpg"
+    },
+
+    {
+      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
+      birthdate: Faker::Date.birthday,
+      species: "Cat",
+      breed: "Ragdoll",
+      description: "She likes to cuddle",
+      url: "https://i.pinimg.com/736x/2a/d8/99/2ad899c99b170ae986bb7b2cfc559849.jpg"
+    },
+
+    {
+      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
+      birthdate: Faker::Date.birthday,
+      species: "Cat",
+      breed: "Persian",
+      description: "She likes a good belly rub",
+      url: "https://i.pinimg.com/originals/55/65/48/5565482849dc9f8b01ef22c7c03db28f.jpg"
+    },
+
+    {
+      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
+      birthdate: Faker::Date.birthday,
+      species: "Cat",
+      breed: "Munchkin",
+      description: "Tiny legs",
+      url: "https://i.pinimg.com/564x/3a/20/5b/3a205b18b50fefa3e0149c2a3f9165a8.jpg"
     },
 
     {
       pet_name: Faker::JapaneseMedia::StudioGhibli.character,
       birthdate: Faker::Date.birthday,
       species: "Dog",
-      breed: "Shibe",
+      breed: "Shiba",
       description: "He's stubborn",
-      url: "https://i.imgflip.com/4/4t0m5.jpg"
+      url: "https://i.pinimg.com/564x/f8/04/aa/f804aad2fc1f256bc7569b777df3be3c.jpg"
     },
 
     {
@@ -112,7 +139,34 @@ pets = [
       species: "Dog",
       breed: "Golden Retreiver",
       description: "She is a sweetheart",
-      url: "https://i.pinimg.com/originals/39/d7/b9/39d7b92471192ae8e445a54f7d85b508.jpg"
+      url: "https://i.pinimg.com/564x/2f/53/e3/2f53e3c6b8609cd8dc0531767a2f47b4.jpg"
+    },
+
+    {
+      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
+      birthdate: Faker::Date.birthday,
+      species: "Dog",
+      breed: "Poodle",
+      description: "A little floof",
+      url: "https://i.pinimg.com/564x/a2/02/12/a20212841496021d9f9252d6151051cf.jpg"
+    },
+
+    {
+      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
+      birthdate: Faker::Date.birthday,
+      species: "Dog",
+      breed: "Mix",
+      description: "My little shaggy dog",
+      url: "https://i.pinimg.com/750x/ad/a2/c2/ada2c256be122e9b7e7a1a3e80725062.jpg"
+    },
+
+    {
+      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
+      birthdate: Faker::Date.birthday,
+      species: "Dog",
+      breed: "Chihuahua",
+      description: "My little shaggy dog",
+      url: "https://i.pinimg.com/564x/9d/e5/16/9de5168de32d3b856b8266c698edc119.jpg"
     },
 
     {
@@ -121,7 +175,7 @@ pets = [
       species: "Pig",
       breed: "Mini Pig",
       description: "She loves mud",
-      url: "http://tamuvetmed.wpengine.com/news/wp-content/uploads/sites/9/2018/05/pig-300x210.png"
+      url: "https://i.pinimg.com/564x/fd/05/c6/fd05c6a91c5045d3fed11785fc51555d.jpg"
     },
 
     {
@@ -145,10 +199,28 @@ pets = [
     {
       pet_name: Faker::JapaneseMedia::StudioGhibli.character,
       birthdate: Faker::Date.birthday,
-      species: "Hamster",
-      breed: "Dwarf Hamster",
-      description: "Her favorite food is sunflower seeds",
-      url: "https://i.pinimg.com/originals/73/f7/a3/73f7a338eb28c6f07ab4b953d6669dfa.jpg"
+      species: "Lizard",
+      breed: "Beared Lizard",
+      description: "He likes flowers",
+      url: "https://i.pinimg.com/564x/ef/8b/cb/ef8bcb6a50a25854692297951487e731.jpg"
+    },
+
+    {
+      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
+      birthdate: Faker::Date.birthday,
+      species: "Rabbit",
+      breed: "Netherland Dwarf",
+      description: "She likes daisies",
+      url: "https://i.pinimg.com/564x/39/be/5c/39be5cea18aeeea8b56003b84292f26a.jpg"
+    },
+
+    {
+      pet_name: Faker::JapaneseMedia::StudioGhibli.character,
+      birthdate: Faker::Date.birthday,
+      species: "Lizard",
+      breed: "Holland Loop",
+      description: "He likes to nap like this",
+      url: "https://i.pinimg.com/564x/9d/82/42/9d82428df38c6c0c8b822d61f252302d.jpg"
     }
 ]
 

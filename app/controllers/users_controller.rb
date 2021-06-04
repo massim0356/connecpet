@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = policy_scope(User)
+    @users = policy_scope(User).shuffle
   end
 
   def show
