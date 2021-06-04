@@ -8,7 +8,7 @@
           <h3> Chat with <b><%= @friend.first_name %></b></h3>
         </div>
         <% if @messages.any? %>
-          <%= render @messages %>
+          <%= render @messages, viewer: current_user %>
         <% else %>
           <div class="message-container">
             <p>No messages with <%= @friend.first_name %> yet. Send the first message!</p>

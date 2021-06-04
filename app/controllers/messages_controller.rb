@@ -7,11 +7,11 @@ class MessagesController < ApplicationController
     if @message.save
       FriendChannel.broadcast_to(
         @message.sender,
-        render_to_string(partial: 'messages/message', locals: { message: @message })
+        render_to_string(partial: 'messages/message', locals: { message: @message, viewer: @message.receiver })
       )
       FriendChannel.broadcast_to(
         @message.receiver,
-        render_to_string(partial: 'messages/message', locals: { message: @message })
+        render_to_string(partial: 'messages/message', locals: { message: @message, viewer: @message.sender })
       )
       redirect_to friend_path(@message.receiver, anchor: "message-#{@message.id}")
     else

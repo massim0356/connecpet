@@ -1,9 +1,9 @@
  <%#= message.sender.photo.attached? ? cl_image_tag(message.sender.photo.key, class: "avatar") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "avatar") %>
-<div class="message-container <%= current_user == message.sender ? "right-bubble p-2 pr-3 mb-4 align-items-end" : "left-bubble p-2 pl-3 mb-4 align-items-start" %>" id="message-<%= message.id %>">
+<div class="message-container <%= viewer == message.sender ? "right-bubble p-2 pr-3 mb-4 align-items-end" : "left-bubble p-2 pl-3 mb-4 align-items-start" %>" id="message-<%= message.id %>">
   <small class="created-at"><%= message.created_at&.strftime("%a %b %e at %l:%M%p") %></small>
   <i class="author">
-    <%= current_user != message.receiver && message.receiver.photo.attached? ? cl_image_tag(message.receiver.photo.key, class: "avatar") : "" %>
-    <span><b><%= current_user != message.sender ? message.sender.first_name : "You" %></b></span>
+    <%= viewer != message.receiver && message.receiver.photo.attached? ? cl_image_tag(message.receiver.photo.key, class: "avatar") : "" %>
+    <span><b><%= viewer != message.sender ? message.sender.first_name : "You" %></b></span>
   </i>
   <div class="message-content-div">
     <p><%= message.content %></p>
