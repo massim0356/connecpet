@@ -6,7 +6,7 @@ Pet.destroy_all
 
 puts "creating users and pets.."
 
-CITY = %w[Meguro Shibuya Shinagawa Shimokitazawa Kichijyoji Ichikawa Yokohama Tachikawa Kameari Hibiya Matusdo Gotanda, Meidaimae, Kameido, Tsujido, Ikebukuro]
+CITY = %w[Meguro Shibuya Shinagawa Shimokitazawa Kichijyoji Ichikawa Yokohama Tachikawa Kameari Hibiya Matusdo Gotanda Meidaimae Kameido Tsujido Ikebukuro]
 BIO = ["I love all animals", "I want to find a friend for my pet", "Looking for someone to walk my pet with", "I want some advice on raising a pet!", "I am a pet-lover"]
 
 alex_img = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1618495010/r3mmdrp9imzjv9yxejgx.jpg")
@@ -27,7 +27,7 @@ massim = User.create!(
   last_name: "Shah",
   email: "massim@test.com",
   password: "121212",
-  city: CITY.sample,
+  city: "Ichikawa",
   bio: "I am Massim",
   admin: true
   )
