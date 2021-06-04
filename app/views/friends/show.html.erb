@@ -5,7 +5,7 @@
       <div id="messages" data-user-id="<%= @friend.id %>">
         <div class="message-top">
           <%= @friend.photo.attached? ? cl_image_tag(@friend.photo.key, class: "avatar-large") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "avatar-larger") %>
-          <p> Chat with <b><%= @friend.first_name %></b></p>
+          <h3> Chat with <b><%= @friend.first_name %></b></h3>
         </div>
         <% if @messages.any? %>
           <%= render @messages %>
