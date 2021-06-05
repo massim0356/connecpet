@@ -3,12 +3,12 @@
 }
 
 .container-home {
-  margin-top: 50px;
+  margin-top: 140px;
 }
 
 #images {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   border-radius: 16px;
 }
 
@@ -31,6 +31,10 @@
 @media only screen and (max-width: 576px) {
   .easter-eggs {
     display: none;
+  }
+
+  .container-home {
+  margin-top: 60px;
   }
 
   #images img:first-child {
