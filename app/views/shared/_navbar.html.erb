@@ -3,26 +3,25 @@
   <%= link_to "/", class: "navbar-brand d-flex justify-content-center" do %>
     <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622550543/logo_qobxhf.png" %>
     <% end %>
-
   <div class="collapse navbar-collapse d-flex justify-content-end align-items-end" id="navbarSupportedContent">
     <ul class="navbar-nav d-flex flex-row justify-content-center align-items-center">
       <% if user_signed_in? %>
-        <li class="nav-item">
+        <li class="nav-item mr-3">
           <%= link_to users_path do %>
-          <i class="fas fa-home nav-link"></i>
+          <i class="fas fa-home"></i>
           <% end %>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mr-3">
           <%= link_to friends_path do %>
-          <i class="fas fa-user nav-link"></i>
+          <i class="fas fa-user"></i>
           <% end %>
         </li>
-         <li class="nav-item dropdown m-0">
-          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622623343/cat_in_pink_p23lrb.png"/>
-          <div class="dropdown-menu dropdown-menu-right text-center p-0" aria-labelledby="navbarDropdown">
-          <p>signed in as <%= current_user.email %>
-          <a class="dropdown-item"> <%= link_to "Your Profile", user_path(current_user), class: "nav-link" %></a>
-          <a class="dropdown-item"> <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %></a>
+         <li class="dropdown m-0">
+          <i class="fas fa-bars avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+          <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="navbarDropdown">
+            <p class="ml-2"> signed in as </br> <strong><%= current_user.email %></strong></p>
+          <a class="dropdown-item"> <%= link_to "Your Profile", user_path(current_user)%></a>
+          <a class="dropdown-item"> <%= link_to "Log Out", destroy_user_session_path, method: :delete %></a>
         </div>
       </li>
       <% else %>
