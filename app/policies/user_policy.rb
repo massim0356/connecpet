@@ -8,6 +8,10 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
+  def request_friendship?
+    true
+  end
+
   def accept_request?
     true
     # user == current_user
@@ -18,7 +22,7 @@ class UserPolicy < ApplicationPolicy
     # user == current_user
   end
 
-  def request_friendship?
+  def cancel_request?
     true
   end
 end

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :friends, only:[:index, :show] do
     post 'request_friendship'
     post 'accept_request'
+    delete 'cancel_request'
     delete 'decline_request'
     delete 'remove_friend'
   end
