@@ -1,23 +1,22 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <%#= current_user != @message.receiver && @message.receiver.photo.attached? ? cl_image_tag(@message.receiver.photo.key, class: "avatar-larger") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "avatar-larger") %>
-    <div class="col-12 col-sm-10 col-md-8">
+    <div class="d-flex text-center flex-column justify-content-center align-items-center">
       <div id="messages" data-user-id="<%= @friend.id %>">
         <div class="message-top">
           <%= @friend.photo.attached? ? cl_image_tag(@friend.photo.key, class: "avatar-large") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "avatar-larger") %>
-          <h3> Chat with <b><%= @friend.first_name %></b></h3>
+          <h6><b><%= @friend.first_name %></b></br>
+            <small><%= @friend.city %></small>
+            <small><%= @friend.first_name %> has <%= @friend.pets.count %> pets</small></h6>
         </div>
         <% if @messages.any? %>
           <%= render @messages, viewer: current_user %>
         <% else %>
           <div class="message-container">
-            <p>No messages with <%= @friend.first_name %> yet. Send the first message!</p>
           </div>
         <% end %>
       </div>
-      <%= simple_form_for [ @friend, @message ], remote: true, html: { class: "send-message"} do |f| %>
+        <%= simple_form_for [ @friend, @message ], remote: true, html: { class: "send-message"} do |f| %>
         <%= f.input :content, label: false, placeholder: "Message" %>
-        <%= f.submit "Send", :class => "btn btn-primary", :id => "message-button" %>
+        <%= f.submit "Send", :class => "btn btn-flat", :id => "message-button" %>
       <% end %>
     </div>
   </div>
