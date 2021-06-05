@@ -3,7 +3,7 @@
 <% end  %>
 <div class="notification-content" id="friend-request-div">
   <p>Friend request from <b><%= friend.first_name %> <%= friend.last_name %></b></p>
-  <div class="friend-request-buttons d-flex">
+  <div class="friend-request-buttons d-flex align-items-center">
     <%= form_for :user, url: friend_accept_request_path(friend) do |f| %>
       <%= f.submit "accept", class: "btn btn-flat ml-0 my-2" %>
     <% end %>
