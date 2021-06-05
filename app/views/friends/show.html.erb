@@ -7,11 +7,8 @@
             <small><%= @friend.city %></small>
             <small><%= @friend.first_name %> has <%= @friend.pets.count %> pets</small></h6>
         </div>
-        <% if @messages.any? %>
+        <% unless @messages.empty? %>
           <%= render @messages, viewer: current_user %>
-        <% else %>
-          <div class="message-container">
-          </div>
         <% end %>
       </div>
         <%= simple_form_for [ @friend, @message ], remote: true, html: { class: "send-message"} do |f| %>

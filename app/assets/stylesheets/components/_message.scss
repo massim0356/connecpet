@@ -1,8 +1,13 @@
 #messages {
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   height: auto;
   overflow: auto;
+  height: 500px;
+  margin-top: -40px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .message-container {
@@ -28,31 +33,32 @@
 #new_message {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  max-width: 400px;
   align-items: center;
 }
+
+#message-button {
+  margin-left: 20px !important;
+}
+
 .right-bubble {
-  border-radius: 16px;
+  border-radius: 8px;
   background-color: #ccc;
   height: auto;
   max-width: 50%;
   display: block;
-  overflow: hidden;
   float: right;
   clear: both;
   word-wrap: break-word;
+  overflow: hidden;
 }
 
 .left-bubble {
-  border-radius: 16px;
-  margin-right: 10rem;
+  border-radius: 8px;
   background-color: white;
   border: 1px solid #ccc;
   height: auto;
   max-width: 50%;
-  position: relative;
-  white-space: normal;
-  word-wrap: break-word;
   float: left;
   clear: both;
   white-space: normal;
@@ -86,3 +92,8 @@
   justify-content: center;
 }
 
+@media only screen and (max-width: 576px) {
+  #messages {
+    border: none;
+  }
+}
