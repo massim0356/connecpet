@@ -10,13 +10,11 @@
   background: white;
   padding: 8px 16px;
   border: 1px solid rgb(235,235,235);
-  width: 90%;
+  max-width: 400px;
+  width: 70%;
   border-radius: 12px;
   overflow: hidden
-  // box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
-
-
 
 .notification .notification-content {
   flex-grow: 1;
@@ -39,25 +37,21 @@
   transition: ease .3s;
 }
 
-
 .notification .notification-actions a {
   color: #999999;
   margin-left: 16px;
   font-size: 14px;
 }
 
-// .notification .notification-actions a:hover {
-//   color: red;
-//   text-decoration: none;
-// }
-
-// .notification .far:hover {
-//    color: red;
-//    text-decoration: none;
-// }
+a {
+  text-decoration: none !important;
+  opacity: 70%;
+  color: inherit;
+}
 
 a:hover {
-  text-decoration: none;
+  text-decoration: none !important;
+  color: inherit;
 }
 
 #friend-request-div {
@@ -67,5 +61,3 @@ a:hover {
 .title-container {
   margin-top: 4rem;
 }
-
-

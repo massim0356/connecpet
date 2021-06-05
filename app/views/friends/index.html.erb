@@ -1,7 +1,7 @@
 <div class="title-container d-flex justify-content-center">
-  <h3><%= "Hi #{current_user.first_name}, here's your friends list."  %> </h3>
+  <h5>Activity Feed<h5>
 </div>
-<div class="container d-flex flex-column mt-2 pl-10 justify-content-center">
+<div class="container d-flex flex-column mt-2 pl-10 justify-content-center align-items-center">
   <% if current_user.requested_friends.any? %>
     <% current_user.requested_friends.each do |friend| %>
       <div class="notification">
