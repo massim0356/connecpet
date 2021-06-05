@@ -1,5 +1,5 @@
 class FriendsController < ApplicationController
-  before_action :set_user, only: [:show, :request_friendship, :accept_request, :decline_request, :cancel_request]
+  before_action :set_user, only: [:request_friendship, :accept_request, :decline_request, :cancel_request]
   def index
     skip_policy_scope
     @users = current_user.friends
