@@ -3,12 +3,12 @@
 }
 
 .container-home {
-  margin-top: 140px;
+  margin-top: 60px;
 }
 
 #images {
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   border-radius: 16px;
 }
 
@@ -40,12 +40,26 @@
   #images img:first-child {
     border-radius: 16px !important;
     width: 400px;
-    margin-top: -20px;
   }
 }
 
 @media screen and (min-width: 576px) {
   .logo {
     display: none !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container-home {
+    margin-top: 100px;
+  }
+
+  #images {
+    margin-bottom: 50px;
+  }
+
+  #images img {
+    width: 370px;
+    height: auto;
   }
 }
