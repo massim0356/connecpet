@@ -1,9 +1,9 @@
 .btn {
-  background-color: #76D0C0;
-  color: white;
-  border: none;
+  background-color: white;
+  color: inherit;
+  border: 1px solid;
   border-radius: 8px;
-  transition-duration: 0.9s;
+  transition-duration: 0.3s;
   text-decoration: none;
   min-width: 80px;
   margin: 20px;
@@ -11,7 +11,7 @@
 }
 
 .btn:hover {
-  background-color: #c2d4ea;
+  background-color: #2C2C2C;
   color: white;
 }
 
