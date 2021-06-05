@@ -1,19 +1,27 @@
-.container {
-  margin-top: 80px;
+.connect-button a {
+  font-size: 20px;
+}
+
+.container-home {
+  margin-top: 50px;
 }
 
 #images {
   width: 100%;
+  margin-bottom: 20px;
+  border-radius: 16px;
+}
+
+#images img:first-child {
+  border-radius: 16px 0px 0px 16px !important;
+}
+
+#images img:last-child {
+  border-radius: 0px 16px 16px 0px !important;
 }
 
 .logo img {
   width: 200px;
-}
-
-.slogan {
-  margin-top: 20px;
-  font-family: 'Pacifico', cursive;
-  color: #4D4D4D;
 }
 
 [class*="col-"] {
@@ -23,6 +31,12 @@
 @media only screen and (max-width: 576px) {
   .easter-eggs {
     display: none;
+  }
+
+  #images img:first-child {
+    border-radius: 16px !important;
+    width: 400px;
+    margin-top: -20px;
   }
 }
 
