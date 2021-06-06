@@ -1,23 +1,5 @@
-.connect-button a {
-  font-size: 20px;
-}
-
 .container-home {
   margin-top: 60px;
-}
-
-#images {
-  width: 100%;
-  margin-bottom: 30px;
-
-    img {
-    border-radius: 16px;
-    margin: 10px;
-  }
-}
-
-#carousel img {
-  border-radius: 16px;
 }
 
 .logo img {
@@ -32,28 +14,10 @@
   .container-home {
   margin-top: 30px;
   }
-
-  #images {
-    display: none !important;
-  }
-
-  #carousel-images img {
-    display: none;
-    width: 400px;
-    margin-bottom: -20px;
-  }
-
-  #button {
-    margin-top: 20px !important;
-  }
 }
 
 @media screen and (min-width: 576px) {
   .logo {
-    display: none !important;
-  }
-
-  .carousel-control-prev, .carousel-control-next, #carousel {
     display: none !important;
   }
 }
@@ -61,17 +25,5 @@
 @media screen and (min-width: 1200px) {
   .container-home {
     margin-top: 100px;
-  }
-
-  .carousel-control-prev, .carousel-control-next, #carousel {
-    display: none !important;
-  }
-
-  #images {
-    margin-bottom: 50px;
-    img {
-    width: 370px;
-    height: auto;
-    }
   }
 }
