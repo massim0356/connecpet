@@ -1,9 +1,16 @@
 
+body{
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+}
+
 #main {
   background-color: rgb(245, 244, 244);
   background-attachment: fixed;
   height: 100%;
   padding-bottom: 30px;
+  overflow-x: hidden;
 }
 
 .card-pet {
@@ -22,7 +29,9 @@
 }
 
 .pet-info {
+  padding-top: 10px;
   width: 80%;
+  height: auto;
   display: flex;
   justify-content: flex-start;
   align-items: left;
@@ -94,6 +103,7 @@
   display: flex;
   width: 100%;
   padding-left: 10px;
+  padding-bottom: 0;
 }
 
 .user-bio {

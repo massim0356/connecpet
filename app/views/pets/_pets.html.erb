@@ -1,9 +1,11 @@
 <% @user.pets.each do |pet| %>
   <div class="card-pet d-flex flex-row align-items-center justify-content-center mb-3">
     <div class="pet-info d-flex flex-column overflow-wrap">
-      <p><strong><%= pet.pet_name %></strong></br><small><%= pet.get_age %> yrs old</small></br>
-    <small><i><%= pet.breed %></small></i></br>
-  <small><strong><%= pet.description %></strong></small></p>
+      <p><strong><%= pet.pet_name %></strong></br>
+      <small>_________________________</small></br>
+    <small><%= pet.get_age %> yrs old</small></br>
+  <small><i><%= pet.breed %></small></i></br>
+<small><strong><%= pet.description %></strong></small></p>
 </div>
 <div class="pet-img">
   <%= pet.photo.attached? ? cl_image_tag(pet.photo.key) : "easter egg" %>
