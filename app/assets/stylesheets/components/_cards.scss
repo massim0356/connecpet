@@ -1,43 +1,129 @@
+
+body{
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    font-style: "Poppins", sans-serif;
+}
+
+
+#main {
+  background-color: rgb(245, 244, 244);
+  background-attachment: fixed;
+  height: 100%;
+  padding-bottom: 30px;
+  overflow-x: hidden;
+}
+
 .card-pet {
-  border-radius: 8px;
-  width: 320px;
+  border-radius: 16px;
+  width: 340px;
+  height: auto;
   min-height: 150px;
   max-height: 300px;
   line-height: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(233, 233, 233);
   background-color: white;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding-right: 20px;
+  background-image: url("https://res.cloudinary.com/bdmaecloud/image/upload/v1622953664/pet-profile_background_wfo9am.png");
+}
+
+.pet-info {
+  padding-top: 10px;
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: left;
+  padding-left: 10px;
 }
 
 .card-pet img {
-  height: 100px;
-  width: 100px;
+  height: 120px;
+  width: 120px;
   margin-left: 10px;
   border-radius: 50%;
+  border: 5px solid white;
 }
 
 .cards-user {
-  border-radius: 8px;
-  height: 500px;
-  width: 320px;
+  border-radius: 16px;
+  height: auto;
+  width: 340px;
   line-height: 25px;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(233, 233, 233);
   background-color: white;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  background-repeat: no-repeat;
 }
 
 .cards-user img {
-  height: 275px;
-  width: 275px;
-  margin-top: 20px;
-  padding: 20px;
+  height: 140px;
+  width: 140px;
   border-radius: 50%;
+  z-index: 2;
 }
 
-#main {
-  gap: 20px;
+#back-button-div {
+ width: 100%;
+ margin-left: 20px;
+ margin-top: 20px;
+ padding-bottom: 0;
+ color: rgba(209, 207, 207, 0.65);
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-start;
+ transition: color 1s ease-in;
+}
+
+
+.cards-user:hover {
+  #back-button-div i {
+   color: black;
+  }
+}
+
+
+.container-img {
+  width: 86%;
+  height: 80%;
+  display: flex;
+  justify-content: flex-end;
+  left: 0;
+  margin-top: 0;
+}
+
+// #back-button-div i {
+//   // z-index: 2;
+//   backdrop-filter: blur(2rem);
+// }
+
+.user-info {
+  display: flex;
+  width: 100%;
+  padding-left: 10px;
+  padding-bottom: 0;
+}
+
+.user-bio {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
+
+@media only screen and (max-width: 700px) {
+  .card-pet {
+    margin-left: 0px;
+  }
 }
 
 @media only screen and (max-width: 576px) {
-  .card-pet {
-    margin-top: 20px;
+  .cards-user {
+    border: none;
   }
 }

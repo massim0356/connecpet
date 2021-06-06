@@ -1,13 +1,19 @@
-<div id="main" class="d-flex flex-row flex-wrap justify-content-center align-items-start mt-5">
-  <div class="cards-user d-flex flex-column align-items-center justify-content-start">
+<div id="main" class="d-flex flex-row flex-wrap justify-content-center align-items-start">
+  <div class="cards-user d-flex flex-column align-items-center justify-content-start" style="background-image: url(https://res.cloudinary.com/bdmaecloud/image/upload/v1622952187/user_profile_background_3_umdkkg.png)">
+    <div id="back-button-div">
+      <%= link_to users_path do %>
+        <i class="fas fa-arrow-circle-left fa-2x"></i>
+      <% end %>
+    </div>
     <div class="container-img">
       <%= @user.photo.attached? ? cl_image_tag(@user.photo.key) : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg") %>
     </div>
-    <div class="user-info d-flex flex-column text-center">
+    <div class="user-info d-flex flex-column text-left">
       <p><strong><%= @user.first_name %> <%= @user.last_name %></br></strong>
-      <small><%= @user.city %></small></p>
+      <i class="fas fa-map-marker-alt pr-1"></i><small><%= @user.city %></small></p>
   </div>
-  <div class="user-bio text-center">
+  <small style="light grey">____________________________________________</small>
+  <div class="user-bio text-left mb-4">
     <%= @user.bio %>
   </div>
   <%= render "users/user_fr_status" %>
