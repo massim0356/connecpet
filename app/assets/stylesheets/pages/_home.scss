@@ -9,15 +9,15 @@
 #images {
   width: 100%;
   margin-bottom: 30px;
+
+    img {
+    border-radius: 16px;
+    margin: 10px;
+  }
+}
+
+#carousel img {
   border-radius: 16px;
-}
-
-#images img:first-child {
-  border-radius: 16px 0px 0px 16px !important;
-}
-
-#images img:last-child {
-  border-radius: 0px 16px 16px 0px !important;
 }
 
 .logo img {
@@ -29,22 +29,31 @@
 }
 
 @media only screen and (max-width: 576px) {
-  .easter-eggs {
-    display: none;
-  }
-
   .container-home {
-  margin-top: 60px;
+  margin-top: 30px;
   }
 
-  #images img:first-child {
-    border-radius: 16px !important;
+  #images {
+    display: none !important;
+  }
+
+  #carousel-images img {
+    display: none;
     width: 400px;
+    margin-bottom: -20px;
+  }
+
+  #button {
+    margin-top: 20px !important;
   }
 }
 
 @media screen and (min-width: 576px) {
   .logo {
+    display: none !important;
+  }
+
+  .carousel-control-prev, .carousel-control-next, #carousel {
     display: none !important;
   }
 }
@@ -54,12 +63,15 @@
     margin-top: 100px;
   }
 
-  #images {
-    margin-bottom: 50px;
+  .carousel-control-prev, .carousel-control-next, #carousel {
+    display: none !important;
   }
 
-  #images img {
+  #images {
+    margin-bottom: 50px;
+    img {
     width: 370px;
     height: auto;
+    }
   }
 }
