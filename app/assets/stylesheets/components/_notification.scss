@@ -3,13 +3,10 @@
   align-items: center;
   justify-content: flex-end;
   flex-direction: row;
-  margin-top: 16px;
-  margin-left: 16px;
-  margin-right: 16px;
-  margin-bottom: 8px;
+  margin: 15px;
   background: white;
   padding: 8px 16px;
-  border: 1px solid rgb(235,235,235);
+  border: 1px solid #ccc;
   max-width: 400px;
   width: 70%;
   border-radius: 12px;
@@ -17,7 +14,6 @@
 
   a {
     color: #999999;
-    margin-left: 16px;
     font-size: 14px;
     text-decoration: none !important;
     color: inherit;
@@ -50,7 +46,6 @@
 .notification .notification-actions {
   display: flex;
   justify-content: space-between;
-  transition: ease .3s;
 
   i {
     font-size: 22px;
@@ -63,4 +58,11 @@
 
 .title-container {
   margin-top: 4rem;
+}
+
+@media(max-width: 576px) {
+  .notification {
+    border: none;
+    min-width: 400px;
+  }
 }
