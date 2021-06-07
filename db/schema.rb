@@ -53,10 +53,10 @@ ActiveRecord::Schema.define(version: 2021_06_07_084833) do
     t.date "start_date"
     t.date "end_date"
     t.bigint "user_id", null: false
-    t.bigint "petsitting_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["petsitting_id"], name: "index_bookings_on_petsitting_id"
+    t.bigint "pet_sitting_id"
+    t.index ["pet_sitting_id"], name: "index_bookings_on_pet_sitting_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -82,6 +82,15 @@ ActiveRecord::Schema.define(version: 2021_06_07_084833) do
     t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
+  create_table "pet_sittings", force: :cascade do |t|
+    t.text "description"
+    t.integer "price"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_pet_sittings_on_user_id"
+  end
+
   create_table "pets", force: :cascade do |t|
     t.string "pet_name"
     t.date "birthdate"
@@ -95,23 +104,14 @@ ActiveRecord::Schema.define(version: 2021_06_07_084833) do
     t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
-  create_table "petsittings", force: :cascade do |t|
-    t.text "description"
-    t.integer "price"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_petsittings_on_user_id"
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.integer "stars"
     t.text "content"
     t.bigint "user_id", null: false
-    t.bigint "petsitting_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["petsitting_id"], name: "index_reviews_on_petsitting_id"
+    t.bigint "pet_sitting_id"
+    t.index ["pet_sitting_id"], name: "index_reviews_on_pet_sitting_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -135,12 +135,13 @@ ActiveRecord::Schema.define(version: 2021_06_07_084833) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "petsittings"
+  add_foreign_key "announcements", "pets"
+  add_foreign_key "bookings", "pet_sittings"
   add_foreign_key "bookings", "users"
   add_foreign_key "messages", "users", column: "receiver_id"
   add_foreign_key "messages", "users", column: "sender_id"
+  add_foreign_key "pet_sittings", "users"
   add_foreign_key "pets", "users"
-  add_foreign_key "petsittings", "users"
-  add_foreign_key "reviews", "petsittings"
+  add_foreign_key "reviews", "pet_sittings"
   add_foreign_key "reviews", "users"
 end
