@@ -1,5 +1,9 @@
+#chatroom {
+  margin-top: 100px;
+}
+
 .created-at {
-  font-size: 14px;
+  font-size: 12px;
 }
 .message {
   display: flex;
@@ -37,7 +41,7 @@ html {
 
 #message_content {
   margin-top: 20px;
-  border-radius: 16px;
+  border-radius: 8px;
   height: 40px;
   min-width: 300px;
 }
@@ -59,11 +63,11 @@ html {
 
 .right-bubble {
   border-radius: 16px;
-  background-color: #ccc;
+  background-color: #eaeaea;
   height: auto;
   max-width: 50%;
   align-self: flex-end !important;
-  font-size: 12px;
+  font-size: 14px;
   margin-right: 10px;
   margin-bottom: 10px;
 }
@@ -71,7 +75,7 @@ html {
 .left-bubble {
   border-radius: 20px;
   background-color: white;
-  border: 1px solid #ccc;
+  border: 1px solid #eaeaea;
   align-self: flex-start !important;
   font-size: 14px;
   max-width: 50%;
@@ -116,9 +120,8 @@ html {
 
   #new_message {
     margin-bottom: 30px;
-
+  }
   .message-top {
     margin-top: 0;
-  }
   }
 }

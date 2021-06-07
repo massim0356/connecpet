@@ -1,0 +1,13 @@
+.form-search {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center;
+
+  .btn {
+    margin-left: 10px !important;
+  }
+
+  .form-control {
+    border-radius: 8px;
+  }
+}
