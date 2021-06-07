@@ -1,7 +1,16 @@
 <div class="title-container d-flex justify-content-center">
-  <h5>Activity Feed<h5>
+  <h5>Messages<h5>
 </div>
 <div class="container d-flex flex-column mt-2 pl-10 justify-content-center align-items-center">
+  <%= form_tag friends_path, method: :get do %>
+    <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          id: "search-form",
+          placeholder: "Who are you looking for?"
+        %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
   <% if current_user.requested_friends.any? %>
     <% current_user.requested_friends.each do |friend| %>
       <div class="notification">
@@ -9,8 +18,8 @@
       </div>
     <% end  %>
   <% end  %>
-  <% if current_user.friends.any? %>
-    <% current_user.friends.each do |friend| %>
+  <% if @users.any? %>
+    <% @users.each do |friend| %>
       <div class="notification">
         <%= render "friends/friend", friend: friend %>
       </div>

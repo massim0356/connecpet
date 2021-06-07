@@ -2,7 +2,12 @@ class FriendsController < ApplicationController
   before_action :set_user, only: [:request_friendship, :accept_request, :decline_request, :cancel_request]
   def index
     skip_policy_scope
-    @users = current_user.friends
+    @users =
+      if params[:query].blank?
+        current_user.friends
+      else
+        current_user.friends.search_by_first_name_last_name(params[:query])
+      end
   end
 
   def show
