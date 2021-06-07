@@ -9,7 +9,7 @@
 <%= link_to friend_path(friend) do %>
   <div class="notification-actions">
     <% if current_user.messages.where(read:false).any? %>
-      <span class="notification-badge-messages badge badge-danger"><%= current_user.messages.where(read:false).count %></span>
+      <span class="notification-badge-messages badge badge-flat"><%= current_user.messages.where(read:false).count %></span>
     <% else %>
       <i class="far fa-comment"></i>
     <% end %>
