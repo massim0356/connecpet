@@ -1,7 +1,7 @@
 <div class="container" id="chatroom">
   <div class="d-flex flex-column justify-content-center align-items-center">
       <div id="messages" data-user-id="<%= @friend.id %>">
-                  <div class="message-top text-center">
+          <div class="message-top text-center">
             <%= cl_image_tag(@friend.photo.key, class: "avatar-large") %>
             <h6><b><%= @friend.first_name %></b></br>
             <small><%= @friend.city %></small></br>

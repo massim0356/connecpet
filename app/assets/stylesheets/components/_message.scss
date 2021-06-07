@@ -20,11 +20,11 @@ html {
   width: 400px;
   overflow-y: scroll;
   box-sizing: content-box;
-  height: 500px;
+  height: 550px;
   margin-top: -40px;
   border: 1px solid #ccc;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   padding-right: 1px;
@@ -37,7 +37,7 @@ html {
 
 #message_content {
   margin-top: 20px;
-  border-radius: 8px;
+  border-radius: 16px;
   height: 40px;
   min-width: 300px;
 }
@@ -111,9 +111,14 @@ html {
 @media only screen and (max-width: 576px) {
   #messages {
     border: none;
+    margin-top: -50;
   }
 
   #new_message {
-    margin-bottom: -20px;
+    margin-bottom: 0;
+
+  .message-top {
+    margin-top: 0;
+  }
   }
 }
