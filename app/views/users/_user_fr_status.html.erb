@@ -6,8 +6,10 @@
   <button class="btn btn-flat"> Unfriend </button>
 <% else %>
   <% unless @user == current_user %>
+  <div class="mt-2">
     <%= simple_form_for @user, url: friend_request_friendship_path(@user), method: "post" do |f| %>
       <%= f.submit 'Friend Request +', class: 'btn btn-flat inactive'%>
     <% end %>
+  </div>
   <% end %>
 <% end %>
