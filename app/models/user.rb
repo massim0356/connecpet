@@ -11,8 +11,16 @@ class User < ApplicationRecord
   has_many :bookings_as_owner, through: :pet_sittings, source: :bookings
   has_one_attached :photo, dependent: :destroy
   before_destroy :destroy_messages
+  geocoded_by :city
+  after_validation :geocode, if: :will_save_change_to_city?
 
   # validates :photo, presence: true
+  include PgSearch::Model
+  pg_search_scope :search_by_first_name_last_name,
+    against: [ :first_name, :last_name ],
+    using: {
+      tsearch: { prefix: true }
+    }
 
   def messages_with(friend)
     Message.where(sender: friend, receiver: self).or(Message.where(sender: self, receiver: friend))

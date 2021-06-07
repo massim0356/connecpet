@@ -5,10 +5,10 @@
   <p>Friend request from <b><%= friend.first_name %> <%= friend.last_name %></b></p>
   <div class="friend-request-buttons d-flex align-items-center">
     <%= form_for :user, url: friend_accept_request_path(friend) do |f| %>
-      <%= f.submit "accept", class: "btn btn-flat ml-0 my-2" %>
+      <%= f.submit "Accept", class: "btn btn-flat ml-0 my-2" %>
     <% end %>
     <%= form_for :user, url: friend_decline_request_path(friend), method: :delete do |f| %>
-      <%= f.submit "reject", class: "btn btn-flat ml-0 my-2" %>
+      <%= f.submit "Decline", class: "btn btn-flat ml-0 my-2" %>
     <% end %>
   </div>
 </div>
