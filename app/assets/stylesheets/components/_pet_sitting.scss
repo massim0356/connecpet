@@ -1,0 +1,13 @@
+.petsitter-img-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+  height: auto;
+}
+
+.petsitter-img-container .avatar-petsitter {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: white 3px solid;
+}

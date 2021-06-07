@@ -1,26 +1,29 @@
 <div id="main" class="d-flex flex-row flex-wrap justify-content-center align-items-start">
-  <div class="cards-user d-flex flex-column align-items-center justify-content-start" style="background-image: url(https://res.cloudinary.com/bdmaecloud/image/upload/v1622965468/profile_background_wider_sc5gej.png)">
+  <div class="cards-user d-flex flex-column align-items-center justify-content-start" style="background-image: url(https://res.cloudinary.com/bdmaecloud/image/upload/v1623065975/petsitter_profile_background_yiili3.png)">
     <div id="back-button-div">
       <%= link_to pet_sittings_path do %>
         <i class="fas fa-arrow-circle-left fa-2x"></i>
       <% end %>
     </div>
-    <div class="user-info d-flex flex-column text-left">
-      <div class="container-img">
-        <%= @pet_sitting.user.photo.attached? ? cl_image_tag(@pet_sitting.user.photo.key, class: "avatar-bordered") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg") %>
-      </div>
-      <div class="name-location-container">
-        <p><strong><%= @pet_sitting.user.first_name %> <%= @pet_sitting.user.last_name %></br></strong>
-        <i class="fas fa-map-marker-alt pr-1"></i><small><%= @pet_sitting.user.city %></small></p>
+    <div class="petsitter-img-container mt-3">
+      <%= @pet_sitting.user.photo.attached? ? cl_image_tag(@pet_sitting.user.photo.key, class: "avatar-petsitter") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg") %>
     </div>
-  </div>
-  <small style="light grey">____________________________________________</small>
-  <div class="user-bio text-left mb-4">
-    <%= @pet_sitting.description %>
-  </div>
-  <div class="price-section d-flex align-left flex-column text-left">
-    <p><b>$<%= @pet_sitting.price %> per day</b></p>
-  </div>
+  </br>
+</br>
+</br>
+<div class="user-info d-flex flex-column text-left">
+  <div class="name-location-container">
+    <p><strong><%= @pet_sitting.user.first_name %> <%= @pet_sitting.user.last_name %></br></strong>
+    <i class="fas fa-map-marker-alt pr-1"></i><small><%= @pet_sitting.user.city %></small></p>
+</div>
+</div>
+<small style="light grey">____________________________________________</small>
+<div class="user-bio text-left mb-4">
+  <%= @pet_sitting.description %>
+</div>
+<div class="price-section d-flex align-left flex-column text-left">
+  <p><b>$<%= @pet_sitting.price %> per day</b></p>
+</div>
 </br>
 </br>
 <small style="light grey">____________________________________________</small>
@@ -32,7 +35,7 @@
   <%= f.input :start_date, label: 'From', html5: true, :input_html => { min: Date.today, class: "petsitting-booking-form" } %>
   <%= f.input :end_date, label: 'Until', html5: true, :input_html => { min: Date.today, class: "petsitting-booking-form" } %>
   <%= f.input :description, label: 'Comments', inline_label: 'description', :input_html => { class: "petsitting-booking-form" } %>
-  <%= f.submit class: 'btn btn-primary mb-3 mt-3', value: "Book" %>
+  <%= f.submit class: 'btn btn-info mb-3 mt-3', value: "Book" %>
 <% end %>
 </div>
 </div>
