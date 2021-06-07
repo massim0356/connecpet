@@ -29,7 +29,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path
     else
-      render :petsitting_path(@petsitting)
+      render "pet_sittings/show"
     end
   end
 
@@ -54,5 +54,4 @@ private
   def booking_params
     params.require(:booking).permit(:description, :status, :start_date, :end_date, :petsitting_id, :user_id)
   end
-
 end
