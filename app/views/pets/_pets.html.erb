@@ -1,17 +1,12 @@
-<div class="pet-section-title mt-4">
-  <h4><%= @user.first_name %>'s pets</h4>
-</div>
 <% @user.pets.each do |pet| %>
   <div class="card-pet d-flex flex-row align-items-center justify-content-center mb-3">
-    <div class="pet-info d-flex flex-column overflow-wrap">
-      <p><strong><%= pet.pet_name %></strong></br>
-      <small>_________________________</small></br>
-    <small><%= pet.get_age %> yrs old</small></br>
-  <small><i><%= pet.breed %></small></i></br>
-<small><strong><%= pet.description %></strong></small></p>
-</div>
-<div class="pet-img">
-  <%= pet.photo.attached? ? cl_image_tag(pet.photo.key) : "easter egg" %>
-</div>
-</div>
+    <div class="pet-info d-flex flex-row justify-content-center align-items-center text-center p-3">
+    <div class="pet-img">
+      <%= cl_image_tag(pet.photo.key) %>
+    </div>
+      <p><strong><%= pet.pet_name %></strong></br><small><%= pet.get_age %> yrs old</small></br>
+      <small><%= pet.breed %></small></br>
+      <small><strong><%= pet.description %></strong></small></p>
+    </div>
+  </div>
 <% end %>
