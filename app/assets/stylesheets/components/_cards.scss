@@ -125,5 +125,7 @@ body{
 @media only screen and (max-width: 576px) {
   .cards-user {
     border: none;
+    width: 100%;
+    margin-top: 0;
   }
 }
