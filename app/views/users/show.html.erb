@@ -7,7 +7,7 @@
       <h5><strong><%= @user.first_name %> <%= @user.last_name %></br></strong></h5>
       <p><small><em>lives in</em>: <%= @user.city %></small></p></br>
     </div>
-    <div class="user-bio text-center">
+    <div class="user-bio text-center mb-3">
       "<%= @user.bio %>"
     </div>
      <%= render "users/user_fr_status" %>
@@ -22,7 +22,7 @@
          <%= render "pets/pets" %>
         <% end %>
         <% if @user == current_user %>
-          <button id="new-pet" type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#petNew">
+          <button id="new-pet" type="button" class="btn btn-primary mt-5 mb-5" data-toggle="modal" data-target="#petNew">
             Add Your Pet!
           </button>
             <%= render "pets/pets_pop" %>
