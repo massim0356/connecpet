@@ -1,19 +1,13 @@
-.container {
-  margin-top: 80px;
+#homepage {
+  min-height: 600px;
 }
 
-#images {
-  width: 100%;
+.container-home {
+  margin-top: 60px;
 }
 
-.logo img {
+#images img {
   width: 200px;
-}
-
-.slogan {
-  margin-top: 20px;
-  font-family: 'Pacifico', cursive;
-  color: #4D4D4D;
 }
 
 [class*="col-"] {
@@ -21,8 +15,8 @@
 }
 
 @media only screen and (max-width: 576px) {
-  .easter-eggs {
-    display: none;
+  #homepage {
+  min-height: 750px;
   }
 }
 
@@ -30,4 +24,14 @@
   .logo {
     display: none !important;
   }
+}
+
+@media screen and (min-width: 1200px) {
+  .container-home {
+    margin-top: 100px;
+  }
+
+  #homepage {
+  min-height: 700px;
+}
 }

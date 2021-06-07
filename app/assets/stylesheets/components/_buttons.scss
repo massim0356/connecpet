@@ -1,18 +1,11 @@
 .btn {
   background-color: white;
-  color: inherit;
-  border: 1px solid;
+  border: 1px solid #2C2C2C;
+  color: #2C2C2C;
   border-radius: 16px;
   transition-duration: 0.3s;
-  text-decoration: none;
+  text-decoration: none !important;
   min-width: 80px;
   margin: 20px;
   font-size: 14px;
 }
-
-.btn:hover {
-  background-color: #2C2C2C;
-  color: white;
-}
-
-
