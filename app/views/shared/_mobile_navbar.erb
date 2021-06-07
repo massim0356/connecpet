@@ -12,6 +12,9 @@
   <% end %>
   <%= link_to friends_path do %>
     <i class="fas fa-user-friends"></i>
+    <% if current_user.requested_friends.any? %>
+      <span class="notification-badge-mobile badge badge-danger"><%= current_user.requested_friends.count %></span>
+    <% end %>
   <% end %>
   <a href="#"><i class="fas fa-dog"></i></a>
 </div>

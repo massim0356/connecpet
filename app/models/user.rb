@@ -13,6 +13,12 @@ class User < ApplicationRecord
   before_destroy :destroy_messages
 
   # validates :photo, presence: true
+  include PgSearch::Model
+  pg_search_scope :search_by_first_name_last_name,
+    against: [ :first_name, :last_name ],
+    using: {
+      tsearch: { prefix: true }
+    }
 
   def messages_with(friend)
     Message.where(sender: friend, receiver: self).or(Message.where(sender: self, receiver: friend))
