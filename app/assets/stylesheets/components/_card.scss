@@ -1,7 +1,7 @@
 .card-pet {
   border-radius: 8px;
-  max-width: 500px;
-  max-height: 300px;
+  width: 400px;
+  height: auto;
   line-height: 20px;
   border: 1px solid #ccc;
   background-color: white;
@@ -13,17 +13,22 @@
   padding: 20px;
 }
 
+.label {
+  margin-right: 260px;
+}
+
 .profile {
   border-radius: 8px;
   width: 400px;
   line-height: 25px;
+  border: 1px solid #ccc;
   background-color: white;
+  padding: 20px;
 }
 
 .profile img {
   height: 250px;
   width: 250px;
-  margin-top: 20px;
   padding: 20px;
   border-radius: 50%;
 }
@@ -36,5 +41,16 @@
      height: auto;
     }
   }
+  .profile {
+    border: none;
+    margin: 0 !important;
+  }
+
+  .label {
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-top: 50px;
+}
+
 }
 
