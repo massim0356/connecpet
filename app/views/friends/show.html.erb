@@ -1,5 +1,5 @@
 <div class="container" id="chatroom">
-  <div class="d-flex flex-column justify-content-center align-items-center">
+  <div class="d-flex flex-column justify-content-center align-items-center" id="box">
       <div id="messages" data-user-id="<%= @friend.id %>">
           <div class="message-top text-center">
             <%= cl_image_tag(@friend.photo.key, class: "avatar-large") %>
