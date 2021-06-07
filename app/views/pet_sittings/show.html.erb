@@ -1,19 +1,29 @@
 <div id="main" class="d-flex flex-row flex-wrap justify-content-center align-items-start">
-  <div class="cards-user d-flex flex-column align-items-center justify-content-start">
+  <div class="cards-user d-flex flex-column align-items-center justify-content-start" style="background-image: url(https://res.cloudinary.com/bdmaecloud/image/upload/v1622965468/profile_background_wider_sc5gej.png)">
     <div id="back-button-div">
       <%= link_to pet_sittings_path do %>
         <i class="fas fa-arrow-circle-left fa-2x"></i>
       <% end %>
     </div>
-    <div class="container-img">
-      <%= @user.photo.attached? ? cl_image_tag(@user.photo.key) : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg") %>
-    </div>
     <div class="user-info d-flex flex-column text-left">
-      <p><strong><%= @user.first_name %> <%= @user.last_name %></br></strong>
-      <i class="fas fa-map-marker-alt pr-1"></i><small><%= @user.city %></small></p>
+      <div class="container-img">
+        <%= @pet_sitting.user.photo.attached? ? cl_image_tag(@pet_sitting.user.photo.key, class: "avatar-bordered") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg") %>
+      </div>
+      <p><strong><%= @pet_sitting.user.first_name %> <%= @pet_sitting.user.last_name %></br></strong>
+      <i class="fas fa-map-marker-alt pr-1"></i><small><%= @pet_sitting.user.city %></small></p>
   </div>
   <small style="light grey">____________________________________________</small>
   <div class="user-bio text-left mb-4">
-    <%= @user.bio %>
+    <%= @pet_sitting.description %>
+    <p><b><%= @pet_sitting.price %>per day</b></p>
+  </div>
+  <div class="booking-section">
+    <p>Make a booking!</p>
+    <%= simple_form_for [@pet_sitting, @booking], html: { class: "petsitting-booking-form" } do |f| %>
+      <%= f.input :date, html5: true, :input_html => { :value => Date.today} %>
+      <%= f.input :description, placeholder: 'special instructions', inline_label: 'description' %>
+      <%= f.submit class: 'btn btn-flat mb-3 mt-3', value: "Book" %>
+    <% end %>
+  <% elsif @bookings_as_owner %>
   </div>
 </div>
