@@ -8,6 +8,7 @@ class PetSittingsController < ApplicationController
   def show
     @pet_sitting = PetSitting.find(params[:id])
     authorize @pet_sitting
+    # to access photo, @pet_sitting.user because the pet sitting belongs to the user
   end
 
   def new

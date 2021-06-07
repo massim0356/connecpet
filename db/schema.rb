@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_03_020419) do
+ActiveRecord::Schema.define(version: 2021_06_07_084833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(version: 2021_06_03_020419) do
     t.text "content"
     t.string "location"
     t.string "status"
-    t.bigint "pet_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "pet_id"
     t.index ["pet_id"], name: "index_announcements_on_pet_id"
   end
 
@@ -53,10 +53,10 @@ ActiveRecord::Schema.define(version: 2021_06_03_020419) do
     t.date "start_date"
     t.date "end_date"
     t.bigint "user_id", null: false
-    t.bigint "petsitting_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["petsitting_id"], name: "index_bookings_on_petsitting_id"
+    t.bigint "pet_sitting_id"
+    t.index ["pet_sitting_id"], name: "index_bookings_on_pet_sitting_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -77,8 +77,18 @@ ActiveRecord::Schema.define(version: 2021_06_03_020419) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "sender_id", null: false
     t.bigint "receiver_id", null: false
+    t.boolean "read", default: false
     t.index ["receiver_id"], name: "index_messages_on_receiver_id"
     t.index ["sender_id"], name: "index_messages_on_sender_id"
+  end
+
+  create_table "pet_sittings", force: :cascade do |t|
+    t.text "description"
+    t.integer "price"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_pet_sittings_on_user_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -94,23 +104,14 @@ ActiveRecord::Schema.define(version: 2021_06_03_020419) do
     t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
-  create_table "petsittings", force: :cascade do |t|
-    t.text "description"
-    t.integer "price"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_petsittings_on_user_id"
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.integer "stars"
     t.text "content"
     t.bigint "user_id", null: false
-    t.bigint "petsitting_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["petsitting_id"], name: "index_reviews_on_petsitting_id"
+    t.bigint "pet_sitting_id"
+    t.index ["pet_sitting_id"], name: "index_reviews_on_pet_sitting_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -127,18 +128,19 @@ ActiveRecord::Schema.define(version: 2021_06_03_020419) do
     t.text "bio"
     t.string "city"
     t.boolean "admin"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "announcements", "pets"
-  add_foreign_key "bookings", "petsittings"
+  add_foreign_key "bookings", "pet_sittings"
   add_foreign_key "bookings", "users"
   add_foreign_key "messages", "users", column: "receiver_id"
   add_foreign_key "messages", "users", column: "sender_id"
+  add_foreign_key "pet_sittings", "users"
   add_foreign_key "pets", "users"
-  add_foreign_key "petsittings", "users"
-  add_foreign_key "reviews", "petsittings"
+  add_foreign_key "reviews", "pet_sittings"
   add_foreign_key "reviews", "users"
 end

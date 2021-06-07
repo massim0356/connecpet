@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
-    @users = policy_scope(User).shuffle
+    users = User.where.not(id: current_user.id)
+    @users = policy_scope(users).near([current_user.latitude, current_user.longitude], 378000)
   end
 
   def show

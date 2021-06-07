@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
   belongs_to :user
-  belongs_to :petsitting
+  belongs_to :pet_sitting
 end

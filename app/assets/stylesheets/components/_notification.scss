@@ -13,7 +13,20 @@
   max-width: 400px;
   width: 70%;
   border-radius: 12px;
-  overflow: hidden
+  overflow: hidden;
+
+  a {
+    color: #999999;
+    margin-left: 16px;
+    font-size: 14px;
+    text-decoration: none !important;
+    color: inherit;
+  }
+
+  a:hover {
+  text-decoration: none !important;
+  color: #999999;
+}
 }
 
 .notification .notification-content {
@@ -31,31 +44,17 @@
 .notification small {
   color: #999999;
   font-weight: bold;
+  text-decoration: none !important;
+  color: inherit;
 }
 .notification .notification-actions {
   display: flex;
   justify-content: space-between;
   transition: ease .3s;
-  a {
-    color: #999999;
-    margin-left: 16px;
-    font-size: 14px;
-  }
 
   i {
     font-size: 22px;
   }
-}
-
-a {
-  text-decoration: none !important;
-  opacity: 70%;
-  color: inherit;
-}
-
-a:hover {
-  text-decoration: none !important;
-  color: inherit;
 }
 
 #friend-request-div {
