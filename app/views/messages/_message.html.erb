@@ -1,7 +1,10 @@
-<div>
-  <div class="message-container <%= viewer == message.sender ? "right-bubble p-2 align-items-end" : "left-bubble p-2 align-items-start" %>" id="message-<%= message.id %>">
-  <div class="message-content-div">
-    <p><%= message.content %></p>
-  </div>
+<div class="message">
+  <div class="created-at text-center">
+  <%= message.created_at.month %> <%= message.created_at.day %> <%= message.created_at.year %>
 </div>
+  <div class="message-container <%= viewer == message.sender ? "right-bubble p-2 align-items-end" : "left-bubble p-2" %>" id="message-<%= message.id %>">
+    <div class="message-content-div">
+      <p><%= message.content %></p>
+    </div>
+  </div>
 </div>

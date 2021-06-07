@@ -1,12 +1,12 @@
-<div class="container">
-    <div class="d-flex text-center flex-column justify-content-center align-items-center">
+<div class="container" id="chatroom">
+  <div class="d-flex flex-column justify-content-center align-items-center">
       <div id="messages" data-user-id="<%= @friend.id %>">
-        <div class="message-top">
-          <%= @friend.photo.attached? ? cl_image_tag(@friend.photo.key, class: "avatar-large") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "avatar-larger") %>
-          <h6><b><%= @friend.first_name %></b></br>
+                  <div class="message-top text-center">
+            <%= cl_image_tag(@friend.photo.key, class: "avatar-large") %>
+            <h6><b><%= @friend.first_name %></b></br>
             <small><%= @friend.city %></small></br>
             <small><%= @friend.first_name %> has <%= @friend.pets.count %> pet(s)</small></h6>
-        </div>
+          </div>
         <% unless @messages.empty? %>
           <%= render @messages, viewer: current_user %>
         <% end %>
