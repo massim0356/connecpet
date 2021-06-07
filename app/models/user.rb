@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :bookings_as_owner, through: :petsittings, source: :bookings
   has_one_attached :photo, dependent: :destroy
   before_destroy :destroy_messages
+  geocoded_by :city
+  after_validation :geocode, if: :will_save_change_to_city?
 
   # validates :photo, presence: true
   include PgSearch::Model
