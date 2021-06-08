@@ -1,7 +1,8 @@
 .form-search {
-  display: flex !important;
-  flex-direction: row !important;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
 
   .btn {
     margin-left: 10px !important;
@@ -9,5 +10,6 @@
 
   .form-control {
     border-radius: 8px;
+    height: 30px;
   }
 }

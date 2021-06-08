@@ -8,6 +8,11 @@
 </div>
 <%= link_to friend_path(friend) do %>
   <div class="notification-actions">
-  <i class="far fa-comment"></i>
+    <% count = current_user.messages.where(sender: friend, read:false).count %>
+    <% unless count.zero? %>
+      <span class="notification-badge-messages badge badge-danger"><%= count %></span>
+    <% else %>
+      <i class="far fa-comment"></i>
+    <% end %>
   </div>
 <% end %>

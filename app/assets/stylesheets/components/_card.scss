@@ -1,101 +1,55 @@
-h1 {
-  text-align: center;
-}
-
-.container-users {
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-  justify-content: space-around;
-  padding: 100px;
-  padding-top: 3px;
-}
-
-.card-user {
-  display: grid;
-  grid-template-columns: 1fr;
-  flex-grow: 0;
-  background: white;
+.card-pet {
+  border-radius: 8px;
+  width: 400px;
+  height: auto;
+  line-height: 20px;
   border: 1px solid #ccc;
+  background-color: white;
+}
+
+.card-pet img {
+  height: 150px;
+  width: 150px;
+  padding: 20px;
+}
+
+.label {
+  margin-right: 260px;
+}
+
+.profile {
   border-radius: 8px;
-  width: 100%;
-  max-width: 400px;
-  min-width: 300px;
+  width: 400px;
+  line-height: 25px;
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 20px;
 }
 
-.card-user > img {
-  height: 330px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-user .card-user-info {
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  color: black;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.card-user-name {
-  margin-bottom: 0px;
-  width: 50%;
-
-  h2 {
-    margin-right: 10px;
-  }
-}
-
-.name-text h2 {
-  font-size: 14px;
-  margin: 0;
-}
-
-#user-location {
-    font-size: 12px;
-  }
-
-.link:hover{
-  text-decoration: none;
-}
-
-
-.card-user-info .card-user-avatar {
-  width: 54px;
+.profile img {
+  height: 250px;
+  width: 250px;
+  padding: 20px;
   border-radius: 50%;
-  margin-right: 8px;
-  }
-
-.card-user-info h2, h3:hover {
-    text-decoration: none;
-  }
-
-.carousel-control-prev, .carousel-control-next {
-  border-radius: 8px;
 }
 
-@media(max-width: 992px) {
-  .container-users {
-    grid-template-columns: 1fr 1fr;
+@media only screen and (max-width: 878px) {
+  .card-pet {
+    border: none;
+    img {
+     width: 200px;
+     height: auto;
+    }
   }
-}
-
-@media(max-width: 768px) {
-  .container-users {
-    grid-template-columns: 1fr 1fr;
+  .profile {
+    border: none;
+    margin: 0 !important;
   }
-}
 
-@media(max-width: 576px) {
-  .container-users {
-    grid-template-columns: 1fr 1fr;
+  .label {
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-top: 50px;
   }
 }
 
-@media(max-width: 480px) {
-  .container-users {
-    grid-template-columns: 1fr;
-  }
-}

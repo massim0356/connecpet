@@ -6,13 +6,6 @@
 .avatar-large {
   width: 56px;
   border-radius: 50%;
-  transition: width 0.3s ease-in-out;
-}
-
-.avatar-larger {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
 }
 
 .avatar-bordered {
@@ -31,5 +24,9 @@
   cursor: pointer;
 }
 
+.avatar-announcement {
+  width: 120px;
+  border-radius: 50%;
 
+}
 

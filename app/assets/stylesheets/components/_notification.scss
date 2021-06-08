@@ -3,17 +3,26 @@
   align-items: center;
   justify-content: flex-end;
   flex-direction: row;
-  margin-top: 16px;
-  margin-left: 16px;
-  margin-right: 16px;
-  margin-bottom: 8px;
+  margin: 15px;
   background: white;
   padding: 8px 16px;
-  border: 1px solid rgb(235,235,235);
+  border: 1px solid #ccc;
   max-width: 400px;
   width: 70%;
   border-radius: 12px;
-  overflow: hidden
+  overflow: hidden;
+
+  a {
+    color: #999999;
+    font-size: 14px;
+    text-decoration: none !important;
+    color: inherit;
+  }
+
+  a:hover {
+  text-decoration: none !important;
+  color: #999999;
+}
 }
 
 .notification .notification-content {
@@ -31,31 +40,16 @@
 .notification small {
   color: #999999;
   font-weight: bold;
+  text-decoration: none !important;
+  color: inherit;
 }
 .notification .notification-actions {
   display: flex;
   justify-content: space-between;
-  transition: ease .3s;
-  a {
-    color: #999999;
-    margin-left: 16px;
-    font-size: 14px;
-  }
 
   i {
     font-size: 22px;
   }
-}
-
-a {
-  text-decoration: none !important;
-  opacity: 70%;
-  color: inherit;
-}
-
-a:hover {
-  text-decoration: none !important;
-  color: inherit;
 }
 
 #friend-request-div {
@@ -64,4 +58,11 @@ a:hover {
 
 .title-container {
   margin-top: 4rem;
+}
+
+@media(max-width: 576px) {
+  .notification {
+    border: none;
+    min-width: 400px;
+  }
 }

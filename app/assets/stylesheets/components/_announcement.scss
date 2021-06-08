@@ -1,0 +1,33 @@
+.announcement-background {
+   margin: 0 auto;
+}
+
+.container-announcements {
+  margin: 0 auto;
+  width: 900px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  justify-content: space-around;
+}
+
+.card-announcement {
+  width: 900px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+
+.announcement-user-name {
+  font-size: 20px;
+}
+
+.announcement-info {
+  width: 400px;
+
+  p {
+    font-size: 20px;
+  }
+}
+
+
