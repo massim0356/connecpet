@@ -34,6 +34,6 @@ class PetSittingsController < ApplicationController
   private
 
   def pet_sitting_params
-    params.require(:pet_sitting).permit(:description, :price, :user_id)
+    params.require(:pet_sitting).permit(:description, :price, :user_id, :photo)
   end
 end
