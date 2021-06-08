@@ -1,0 +1,32 @@
+    <% @announcements.each do |announcement| %>
+      <div class="card-announcement p-4 d-flex justify-content-between align-items-center">
+        <div class="announcement-user-info text-center">
+          <%= cl_image_tag(announcement.pet.user.photo.key, class: "avatar-announcement")%>
+          <div class="announcement-user-name d-flex mt-3">
+            <%= announcement.pet.user.first_name %>
+            <%= announcement.pet.user.last_name %>
+          </div>
+        </div>
+        <div class="announcement-info align-items-center p-2 pt-3">
+          <div class="d-flex">
+            <p><b>Date: </b><%= announcement.date %>　</p>
+            <p><b>Status: </b><%= announcement.status %></p>
+          </div>
+            <p><b>Location: </b><%= announcement.location %></p>
+
+            <div class="announcement-content">
+              <p><b>Description: </b><br><%= announcement.content %></p>
+            </div>
+        </div>
+        <div class="pet-info">
+          <%= cl_image_tag(announcement.pet.photo.key, class: "avatar-announcement") %>
+          <%= announcement.pet.pet_name %>
+        </div>
+      </div>
+    <% end %>
+
+
+
+
+
+
