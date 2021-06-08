@@ -14,7 +14,7 @@ class PetsController < ApplicationController
     if @pet.save
       redirect_to user_path(@pet.user)
     else
-      render "pets/pets"
+      render :new
     end
   end
 
