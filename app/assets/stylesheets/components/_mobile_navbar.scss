@@ -22,6 +22,12 @@
   .navbar-lewagon {
     display: none;
   }
+  .home .navbar-lewagon {
+    display: unset;
+  }
+  .home .mobile-nav {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 570px) {
