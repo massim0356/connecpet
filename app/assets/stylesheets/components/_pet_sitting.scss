@@ -1,3 +1,4 @@
+
 .petsitter-img-container {
   display: flex;
   justify-content: flex-end;
@@ -51,5 +52,9 @@
 .weekend-price:hover, .weekday-price:hover {
   color: black;
   cursor: pointer;
+}
+
+#main {
+  background-color: lightgray;
 }
 
