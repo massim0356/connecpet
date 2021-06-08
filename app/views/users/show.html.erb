@@ -4,35 +4,23 @@
       <%=cl_image_tag(@user.photo.key) %>
     </div>
     <div class="user-info d-flex flex-column text-center">
-      <h5><strong><%= @user.first_name %> <%= @user.last_name %></br></strong></h5>
-    <p><small><em>lives in</em>: <%= @user.city %></small></p>
-  </br>
-</div>
-<div class="user-bio text-center mb-3">
-  "<%= @user.bio %>"
-</div>
-<!--booking status-->
-<% if @user == current_user && @user.bookings.any? %>
-  <div class="booking-status">
-    <h6>Your bookings with pet sitters:</h6>
-  </br>
-  <% @user.bookings.each do |booking| %>
-    <p>Booked <%= booking.pet_sitting.user.first_name %>, for
-      <%= booking.start_date %> -
-      <%= booking.end_date %></p>
-  <% end %>
-</div>
-<% end %>
-<%= render "users/user_fr_status" %>
-</div>
-<div class="d-flex flex-column justify-content-center align-items-center">
-  <% if @user == current_user && @user.pets.empty? %>
-    <div class="card-pet d-flex flex-row align-items-start justify-content-start mb-3">
-      <h6 class="mb-0">Add your first pet!</h6>
+      <h5><strong><%= @user.first_name %> <%= @user.last_name %></strong></h5>
+      <p><small><em>lives in</em>: <%= @user.city %></small></p>
     </div>
     <div class="user-bio text-center mb-3">
       "<%= @user.bio %>"
     </div>
+    <!--booking status-->
+    <% if @user == current_user && @user.bookings.any? %>
+      <div class="booking-status">
+        <h6>Your bookings with pet sitters:</h6>
+        <% @user.bookings.each do |booking| %>
+          <p>Booked <%= booking.pet_sitting.user.first_name %>, for
+            <%= booking.start_date %> -
+            <%= booking.end_date %></p>
+        <% end %>
+      </div>
+    <% end %>
     <%= render "users/user_fr_status" %>
   </div>
   <div class="d-flex flex-column justify-content-center align-items-center">
