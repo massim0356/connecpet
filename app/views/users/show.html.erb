@@ -22,10 +22,9 @@
          <%= render "pets/pets" %>
         <% end %>
         <% if @user == current_user %>
-          <button id="new-pet" type="button" class="btn btn-primary mt-5 mb-5" data-toggle="modal" data-target="#petNew">
-            Add Your Pet!
-          </button>
-            <%= render "pets/pets_pop" %>
+          <%= link_to new_pet_path do %>
+          <div class="btn btn-flat">Add Your Pet</div>
+          <% end %>
         <% end %>
      </div>
   </div>
