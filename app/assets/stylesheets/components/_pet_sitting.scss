@@ -1,0 +1,55 @@
+.petsitter-img-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+  height: auto;
+}
+
+.petsitter-img-container .avatar-petsitter {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: white 3px solid;
+}
+
+.price-section {
+  display: flex;
+  justify-content: space-around;
+  width: 68%;
+}
+
+.weekday-price {
+  border-radius: 2rem;
+  z-index: 2;
+  background-color: rgb(248, 247, 247);
+  backdrop-filter: blur(2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: auto;
+  height: 40px;
+  color: grey;
+  margin-left: 20px;
+}
+
+.weekend-price {
+  border-radius: 2rem;
+  background-color: rgb(248, 247, 247);
+  z-index: 2;
+  backdrop-filter: blur(2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: auto;
+  height: 40px;
+  color: grey;
+  margin-right: 20px;
+}
+
+.weekend-price:hover, .weekday-price:hover {
+  color: black;
+  cursor: pointer;
+}
+

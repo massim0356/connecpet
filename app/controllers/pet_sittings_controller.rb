@@ -8,9 +8,11 @@ class PetSittingsController < ApplicationController
     # order by closest pet sitter?
   end
 
+  # if your booking form is in the show, you should make the instance variable in the show you dumbo
   def show
     @pet_sitting = PetSitting.find(params[:id])
     authorize @pet_sitting
+    @booking = Booking.new
     # to access photo, @pet_sitting.user because the pet sitting belongs to the user
   end
 
