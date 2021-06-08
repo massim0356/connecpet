@@ -1,3 +1,73 @@
+#main-petsitting {
+  background-color: rgb(245, 244, 244);
+  background-attachment: fixed;
+  height: 100%;
+  padding-bottom: 30px;
+  overflow-x: hidden;
+}
+
+.cards-user-petsitting {
+  border-radius: 16px;
+  height: auto;
+  width: 340px;
+  line-height: 25px;
+  border: 1px solid rgb(233, 233, 233);
+  background-color: white;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  background-repeat: no-repeat;
+
+}
+.cards-user-petsitting img {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+
+#back-button-div {
+ width: 100%;
+ margin-left: 20px;
+ margin-top: 20px;
+ padding-bottom: 0;
+ color: rgba(209, 207, 207, 0.65);
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-start;
+ transition: color 1s ease-in;
+}
+
+.cards-user-petsitting:hover {
+  #back-button-div i {
+   color: black;
+  }
+}
+
+
+.container-img {
+  width: 86%;
+  height: 80%;
+  display: flex;
+  justify-content: flex-end;
+  left: 0;
+  margin-top: 0;
+}
+
+
+.user-info {
+  display: flex;
+  width: 100%;
+  padding-left: 10px;
+  padding-bottom: 0;
+}
+.user-bio {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
 
 .petsitter-img-container {
   display: flex;

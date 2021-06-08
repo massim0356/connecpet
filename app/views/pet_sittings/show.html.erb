@@ -1,5 +1,5 @@
-<div id="main" class="d-flex flex-row flex-wrap justify-content-center align-items-start">
-  <div class="cards-user d-flex flex-column align-items-center justify-content-start" style="background-image: url(https://res.cloudinary.com/bdmaecloud/image/upload/v1623113519/pet_sitter_walking_no2_a7z8yr.png)">
+<div id="main-petsitting" class="d-flex flex-row flex-wrap justify-content-center align-items-start">
+  <div class="cards-user-petsitting d-flex flex-column align-items-center justify-content-start" style="background-image: url(https://res.cloudinary.com/bdmaecloud/image/upload/v1623134319/pet_sitter_walking_image_final_mye7da.png)">
     <div id="back-button-div">
       <%= link_to pet_sittings_path do %>
         <i class="fas fa-arrow-circle-left fa-2x"></i>
@@ -13,38 +13,40 @@
 </br>
 <div class="user-info d-flex flex-column text-left">
   <div class="name-location-container">
-    <p><strong><%= @pet_sitting.user.first_name %> <%= @pet_sitting.user.last_name %></br></strong>
-    <i>Petsitter</i></br>
+    <h5><strong><%= @pet_sitting.user.first_name %> <%= @pet_sitting.user.last_name %></br></strong></h5>
+  <p><i>Petsitter</i></br>
   <i class="fas fa-map-marker-alt pr-1"></i><small><%= @pet_sitting.user.city %></small></p>
 </div>
 </div>
 <div class="ratings-section d-flex justify-content">
   <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
 </div>
+</br>
 <small style="light grey">____________________________________________</small>
 <div class="user-bio text-left mb-4">
   <%= @pet_sitting.description %>
 </div>
 <div class="price-section d-flex justify-content-between">
   <div class="weekday-price">
-    <p><b>$<%= @pet_sitting.price %> per weekday</b></p>
+    <p><b>¥<%= @pet_sitting.price %> per weekday</b></p>
   </div>
   <div class="weekend-price">
-    <p><b>$<%= @pet_sitting.price + 10 %> weekend</b></p>
+    <p><b>¥<%= @pet_sitting.price + 2000 %> weekend</b></p>
   </div>
 </div>
 </br>
 </br>
+<h5><b>Make a booking!</b></h5>
 <small style="light grey">____________________________________________</small>
-<div class="booking-section text-center">
-  <h5><b>Make a booking!</b></h5>
-</br>
-</br>
-<%= simple_form_for [@pet_sitting, @booking], :html => { class: "booking-form-container" } do |f| %>
-  <%= f.input :start_date, label: 'From', html5: true, :input_html => { min: Date.today, class: "petsitting-booking-form" } %>
-  <%= f.input :end_date, label: 'Until', html5: true, :input_html => { min: Date.today, class: "petsitting-booking-form" } %>
-  <%= f.input :description, label: 'Comments', inline_label: 'description', :input_html => { class: "petsitting-booking-form" } %>
-  <%= f.submit class: 'btn btn-info mb-3 mt-3', value: "Book" %>
-<% end %>
+<div class="booking-wrapper">
+  <div class="booking-section text-center">
+  </br>
+  <%= simple_form_for [@pet_sitting, @booking], :html => { class: "booking-form-container" } do |f| %>
+    <%= f.input :start_date, label: 'From', html5: true, :input_html => { min: Date.today, class: "petsitting-booking-form" } %>
+    <%= f.input :end_date, label: 'Until', html5: true, :input_html => { min: Date.today, class: "petsitting-booking-form" } %>
+    <%= f.input :description, label: 'Comments', inline_label: 'description', :input_html => { class: "petsitting-booking-form" } %>
+    <%= f.submit class: 'btn btn-info mb-3 mt-3', value: "Book" %>
+  <% end %>
+</div>
 </div>
 </div>

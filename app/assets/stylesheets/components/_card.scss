@@ -1,18 +1,3 @@
-.card-pet {
-  border-radius: 8px;
-  width: 400px;
-  height: auto;
-  line-height: 20px;
-  border: 1px solid #ccc;
-  background-color: white;
-}
-
-.card-pet img {
-  height: 150px;
-  width: 150px;
-  padding: 20px;
-}
-
 .label {
   margin-right: 260px;
 }
@@ -33,6 +18,23 @@
   border-radius: 50%;
 }
 
+.card-pet {
+  border-radius: 8px;
+  width: 400px;
+  height: auto;
+  line-height: 20px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+.card-pet img {
+  height: 150px;
+  width: 150px;
+  padding: 20px;
+}
+
+
+
 @media only screen and (max-width: 878px) {
   .card-pet {
     border: none;
@@ -41,6 +43,7 @@
      height: auto;
     }
   }
+
   .profile {
     border: none;
     margin: 0 !important;
