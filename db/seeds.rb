@@ -102,12 +102,12 @@ m_dog = Pet.create!(
   )
 m_dog.photo.attach(io: m_dog_img, filename: 'm_dog.jpg', content_type: 'image/jpg')
 
-pig_img = URI.open("https://i.pinimg.com/564x/fd/05/c6/fd05c6a91c5045d3fed11785fc51555d.jpg")
-pig = Pet.create!(
+b_dog_img = URI.open("https://i.pinimg.com/564x/49/78/32/497832731de7eaffe9b9e974e64ce965.jpg")
+b_dog_img = Pet.create!(
   pet_name: "Dylan",
   birthdate: Faker::Date.birthday(min_age: 1, max_age: 25),
-  species: "Pig",
-  breed: "Mini Pig",
+  species: "Dog",
+  breed: "Golden Retreiver",
   description: "She loves tomatoes",
   user: brady
   )
