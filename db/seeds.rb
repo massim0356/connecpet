@@ -111,7 +111,7 @@ b_dog_img = Pet.create!(
   description: "She loves tomatoes",
   user: brady
   )
-pig.photo.attach(io: pig_img, filename: 'pig.jpg', content_type: 'image/jpg')
+b_dog.photo.attach(io: b_dog_img, filename: 'b_dog.jpg', content_type: 'image/jpg')
 
 kitty_img = URI.open("https://i.pinimg.com/564x/71/95/60/7195601aabb8f2fbf2a28ee28d3b3cc0.jpg")
 kitty = Pet.create!(
