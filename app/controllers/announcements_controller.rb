@@ -2,8 +2,10 @@ class AnnouncementsController < ApplicationController
   before_action :set_pet, only: [:new, :create]
 
   def index
-    @announcement = policy_scope(Announcement).where(user: current_user)
-    @announcements_as_owner = policy_scope(Announcement).where(announcement: current_user.pet)
+    @announcements = policy_scope(Announcement)
+
+    # @announcement = policy_scope(Announcement).where(user: current_user)
+    # @announcements_as_owner = policy_scope(Announcement).where(announcement: current_user.pets)
   end
 
   def new
