@@ -1,0 +1,5 @@
+<%= render @pet_sittings %>
+<button id="new-pet_sitting" type="button" class="btn btn-primary mt-5 mb-5" data-toggle="modal" data-target="#pet_sittingNew">
+  Add Your PetSitting!
+</button>
+<%= render "pet_sittings/pet_sitting_pop", pet_sitting: @pet_sitting %>
