@@ -1,13 +1,17 @@
-<div class="card-petsittings">
+<div class="all">
+<div class="card-petsittings d-flex flex-column justify-content-center mb-5">
   <%= link_to pet_sitting_path(pet_sitting), class: "link" do %>
-    <%= pet_sitting.photo.attached? ? cl_image_tag(pet_sitting.photo.key, class: "card-user-avatar") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "card-user-avatar") %>
-    <div class="card-petsittings-infos">
-      <div>
-        <h2><%= pet_sitting.user.first_name %> <%= pet_sitting.user.last_name %></h2>
-        <p><%= pet_sitting.user.city %></p>
+    <%= pet_sitting.photo.attached? ? cl_image_tag(pet_sitting.photo.key, class: "petsitter-img") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "card-user-avatar") %>
+    <div class="card-petsittings-info d-flex flex-row justify-content-around align-items-center border-top-rig ">
+      <div class="flex-column">
+        <%= pet_sitting.user.photo.attached? ? cl_image_tag(pet_sitting.user.photo.key, class: "avatar-large") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "card-user-avatar") %>
+        <p><strong><%= pet_sitting.user.first_name %> <%= pet_sitting.user.last_name %></strong></p>
       </div>
-      <h2 class="card-petsittings-pricing"><%= pet_sitting.price %>yen per night</h2>
-      <%= pet_sitting.user.photo.attached? ? cl_image_tag(pet_sitting.user.photo.key, class: "card-user-avatar") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "card-user-avatar") %>
+      <div class="flex-column">
+        <p>lives in: <strong><%= pet_sitting.user.city %></strong></p>
+      <p>price: <strong><%= pet_sitting.price %>yen per night</strong></p>
     </div>
   </div>
 <% end %>
+</div>
+</div>

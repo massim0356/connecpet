@@ -33,6 +33,27 @@
   border-radius: 50%;
 }
 
+.petsitter-img {
+  max-height: 400px;
+  min-width: 400px;
+  border-radius: 8px;
+}
+.card-petsittings-info {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+  p {
+  text-decoration: none !important;
+  color: inherit;
+  }
+
+.petsitter img {
+  height: 200px;
+}
+
 @media only screen and (max-width: 878px) {
   .card-pet {
     border: none;
