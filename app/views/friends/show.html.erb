@@ -1,3 +1,8 @@
+    <div id="back-button-div">
+      <%= link_to pet_sittings_path do %>
+        <i class="fas fa-angle-left"></i>
+      <% end %>
+    </div>
 <div class="container" id="chatroom">
   <div class="d-flex flex-column justify-content-center align-items-center" id="box">
     <div id="messages" data-user-id="<%= @friend.id %>">
