@@ -1,5 +1,5 @@
 <div class="container-new-pet_sitting">
-  <%= simple_form_for pet_sitting do |f| %>
+  <%= simple_form_for @pet_sitting do |f| %>
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.submit 'Add your petsitting', class: 'btn btn-flat' %>
