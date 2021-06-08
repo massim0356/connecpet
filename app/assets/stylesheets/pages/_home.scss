@@ -1,7 +1,37 @@
-.logo img {
+#homepage {
+  min-height: 600px;
+}
+
+.container-home {
+  margin-top: 60px;
+}
+
+#images img {
   width: 200px;
 }
 
-.nav-item .btn {
-  margin: 0 !important;
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (max-width: 576px) {
+  #homepage {
+  min-height: 750px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .logo {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container-home {
+    margin-top: 100px;
+  }
+
+  #homepage {
+  min-height: 700px;
+}
 }

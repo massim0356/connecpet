@@ -1,13 +1,17 @@
 <%= link_to user_path(friend) do %>
-  <%= friend.photo.attached? ? cl_image_tag(friend.photo.key, class: "avatar-large") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "avatar-large") %>
+  <%= cl_image_tag(friend.photo.key, class: "avatar-large") %>
 <% end  %>
 <div class="notification-content">
-  <p>Your friend</p>
   <b><%= friend.first_name %></b>
   <b><%= friend.last_name %></b>
+  <small>(<%= friend.city %>)</small>
 </div>
 <%= link_to friend_path(friend) do %>
   <div class="notification-actions">
-    <i class="fas fa-comment-dots fa-2x"></i>
+    <% if current_user.messages.where(read:false).any? %>
+      <span class="notification-badge-messages badge badge-flat"><%= current_user.messages.where(read:false).count %></span>
+    <% else %>
+      <i class="far fa-comment"></i>
+    <% end %>
   </div>
 <% end %>

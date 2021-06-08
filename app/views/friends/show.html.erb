@@ -1,19 +1,21 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-sm-10 col-md-8">
-      <div id="messages" data-user-id="<%= @friend.id %>">
-        <% if @messages.any? %>
-          <%= render @messages %>
-        <% else %>
-          <div class="message-container">
-            <p>No messages with <%= @friend.first_name %> yet. Send the first message!</p>
-          </div>
-        <% end %>
-      </div>
-      <%= simple_form_for [ @friend, @message ], remote: true, html: { class: "send-message"} do |f| %>
-        <%= f.input :content, label: false, placeholder: "Message" %>
-        <%= f.submit "Send", :class => "btn btn-primary", :id => "message-button" %>
-      <% end %>
-    </div>
+<div class="container" id="chatroom">
+  <div class="d-flex flex-column justify-content-center align-items-center" id="box">
+    <div id="messages" data-user-id="<%= @friend.id %>">
+      <div class="message-top text-center">
+        <%= cl_image_tag(@friend.photo.key, class: "avatar-large") %>
+        <h6><b><%= @friend.first_name %></b></br>
+        <small><%= @friend.city %></small></br>
+      <small><%= @friend.first_name %> has <%= @friend.pets.count %> pet(s)</small></h6>
   </div>
+  <% unless @messages.empty? %>
+    <%= render @messages, viewer: current_user %>
+    <% @messages.where(receiver: current_user).update_all(read: true) %>
+  <% end %>
+</div>
+<%= simple_form_for [ @friend, @message ], remote: true, html: { class: "send-message"} do |f| %>
+  <%= f.input :content, label: false, placeholder: "Message" %>
+  <%= f.submit "Send", :class => "btn btn-flat", :id => "message-button" %>
+<% end %>
+</div>
+</div>
 </div>

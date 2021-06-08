@@ -1,8 +1,12 @@
-<div class="message-container <%= current_user == message.sender ? "right-bubble p-2 pr-3 mb-4 text-white align-items-end" : "left-bubble p-2 pl-3 mb-4 align-items-start" %>" id="message-<%= message.id %>">
-  <small><%= message.created_at&.strftime("%a %b %e at %l:%M%p") %></small>
-  <i class="author">
-    <%= message.sender.photo.attached? ? cl_image_tag(message.sender.photo.key, class: "avatar") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "avatar") %>
-    <span><b><%= message.sender.first_name %></b></span>
-  </i>
-  <p><%= message.content %></p>
+<div class="message">
+  <div class="created-at text-center">
+    <%# unless @messages[-1].created_at == message.created_at  %>
+  <%= message.created_at.year %>/<%= message.created_at.month %>/<%= message.created_at.day %>
+  <%#end %>
+</div>
+  <div class="message-container <%= viewer == message.sender ? "right-bubble p-2 align-items-end" : "left-bubble p-2" %>" id="message-<%= message.id %>">
+    <div class="message-content-div">
+      <p><%= message.content %></p>
+    </div>
+  </div>
 </div>

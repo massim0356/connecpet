@@ -9,7 +9,7 @@ class PetPolicy < ApplicationPolicy
     true
   end
 
-   def new?
+  def new?
     create?
   end
 end

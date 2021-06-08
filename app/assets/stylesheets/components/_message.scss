@@ -1,13 +1,49 @@
-.message-container {
+#chatroom {
+  margin-top: 100px;
+}
+
+.created-at {
+  font-size: 12px;
+}
+.message {
   display: flex;
   flex-direction: column;
-  height: 120px;
-  font-family: "Poppins", sans-serif;
+}
+
+html {
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+#messages {
+  background-color: white;
+  width: 400px;
+  overflow-y: scroll;
+  box-sizing: content-box;
+  height: 550px;
+  margin-top: -40px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  padding-right: 1px;
+}
+
+.message-container {
+  margin-top: 10px;
+  border: 1px #ccc;
 }
 
 #message_content {
   margin-top: 20px;
-  border-radius: 16px;
+  border-radius: 8px;
+  height: 40px;
+  min-width: 300px;
 }
 
 #written-message {
@@ -15,31 +51,77 @@
 }
 
 #new_message {
-  .btn {
-    font-family: "Poppins", sans-serif;
-    font-weight: bold;
-    font-size: large;
-    height: 50px;
-  }
+  display: flex;
+  flex-direction: row;
+  max-width: 400px;
+  align-items: center;
+}
+
+#message-button {
+  margin-left: 20px !important;
 }
 
 .right-bubble {
-  border-radius: 38px 38px 0px 38px;
-  margin-left: 32px;
-  background-color: #76D0C0;
+  border-radius: 16px;
+  background-color: #eaeaea;
+  height: auto;
+  max-width: 50%;
+  align-self: flex-end !important;
+  font-size: 14px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .left-bubble {
-  border-radius: 38px 38px 38px 0px;
-  margin-right: 32px;
+  border-radius: 20px;
   background-color: white;
-
+  border: 1px solid #eaeaea;
+  align-self: flex-start !important;
+  font-size: 14px;
+  max-width: 50%;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 .send-message {
   margin-bottom: 50px;
 }
 
+.created-at {
+  font-style: rgb(182, 181, 181);
+  font-style: italic;
+}
 
+.author {
+  text-decoration: none;
+}
 
+.message-content-div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
+}
 
+.message-top {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 576px) {
+  #messages {
+    border: none;
+    margin-top: -50;
+  }
+
+  #new_message {
+    margin-bottom: 30px;
+  }
+  .message-top {
+    margin-top: 0;
+  }
+}

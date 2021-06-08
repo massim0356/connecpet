@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :messages, only:[:create]
   end
   resources :pets, only:[:new, :create]
-  resources :petsittings, only:[:index, :show, :new, :create] do
+  resources :pet_sittings, only:[:index, :show, :new, :create] do
     resources :bookings, only:[:create]
   end
   resources :bookings, only:[:index, :update]
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :friends, only:[:index, :show] do
     post 'request_friendship'
     post 'accept_request'
+    delete 'cancel_request'
     delete 'decline_request'
     delete 'remove_friend'
   end

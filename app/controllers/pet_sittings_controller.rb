@@ -1,17 +1,19 @@
 class PetSittingsController < ApplicationController
   before_action :set_user, only: [:new, :create]
   def index
-    @pet_sitting = policy_scope(PetSitting).where(user: current_user)
-    @pet_sittings_as_owner = policy_scope(PetSitting).where(pet_sitting: current_user.pet_sittings)
+    @pet_sittings = policy_scope(PetSitting)
+    # order by closest pet sitter?
   end
 
   def show
     @pet_sitting = PetSitting.find(params[:id])
+    authorize @pet_sitting
+    # to access photo, @pet_sitting.user because the pet sitting belongs to the user
   end
 
   def new
     @pet_sitting = PetSitting.new
-    autorize @pet_sitting
+    authorize @pet_sitting
   end
 
   def create

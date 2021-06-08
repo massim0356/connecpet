@@ -4,7 +4,12 @@ class UserPolicy < ApplicationPolicy
       scope.all
     end
   end
+
   def show?
+    true
+  end
+
+  def request_friendship?
     true
   end
 
@@ -18,7 +23,7 @@ class UserPolicy < ApplicationPolicy
     # user == current_user
   end
 
-  def request_friendship?
+  def cancel_request?
     true
   end
 end
