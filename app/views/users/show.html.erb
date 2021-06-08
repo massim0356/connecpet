@@ -4,15 +4,11 @@
         <i class="fas fa-angle-left"></i>
       <% end %>
     </div>
+<div id="main-container" class="d-flex flex-row flex-wrap justify-content-center align-items-start mb-5 mt-5">
   <div class="profile d-flex flex-column align-items-center justify-content-start mb-3 mr-5">
-    <div class="container-img">
       <%=cl_image_tag(@user.photo.key) %>
-    </div>
-    <div class="user-info d-flex flex-column text-center">
       <h5><strong><%= @user.first_name %> <%= @user.last_name %></strong></h5>
       <p><small><em>lives in</em>: <%= @user.city %></small></p>
-    </div>
-    <div class="user-bio text-center mb-3">
       "<%= @user.bio %>"
     </div>
     <!--booking status-->
