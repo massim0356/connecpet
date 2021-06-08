@@ -103,7 +103,7 @@ m_dog = Pet.create!(
 m_dog.photo.attach(io: m_dog_img, filename: 'm_dog.jpg', content_type: 'image/jpg')
 
 b_dog_img = URI.open("https://i.pinimg.com/564x/49/78/32/497832731de7eaffe9b9e974e64ce965.jpg")
-b_dog_img = Pet.create!(
+b_dog = Pet.create!(
   pet_name: "Dylan",
   birthdate: Faker::Date.birthday(min_age: 1, max_age: 25),
   species: "Dog",
