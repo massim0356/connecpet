@@ -1,7 +1,10 @@
 class PetSittingsController < ApplicationController
-  before_action :set_user, only: [:new, :create]
   def index
-    @pet_sittings = policy_scope(PetSitting)
+    users = policy_scope(User)
+    users = users.near([current_user.latitude, current_user.longitude], 100)
+    @pet_sittings = policy_scope(PetSitting).where(user: users.map(&:id))
+    @pet_sitting = PetSitting.new
+    @pet_sitting.user = current_user
     # order by closest pet sitter?
   end
 
@@ -13,13 +16,12 @@ class PetSittingsController < ApplicationController
 
   def new
     @pet_sitting = PetSitting.new
-    authorize @pet_sitting
   end
 
   def create
     @pet_sitting = PetSitting.new(pet_sitting_params)
     authorize @pet_sitting
-    @pet_sitting.user = @user
+    @pet_sitting.user = current_user
     if @pet_sitting.save
       redirect_to pet_sittings_path
     else
@@ -28,10 +30,6 @@ class PetSittingsController < ApplicationController
   end
 
   private
-
-  def set_user
-    @user = User.find(params[:user_id])
-  end
 
   def pet_sitting_params
     params.require(:pet_sitting).permit(:description, :price, :user_id)
