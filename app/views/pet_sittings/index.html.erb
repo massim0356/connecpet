@@ -1,5 +1,2 @@
 <%= render @pet_sittings %>
-<button id="new-pet_sitting" type="button" class="btn btn-primary mt-5 mb-5" data-toggle="modal" data-target="#pet_sittingNew">
-  Add Your PetSitting!
-</button>
-<%= render "pet_sittings/pet_sitting_pop", pet_sitting: @pet_sitting %>
+<%= link_to "Become a Petsitter", new_pet_sitting_path, class: "btn btn-flat mt-5 mb-5" %>

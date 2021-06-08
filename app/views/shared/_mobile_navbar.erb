@@ -1,11 +1,13 @@
 <div class="mobile-nav">
-  <a href="#"><i class="far fa-bell"></i></a>
+  <%= link_to announcements_path do %>
+  <i class="fas fa-bell"></i>
+  <% end %>
   <%= link_to users_path do %>
     <i class="fas fa-search"></i>
   <% end %>
   <% if user_signed_in? %>
     <%= link_to user_path(current_user) do %>
-      <i class="far fa-user-circle"></i>
+      <i class="fas fa-user-circle"></i>
     <% end %>
   <% else %>
     <%= "easter egg :)" %>
@@ -18,5 +20,7 @@
       <% end %>
     <% end %>
   <% end %>
-  <a href="#"><i class="fas fa-dog"></i></a>
+  <%= link_to pet_sittings_path do %>
+    <i class="fas fa-dog"></i>
+  <% end %>
 </div>

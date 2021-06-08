@@ -2,7 +2,7 @@
   <div class="card-pet d-flex flex-row align-items-start justify-content-start mb-3">
     <div class="pet-info d-flex flex-row justify-content-center align-items-center text-left p-3">
     <div class="pet-img">
-      <%= cl_image_tag(pet.photo.key) %>
+      <%= pet.photo.attached? ? cl_image_tag(pet.photo.key) : "" %>
     </div>
       <p>Name:<strong> <%= pet.pet_name %></strong></br><small> <%= pet.get_age %> yr(s) old </small></br>
       <small>Breed: <%= pet.breed %></small></br>

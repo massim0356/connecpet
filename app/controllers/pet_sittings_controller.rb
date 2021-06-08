@@ -3,8 +3,6 @@ class PetSittingsController < ApplicationController
     users = policy_scope(User)
     users = users.near([current_user.latitude, current_user.longitude], 100)
     @pet_sittings = policy_scope(PetSitting).where(user: users.map(&:id))
-    @pet_sitting = PetSitting.new
-    @pet_sitting.user = current_user
     # order by closest pet sitter?
   end
 
@@ -18,6 +16,8 @@ class PetSittingsController < ApplicationController
 
   def new
     @pet_sitting = PetSitting.new
+    @pet_sitting.user = current_user
+    authorize @pet_sitting
   end
 
   def create
@@ -34,6 +34,6 @@ class PetSittingsController < ApplicationController
   private
 
   def pet_sitting_params
-    params.require(:pet_sitting).permit(:description, :price, :user_id)
+    params.require(:pet_sitting).permit(:description, :price, :user_id, :photo)
   end
 end
