@@ -1,7 +1,7 @@
 <div class="all">
 <div class="card-petsittings d-flex flex-column justify-content-center mb-5">
   <%= link_to pet_sitting_path(pet_sitting), class: "link" do %>
-    <%= pet_sitting.photo.attached? ? cl_image_tag(pet_sitting.photo.key, class: "petsitter-img") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "card-user-avatar") %>
+    <%= pet_sitting.photo.attached? ? cl_image_tag(pet_sitting.photo.key, class: "petsitter-img") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "petsitter-img") %>
     <div class="card-petsittings-info d-flex flex-row justify-content-around align-items-center border-top-rig ">
       <div class="flex-column">
         <%= pet_sitting.user.photo.attached? ? cl_image_tag(pet_sitting.user.photo.key, class: "avatar-large") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "card-user-avatar") %>
