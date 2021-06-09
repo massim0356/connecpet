@@ -1,5 +1,6 @@
 #homepage {
   min-height: 600px;
+  font-family: "Arvo", serif;
 }
 
 .container-home {
@@ -16,13 +17,13 @@
 
 @media only screen and (max-width: 576px) {
   #homepage {
-  min-height: 750px;
+  min-height: 500px;
   }
-}
-
-@media screen and (min-width: 576px) {
-  .logo {
-    display: none !important;
+  .dropdown {
+    display: none;
+  }
+  .nav-item {
+    display: none;
   }
 }
 
