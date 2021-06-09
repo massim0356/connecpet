@@ -31,14 +31,19 @@
   <%= pluralize @pet_sitting.user.reviews.size, "review" %>
 </h5>
 <div class="reviews-petsitting">
-  <% if @pet_sitting.user.reviews.blank? %>
+  <% if @pet_sitting.reviews.empty? %>
     Be the first to leave a review for
     <%= @pet_sitting.user.first_name %>
   <% else %>
-    <% @pet_sitting.user.reviews.each do |review| %>
+    <% @pet_sitting.reviews.each do |review| %>
       <div id="content">
         <div class="ratings-section d-flex justify-content-center">
-          <%= review.stars %>
+          <% review.stars.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+          <% (5 - review.stars).times do %>
+            <i class="far fa-star"></i>
+          <% end %>
         </div>
         <div class="testimonial">
           <blockquote>
@@ -50,7 +55,7 @@
     <% unless current_user == @pet_sitting.user %>
       <h6>Leave a review for <%= @pet_sitting.user.first_name %></h6>
       <%= simple_form_for([ @pet_sitting, @review ], remote: true) do |f| %>
-        <%= f.input :stars %>
+        <%= render "shared/star_rating" %>
         <%= f.input :content %>
         <%= f.submit "Leave review", class: "btn btn-primary" %>
       <% end %>
