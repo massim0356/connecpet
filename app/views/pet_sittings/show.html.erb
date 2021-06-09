@@ -27,34 +27,32 @@
   <%= @pet_sitting.description %>
 </div>
 <small>___________________________________________</small>
-<div id="content">
-  <div class="ratings-section d-flex justify-content-center">
-    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-  </div>
-  <div class="testimonial">
-    <blockquote>
-      <p>(petsitter review goes in here)</p>
-    </blockquote>
-  </div>
-  <div class="price-section d-flex justify-content-center">
-    <div class="petsitting-price">
-      <h1 class="yen-sign"><b>¥</b></h1>
-      <p><%= @pet_sitting.price %> <small>per day</small></p>
-    </div>
+<p>
+  <%= pluralize @pet_sitting.reviews.count, "review" %>
+</p>
+<div class="reviews-petsitting">
+  <% if @pet_sitting.reviews.empty? %>
+    Be the first to leave a review for
+    <%= @pet_sitting.user.first_name %>
+  <% else %>
+    <%= render "reviews/review" %>
+  <% end %>
+  <% unless current_user == @pet_sitting.user %>
+    <%= render "reviews/review_form", pet_sitting: @pet_sitting, review: @review %>
+  <% end %>
+</div>
+<div class="price-section d-flex justify-content-center mb-10">
+  <div class="petsitting-price">
+    <h1 class="yen-sign"><b>¥</b></h1>
+    <p><%= @pet_sitting.price %> <small>per day</small></p>
   </div>
 </div>
-</br>
-</br>
-<h5><b>Make a booking!</b></h5>
-<div class="booking-wrapper" style="background-image: url(https://res.cloudinary.com/bdmaecloud/image/upload/v1623205029/booking_background_absolute_final_tlxhgi.png)">
+<h5 class="booking-title mt-10"><b>Make a booking!</b></h5>
+<div class="booking-wrapper mt-10" style="background-image: url(https://res.cloudinary.com/bdmaecloud/image/upload/v1623205029/booking_background_absolute_final_tlxhgi.png)">
   <div class="booking-section text-center">
   </br>
-  <%= simple_form_for [@pet_sitting, @booking], :html => { class: "booking-form-container" } do |f| %>
-    <%= f.input :start_date, label: 'From', html5: true, :input_html => { min: Date.today, class: "petsitting-booking-form" } %>
-    <%= f.input :end_date, label: 'Until', html5: true, :input_html => { min: Date.today, class: "petsitting-booking-form" } %>
-    <%= f.input :description, label: 'Comments', inline_label: 'description', :input_html => { class: "petsitting-booking-form" } %>
-    <%= f.submit class: 'btn btn-info mb-3 mt-3', value: "Book" %>
-  <% end %>
+  <%= render "bookings/booking_form", pet_sitting: @pet_sitting, booking: @booking %>
+</div>
 </div>
 </div>
 </div>

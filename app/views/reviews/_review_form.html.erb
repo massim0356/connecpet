@@ -1,0 +1,6 @@
+<h6>Leave a review for <%= pet_sitting.user.first_name %></h6>
+<%= simple_form_for([ pet_sitting, review ], remote: true) do |f| %>
+  <%= render "shared/star_rating" %>
+  <%= f.input :content %>
+  <%= f.submit "Leave review", class: "btn btn-primary" %>
+<% end %>
