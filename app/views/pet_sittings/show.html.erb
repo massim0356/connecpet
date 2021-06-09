@@ -47,6 +47,14 @@
         </div>
       <% end %>
     <% end %>
+    <% unless current_user == @pet_sitting.user %>
+      <h6>Leave a review for <%= @pet_sitting.user.first_name %></h6>
+      <%= simple_form_for([ @pet_sitting, @review ], remote: true) do |f| %>
+        <%= f.input :stars %>
+        <%= f.input :content %>
+        <%= f.submit "Leave review", class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
   </div>
   <div class="price-section d-flex justify-content-center mb-10">
     <div class="petsitting-price">
