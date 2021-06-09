@@ -37,16 +37,16 @@
   <% else %>
     <% @pet_sitting.reviews.each do |review| %>
       <div id="content">
-        <div class="ratings-section d-flex justify-content-center">
-          <% review.stars.times do %>
-            <i class="fas fa-star"></i>
-          <% end %>
-          <% (5 - review.stars).times do %>
-            <i class="far fa-star"></i>
-          <% end %>
-        </div>
         <div class="testimonial">
           <blockquote>
+            <div class="ratings-section d-flex justify-content-center">
+              <% review.stars.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+              <% (5 - review.stars).times do %>
+                <i class="far fa-star"></i>
+              <% end %>
+            </div>
             <p><%= review.content %></p>
           </blockquote>
         </div>
