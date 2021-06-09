@@ -10,7 +10,8 @@ class AnnouncementsController < ApplicationController
   end
 
   def new
-    @annoucement = Announcement.new
+    @announcement = Announcement.new
+    set_pet
     authorize @announcement
   end
 
@@ -29,8 +30,8 @@ class AnnouncementsController < ApplicationController
   private
 
   def set_pet
-    @user = User.find(params[:user_id])
-    @pet = @user.pet
+    @user = current_user
+    @pet = @user.pets
   end
 
   def announcement_params
