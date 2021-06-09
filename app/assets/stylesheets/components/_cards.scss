@@ -10,6 +10,7 @@ h1 {
   justify-content: space-around;
   padding: 100px;
   padding-top: 3px;
+
 }
 
 .card-user {
@@ -90,7 +91,9 @@ h1 {
 
 @media(max-width: 576px) {
   .container-users {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    padding: 0;
+    max-width: 400px;
   }
 }
 
