@@ -12,28 +12,29 @@
 </br>
 </br>
 <div class="user-info d-flex justify-content-between">
-  <div class="name-location-container d-flex flex-column">
-    <h5><strong><%= @pet_sitting.user.first_name %> <%= @pet_sitting.user.last_name %></br></strong></h5>
+  <div class="name-location-container d-flex flex-column pt-3">
+    <h3><strong><%= @pet_sitting.user.first_name %> <%= @pet_sitting.user.last_name %></br></strong></h3>
   <p><i>Petsitter</i></br>
   <i class="fas fa-map-marker-alt pr-1"></i><small><%= @pet_sitting.user.city %></small></p>
 </div>
 <%= link_to friend_path(@pet_sitting.user) do %>
-  <i class="far fa-comment fa-3x pr-4 pt-2"></i>
+  <i class="far fa-comment fa-3x pr-4 pt-2 mt-4"></i>
 <% end %>
 </div>
-<div class="ratings-section d-flex justify-content">
-  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-</div>
-</br>
-<small style="light grey">____________________________________________</small>
-<div class="user-bio text-left mb-4">
-  <%= @pet_sitting.description %>
-</div>
-<small style="light grey">____________________________________________</small>
-<div class="price-section d-flex justify-content-center">
-  <div class="petsitting-price">
-    <h1 class="yen-sign"><b>¥</b></h1>
-    <p><%= @pet_sitting.price %> per day</p>
+<div id="content">
+  <div class="ratings-section d-flex justify-content-center">
+    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+  </div>
+  <div class="testimonial">
+    <blockquote>
+      <p>(petsitter review goes in here)</p>
+    </blockquote>
+  </div>
+  <div class="price-section d-flex justify-content-center">
+    <div class="petsitting-price">
+      <h1 class="yen-sign"><b>¥</b></h1>
+      <p><%= @pet_sitting.price %> <small>per day</small></p>
+    </div>
   </div>
 </div>
 </br>
