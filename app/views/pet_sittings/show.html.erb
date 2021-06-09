@@ -18,9 +18,15 @@
   <i class="fas fa-map-marker-alt pr-1"></i><small><%= @pet_sitting.user.city %></small></p>
 </div>
 <%= link_to friend_path(@pet_sitting.user) do %>
-  <i class="far fa-comment fa-3x pr-4 pt-2 mt-4"></i>
+  <i class="far fa-comment fa-3x pr-4 pt-2 mt-10"></i>
 <% end %>
 </div>
+<small>___________________________________________</small>
+<div class="user-bio mt-2 pl-4 pr-4">
+  <h5><b><i><%= @pet_sitting.user.first_name %></b> says..</i></h5>
+  <%= @pet_sitting.description %>
+</div>
+<small>___________________________________________</small>
 <div id="content">
   <div class="ratings-section d-flex justify-content-center">
     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
