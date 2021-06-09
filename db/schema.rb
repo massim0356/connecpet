@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(version: 2021_06_07_084833) do
     t.text "content"
     t.string "location"
     t.string "status"
+    t.bigint "pet_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "pet_id"
     t.index ["pet_id"], name: "index_announcements_on_pet_id"
   end
 
@@ -135,6 +135,7 @@ ActiveRecord::Schema.define(version: 2021_06_07_084833) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "announcements", "pets"
   add_foreign_key "bookings", "pet_sittings"
   add_foreign_key "bookings", "users"
   add_foreign_key "messages", "users", column: "receiver_id"
