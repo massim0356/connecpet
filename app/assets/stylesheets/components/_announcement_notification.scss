@@ -1,0 +1,18 @@
+.card-notification-booking {
+  border: 1px solid #ccc;
+  border-bottom: none;
+  background-color: white;
+}
+
+.card-notification-booking:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.container-notification {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-around;
+  flex-grow: 1;
+  padding: 16px;
+}

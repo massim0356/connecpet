@@ -2,7 +2,7 @@
       <div class="card-announcement py-2 px-3 d-flex align-items-center">
         <div class="announcement-user-info p-2 text-center">
           <%= cl_image_tag(announcement.pet.user.photo.key, class: "avatar-announcement")%>
-          <div class="announcement-user-name d-flex mt-3">
+          <div class="announcement-user-name d-flex justify-content-center mt-3">
             <%= announcement.pet.user.first_name %>
             <%= announcement.pet.user.last_name %>
           </div>
