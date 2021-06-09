@@ -18,8 +18,14 @@
   <i class="fas fa-map-marker-alt pr-1"></i><small><%= @pet_sitting.user.city %></small></p>
 </div>
 <%= link_to friend_path(@pet_sitting.user) do %>
-  <i class="far fa-comment fa-3x pr-4 pt-2 mt-10"></i>
+  <i class="far fa-comment fa-2x ml-2 pr-4 pt-3 mt-12" id="petsitter-message-bubble"></i>
 <% end %>
+<div class="price-section d-flex justify-content-center mb-10">
+  <div class="petsitting-price">
+    <h1 class="yen-sign"><b>¥</b></h1>
+    <p><%= @pet_sitting.price %> <small>per day</small></p>
+  </div>
+</div>
 </div>
 <small>___________________________________________</small>
 <div class="user-bio mt-2 pl-4 pr-4">
@@ -27,10 +33,17 @@
   <%= @pet_sitting.description %>
 </div>
 <small>___________________________________________</small>
-<p>
-  <%= pluralize @pet_sitting.reviews.count, "review" %>
-</p>
-<div class="reviews-petsitting">
+<h5 class="booking-title pt-10 mt-20"><b>Make a booking!</b></h5>
+<div class="booking-wrapper mt-20 mb-20" style="background-image: url(https://res.cloudinary.com/bdmaecloud/image/upload/v1623242934/FINAL_FINAL_BACKGROUND_FOR_BOOKING_edbgev.png)">
+  <div class="booking-section text-center">
+    <%= render "bookings/booking_form", pet_sitting: @pet_sitting, booking: @booking %>
+  </div>
+</div>
+<div class="reviews-petsitting pb-10">
+  <div class="review-count">
+    <h5>See what others are saying about <b><%= @pet_sitting.user.first_name %></b></h5>
+    <%= pluralize @pet_sitting.reviews.count, "review" %>
+  </div>
   <% if @pet_sitting.reviews.empty? %>
     Be the first to leave a review for
     <%= @pet_sitting.user.first_name %>
@@ -38,21 +51,10 @@
     <%= render "reviews/review" %>
   <% end %>
   <% unless current_user == @pet_sitting.user %>
-    <%= render "reviews/review_form", pet_sitting: @pet_sitting, review: @review %>
+    <div class="petsitting-review-form">
+      <%= render "reviews/review_form", pet_sitting: @pet_sitting, review: @review %>
+    </div>
   <% end %>
-</div>
-<div class="price-section d-flex justify-content-center mb-10">
-  <div class="petsitting-price">
-    <h1 class="yen-sign"><b>¥</b></h1>
-    <p><%= @pet_sitting.price %> <small>per day</small></p>
-  </div>
-</div>
-<h5 class="booking-title mt-10"><b>Make a booking!</b></h5>
-<div class="booking-wrapper mt-10" style="background-image: url(https://res.cloudinary.com/bdmaecloud/image/upload/v1623205029/booking_background_absolute_final_tlxhgi.png)">
-  <div class="booking-section text-center">
-  </br>
-  <%= render "bookings/booking_form", pet_sitting: @pet_sitting, booking: @booking %>
-</div>
 </div>
 </div>
 </div>

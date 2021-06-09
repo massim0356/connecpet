@@ -44,6 +44,9 @@
   }
 }
 
+#petsitter-message-bubble a:hover {
+  text-decoration: none;
+}
 
 .container-img {
   width: 86%;
@@ -80,7 +83,6 @@
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
-  border: white 3px solid;
 }
 
 .price-section {
@@ -100,13 +102,17 @@
   align-items: center;
   text-align: center;
   margin-top: 20px;
-  height: 56px;
-  width: 150px;
+  height: 50px;
+  width: 130px;
   box-shadow: 0 0px 12px rgba(0,0,0,0.2);
 }
 
 .booking-wrapper {
   background-position: 20%, 40%;
+}
+
+.form-group .review_content {
+  border-radius: 2rem;
 }
 
 
@@ -126,6 +132,17 @@
   background-color: lightgray;
 }
 
+.review-count {
+  height: 116px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 16px;
+  text-align: center;
+  margin-right: 16px;
+}
+
 
 #content {
   max-width: 600px;
@@ -138,7 +155,7 @@
   padding: 20px 60px;
   position: relative;
   border: none;
-  border-radius: 8px;
+  border-radius: 16px;
 }
 
 .testimonial blockquote:before,
@@ -177,11 +194,11 @@
 }
 
 
-
 //media queries
 @media(max-width: 576px) {
   .cards-user-petsitting {
     width: 100%;
   }
 }
+
 

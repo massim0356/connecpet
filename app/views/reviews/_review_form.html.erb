@@ -2,5 +2,5 @@
 <%= simple_form_for([ pet_sitting, review ], remote: true) do |f| %>
   <%= render "shared/star_rating" %>
   <%= f.input :content %>
-  <%= f.submit "Leave review", class: "btn btn-primary" %>
+  <%= f.submit "Leave review", class: "btn btn-info" %>
 <% end %>
