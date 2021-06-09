@@ -12,7 +12,7 @@ class FriendsController < ApplicationController
 
   def show
     @friend = User.find(params[:id])
-    @messages = current_user.messages_with(@friend)
+    @messages = current_user.messages_with(@friend).order(:created_at)
     @message = Message.new
     authorize [:friends, @friend]
   end

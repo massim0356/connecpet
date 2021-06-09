@@ -1,5 +1,5 @@
     <div id="back-button-div">
-      <%= link_to pet_sittings_path do %>
+      <%= link_to friends_path do %>
         <i class="fas fa-angle-left"></i>
       <% end %>
     </div>
@@ -13,7 +13,7 @@
       <small><%= @friend.first_name %> has <%= @friend.pets.count %> pet(s)</small></h6>
   </div>
   <% unless @messages.empty? %>
-    <%= render @messages, viewer: current_user %>
+    <%= render @messages, viewer: current_user, messages: @messages %>
     <% @messages.where(receiver: current_user).update_all(read: true) %>
   <% end %>
 </div>
