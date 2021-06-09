@@ -39,4 +39,8 @@ class User < ApplicationRecord
       pet.photo.key
     end
   end
+  
+  def pet_sitter?
+    pet_sittings.any?
+  end
 end
