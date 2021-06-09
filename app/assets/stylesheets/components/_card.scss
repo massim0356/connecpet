@@ -1,5 +1,13 @@
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;
+  background-color:#2C2C2C;
+  height: 1px;
+}
+
 .label {
-  margin-right: 260px;
 }
 
 .slogan {
@@ -8,16 +16,15 @@
 
 .profile {
   border-radius: 8px;
-  width: 400px;
+  width: 600px;
   line-height: 25px;
-  border: 1px solid #ccc;
   background-color: white;
   padding: 20px;
 }
 
 .profile img {
-  height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
   padding: 20px;
   border-radius: 50%;
 }
@@ -40,12 +47,12 @@
   }
 
 .petsitter img {
-  height: 200px;
+  height: 150px;
 }
 
 .card-pet {
   border-radius: 8px;
-  width: 400px;
+  width: 500px;
   height: auto;
   line-height: 20px;
   border: 1px solid #ccc;
@@ -53,23 +60,38 @@
 }
 
 .card-pet img {
-  height: 150px;
-  width: 150px;
+  height: 300px;
+  width: 300px;
   padding: 20px;
 }
 
-@media only screen and (max-width: 878px) {
+@media only screen and (max-width: 565px) {
+  .back-button-div {
+    display: none;
+  }
+
   .card-pet {
+    max-width: 400px;
     border: none;
+    padding: 20px;
     img {
+     height: 200px;
      width: 200px;
-     height: auto;
     }
   }
 
+  .user-info {
+    padding: 20 0 20 20;
+  }
+
   .profile {
+    max-width: 400px;
     border: none;
-    margin: 0 !important;
+    padding: 0 0 20 0;
+    img {
+      width: 150px;
+      height: 150px;
+    }
   }
 
   .label {
@@ -78,4 +100,3 @@
     margin-top: 50px;
   }
 }
-
