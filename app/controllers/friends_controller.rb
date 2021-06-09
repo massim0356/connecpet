@@ -14,7 +14,7 @@ class FriendsController < ApplicationController
     @friend = User.find(params[:id])
     @messages = current_user.messages_with(@friend)
     @message = Message.new
-    authorize @friend
+    authorize [:friends, @friend]
   end
 
   def request_friendship
