@@ -1,6 +1,61 @@
+#main-container {
+  width: 700px;
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;
+  background-color:#2C2C2C;
+  height: 1px;
+}
+
+.label {
+}
+
+.slogan {
+  font-family: "Arvo", serif;
+}
+
+.profile {
+  width: 600px;
+  line-height: 25px;
+  background-color: white;
+  padding: 20px;
+}
+
+.profile img {
+  height: 150px;
+  width: 150px;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.petsitter-img {
+  max-height: 400px;
+  min-width: 400px;
+  border-radius: 8px;
+}
+.card-petsittings-info {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+  p {
+  text-decoration: none !important;
+  color: inherit;
+  }
+
+.petsitter img {
+  height: 150px;
+}
+
 .card-pet {
   border-radius: 8px;
-  width: 400px;
+  width: 500px;
   height: auto;
   line-height: 20px;
   border: 1px solid #ccc;
@@ -8,48 +63,58 @@
 }
 
 .card-pet img {
-  height: 150px;
-  width: 150px;
+  height: 300px;
+  width: 300px;
   padding: 20px;
 }
 
-.label {
-  margin-right: 260px;
-}
+@media only screen and (max-width: 576px) {
+  #some-div {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 
-.profile {
-  border-radius: 8px;
-  width: 400px;
-  line-height: 25px;
-  border: 1px solid #ccc;
-  background-color: white;
-  padding: 20px;
-}
+  .back-button-div {
+    display: none;
+  }
 
-.profile img {
-  height: 250px;
-  width: 250px;
-  padding: 20px;
-  border-radius: 50%;
-}
+  hr {
+    max-width: 100%;
+  }
 
-@media only screen and (max-width: 878px) {
+  #main-container {
+    padding: 0;
+    max-width: 500px;
+    margin-bottom: 0px !important;
+    margin-top: 0px;
+  }
+
+  .user-info {
+    margin-left: 20px;
+  }
+
   .card-pet {
     border: none;
+    width: 400px;
     img {
+     height: 200px;
      width: 200px;
-     height: auto;
     }
   }
+
   .profile {
+    max-width: 400px;
     border: none;
-    margin: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0;
+    img {
+      width: 150px;
+      height: 150px;
+    }
   }
 
   .label {
     margin-right: 0;
     margin-bottom: 0;
-    margin-top: 50px;
   }
 }
-

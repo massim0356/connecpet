@@ -1,10 +1,14 @@
   <div class="d-flex flex-column justify-content-center align-items-center" id="homepage">
-      <div class="container-home">
+      <div class="container-home text-center">
+        <div class="slogan mb-3">
+        <p>Connecting Pets</br>
+            Connecting People</p>
+          </div>
         <div id="images" class="d-flex justify-content-center align-items-center">
           <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1623041346/image845_ifisye.png", alt: "cats" %>
         </div>
     </div>
-    <div class="connect-button mt-5">
-      <%= link_to 'Connect Today!', users_path, class: "btn btn-flat", id: "button" %>
+    <div class="connect-button mt-3">
+      <%= link_to 'Connect', users_path, class: "btn btn-flat", id: "button" %>
     </div>
 </div>

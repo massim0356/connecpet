@@ -1,0 +1,187 @@
+#main-petsitting {
+  background-color: rgb(245, 244, 244);
+  background-attachment: fixed;
+  height: 100%;
+  padding-bottom: 30px;
+  overflow-x: hidden;
+}
+
+.cards-user-petsitting {
+  border-radius: 16px;
+  height: auto;
+  width: 340px;
+  line-height: 25px;
+  border: 1px solid rgb(233, 233, 233);
+  background-color: white;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  background-repeat: no-repeat;
+
+}
+.cards-user-petsitting img {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+
+#back-button-div {
+ width: 100%;
+ margin-left: 20px;
+ margin-top: 20px;
+ padding-bottom: 0;
+ color: rgba(209, 207, 207, 0.65);
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-start;
+ transition: color 1s ease-in;
+}
+
+.cards-user-petsitting:hover {
+  #back-button-div i {
+   color: black;
+  }
+}
+
+
+.container-img {
+  width: 86%;
+  height: 80%;
+  display: flex;
+  justify-content: flex-end;
+  left: 0;
+  margin-top: 0;
+}
+
+
+.user-info {
+  display: flex;
+  width: 100%;
+  padding-left: 10px;
+  padding-bottom: 0;
+}
+
+.user-bio {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+
+.petsitter-img-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+  height: auto;
+}
+
+.petsitter-img-container .avatar-petsitter {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: white 3px solid;
+}
+
+.price-section {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+}
+
+.petsitting-price {
+  border-radius: 2rem;
+  background-color: rgba(248, 247, 247, 0.931);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  height: 56px;
+  width: 150px;
+  box-shadow: 0 0px 12px rgba(0,0,0,0.2);
+}
+
+.booking-wrapper {
+  background-position: 20%, 40%;
+}
+
+
+.petsitting-price:hover {
+  color: black;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+  transform: translateY(-8px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+.yen-sign {
+  padding-right: 10px;
+}
+
+#main {
+  background-color: lightgray;
+}
+
+
+#content {
+  max-width: 600px;
+  margin: 10vh auto;
+}
+
+.testimonial blockquote {
+  margin: 10px 10px 0;
+  background: #efefef;
+  padding: 20px 60px;
+  position: relative;
+  border: none;
+  border-radius: 8px;
+}
+
+.testimonial blockquote:before,
+.testimonial blockquote:after {
+  content: "\201C";
+  position: absolute;
+  font-size: 80px;
+  line-height: 1;
+  color: #757f9a;
+}
+
+.testimonial blockquote:before {
+  top: 0;
+  left: 10px;
+}
+
+.testimonial blockquote:after {
+  content: "\201D";
+  right: 10px;
+  bottom: -0.5em;
+}
+
+.testimonial div {
+  width: 0;
+  height: auto;
+  border-left: 0 solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #efefef;
+  margin: 0 0 0 60px;
+}
+
+.testimonial p {
+  margin: 8px 0 0 20px;
+  text-align: left;
+  color: black;
+}
+
+
+
+//media queries
+@media(max-width: 576px) {
+  .cards-user-petsitting {
+    width: 100%;
+  }
+}
+

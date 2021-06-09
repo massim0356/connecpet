@@ -9,6 +9,18 @@ puts "creating users and pets.."
 CITY = %w[Meguro Shibuya Shinagawa Shimokitazawa Kichijyoji Ichikawa Yokohama Tachikawa Kameari Hibiya Matusdo Gotanda Meidaimae Kameido Tsujido Ikebukuro]
 BIO = ["I love all animals", "I want to find a friend for my pet", "Looking for someone to walk my pet with", "I want some advice on raising a pet!", "I am a pet-lover"]
 
+
+ryan_img = URI.open("https://avatars.githubusercontent.com/u/65576226?v=4")
+ryan = User.create!(
+  first_name: "Ryan",
+  last_name: "Kam",
+  email: "ryan@test.com",
+  password: "121212",
+  city: "Ichikawa",
+  bio: "I am Ryan",
+  )
+ryan.photo.attach(io: ryan_img, filename: 'ryan.jpg', content_type: 'image/jpg')
+
 alex_img = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1618495010/r3mmdrp9imzjv9yxejgx.jpg")
 alex = User.create!(
   first_name: "Alexis",
@@ -57,6 +69,17 @@ machiko = User.create!(
   )
 machiko.photo.attach(io: machiko_img, filename: 'machiko.png', content_type: 'image/png')
 
+ryan_d_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1623138572/20210418_172701_qwkten.jpg")
+ryan_d = Pet.create!(
+  pet_name: "Luki",
+  birthdate: Faker::Date.birthday(min_age: 5, max_age: 5),
+  species: "Dog",
+  breed: "Shiba",
+  description: "Luki enjoys going for a walk in the park",
+  user: ryan
+  )
+ryan_d.photo.attach(io: ryan_d_img, filename: 'ryan_d.jpg', content_type: 'image/jpg')
+
 cat_img = URI.open("https://res.cloudinary.com/dzwpbkn3u/image/upload/v1622823585/IMG_5622_idf0t2.jpg")
 cat = Pet.create!(
   pet_name: "Haku",
@@ -68,27 +91,27 @@ cat = Pet.create!(
   )
 cat.photo.attach(io: cat_img, filename: 'cat.jpg', content_type: 'image/jpg')
 
-otter_img = URI.open("https://i.pinimg.com/564x/ac/85/5e/ac855e87a7cc748dae2684344ec0c1e1.jpg")
-otter = Pet.create!(
-  pet_name: "Jose",
+m_dog_img = URI.open("https://i.pinimg.com/564x/a9/e4/ad/a9e4ad7fa723b2d1391a23d555b56df7.jpg")
+m_dog = Pet.create!(
+  pet_name: "Jasper",
   birthdate: Faker::Date.birthday(min_age: 1, max_age: 15),
-  species: "Otter",
-  breed: "Asian Small-clawed Otter",
-  description: "I love fish",
+  species: "Dog",
+  breed: "Shiba",
+  description: "I like swimming",
   user: massim
   )
-otter.photo.attach(io: otter_img, filename: 'otter.jpg', content_type: 'image/jpg')
+m_dog.photo.attach(io: m_dog_img, filename: 'm_dog.jpg', content_type: 'image/jpg')
 
-pig_img = URI.open("https://i.pinimg.com/564x/fd/05/c6/fd05c6a91c5045d3fed11785fc51555d.jpg")
-pig = Pet.create!(
+b_dog_img = URI.open("https://i.pinimg.com/564x/49/78/32/497832731de7eaffe9b9e974e64ce965.jpg")
+b_dog = Pet.create!(
   pet_name: "Dylan",
   birthdate: Faker::Date.birthday(min_age: 1, max_age: 25),
-  species: "Pig",
-  breed: "Mini Pig",
+  species: "Dog",
+  breed: "Golden Retreiver",
   description: "She loves tomatoes",
   user: brady
   )
-pig.photo.attach(io: pig_img, filename: 'pig.jpg', content_type: 'image/jpg')
+b_dog.photo.attach(io: b_dog_img, filename: 'b_dog.jpg', content_type: 'image/jpg')
 
 kitty_img = URI.open("https://i.pinimg.com/564x/71/95/60/7195601aabb8f2fbf2a28ee28d3b3cc0.jpg")
 kitty = Pet.create!(
@@ -101,7 +124,7 @@ kitty = Pet.create!(
   )
 kitty.photo.attach(io: kitty_img, filename: 'kitty.jpg', content_type: 'image/jpg')
 
-36.times do
+25.times do
   file = URI.open('https://thispersondoesnotexist.com/image')
   user = User.create!(
     first_name: Faker::Name.first_name,

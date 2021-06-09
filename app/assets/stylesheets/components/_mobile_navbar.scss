@@ -22,6 +22,12 @@
   .navbar-lewagon {
     display: none;
   }
+  .home .navbar-lewagon {
+    display: unset;
+  }
+  .home .mobile-nav {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 570px) {
@@ -38,6 +44,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-left: 15px;
   padding-right: 15px;
   border-top: solid #ccc 1px;
@@ -51,5 +58,5 @@
   text-align: center;
   padding: 5px 5px;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 25px;
 }
