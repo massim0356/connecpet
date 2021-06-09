@@ -1,8 +1,35 @@
-  <div class="announcement-background">
-    <div class="container-announcements p-5">
-      <%= render "announcements/announcement" %>
-    </div>
+<div class="area pt-3">
+  <input type="radio" name="tab_name" id="tab1" checked>
+  <label class="tab_class" for="tab1">Lost pets</label>
+  <div class="content_class row justify-content-center">
+
+      <div class="container-announcements col-12 col-md-10 col-lg-8 ">
+        <%= render "announcements/announcement" %>
+      </div>
+
   </div>
+
+  <input type="radio" name="tab_name" id="tab2" checked>
+  <label class="tab_class" for="tab2">Notification</label>
+  <div class="content_class">
+
+    <div class="container-notification col-10 col-md-8 col-lg-6 ">
+     <%= render "announcements/notification" %>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
 
 
 
