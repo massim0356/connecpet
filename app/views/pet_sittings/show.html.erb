@@ -11,12 +11,15 @@
   </br>
 </br>
 </br>
-<div class="user-info d-flex flex-column text-left">
-  <div class="name-location-container">
+<div class="user-info d-flex justify-content-between">
+  <div class="name-location-container d-flex flex-column">
     <h5><strong><%= @pet_sitting.user.first_name %> <%= @pet_sitting.user.last_name %></br></strong></h5>
   <p><i>Petsitter</i></br>
   <i class="fas fa-map-marker-alt pr-1"></i><small><%= @pet_sitting.user.city %></small></p>
 </div>
+<%= link_to friend_path(@pet_sitting.user) do %>
+  <i class="far fa-comment fa-3x pr-4 pt-2"></i>
+<% end %>
 </div>
 <div class="ratings-section d-flex justify-content">
   <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -26,19 +29,17 @@
 <div class="user-bio text-left mb-4">
   <%= @pet_sitting.description %>
 </div>
-<div class="price-section d-flex justify-content-between">
-  <div class="weekday-price">
-    <p><b>¥<%= @pet_sitting.price %> per weekday</b></p>
-  </div>
-  <div class="weekend-price">
-    <p><b>¥<%= @pet_sitting.price + 2000 %> weekend</b></p>
+<small style="light grey">____________________________________________</small>
+<div class="price-section d-flex justify-content-center">
+  <div class="petsitting-price">
+    <h1 class="yen-sign"><b>¥</b></h1>
+    <p><%= @pet_sitting.price %> per day</p>
   </div>
 </div>
 </br>
 </br>
 <h5><b>Make a booking!</b></h5>
-<small style="light grey">____________________________________________</small>
-<div class="booking-wrapper">
+<div class="booking-wrapper" style="background-image: url(https://res.cloudinary.com/bdmaecloud/image/upload/v1623205029/booking_background_absolute_final_tlxhgi.png)">
   <div class="booking-section text-center">
   </br>
   <%= simple_form_for [@pet_sitting, @booking], :html => { class: "booking-form-container" } do |f| %>

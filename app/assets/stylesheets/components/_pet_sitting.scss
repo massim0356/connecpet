@@ -66,6 +66,7 @@
   width: 100%;
   justify-content: flex-start;
   padding-left: 10px;
+  height: auto;
 }
 
 
@@ -86,45 +87,52 @@
 .price-section {
   display: flex;
   justify-content: space-around;
-  width: 68%;
+  width: 70%;
+  height: 30%;
+  display: flex;
+  align-items: center;
 }
 
-.weekday-price {
+.petsitting-price {
   border-radius: 2rem;
   z-index: 2;
-  background-color: rgb(248, 247, 247);
+  background-color: rgba(248, 247, 247, 0.931);
   backdrop-filter: blur(2rem);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: auto;
-  height: 40px;
-  color: grey;
+  height: 100px;
+  width: 200px;
   margin-left: 20px;
+  box-shadow: 0 0px 12px rgba(0,0,0,0.2);
 }
 
-.weekend-price {
-  border-radius: 2rem;
-  background-color: rgb(248, 247, 247);
-  z-index: 2;
-  backdrop-filter: blur(2rem);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: auto;
-  height: 40px;
-  color: grey;
-  margin-right: 20px;
+.booking-wrapper {
+  background-position: 20%, 40%;
 }
 
-.weekend-price:hover, .weekday-price:hover {
+
+.petsitting-price:hover {
   color: black;
   cursor: pointer;
+  transition: 0.2s ease-out;
+  transform: translateY(-8px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+.yen-sign {
+  padding-right: 10px;
 }
 
 #main {
   background-color: lightgray;
+}
+
+//media queries
+@media(max-width: 576px) {
+  .cards-user-petsitting {
+    width: 100%;
+  }
 }
 
