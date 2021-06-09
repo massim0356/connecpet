@@ -1,0 +1,23 @@
+<div class="bookings">
+  <% @bookings.each do |booking| %>
+    <%= cl_image_tag(booking.pet_sitting.user.photo.key, class: "avatar-announcement")%>
+    <p><b>Start date: </b><%= booking.start_date %></p>
+    <p><b>End date: </b><%= booking.end_date %></p>
+  <% end %>
+</div>
+<div class="friends-confirmation">
+<!--   <%# @user.friend.user.pet each do |booking| %>
+
+  aaccept, decline, cancel
+  <%# end %>
+
+ -->
+
+
+</div>
+<div class="pet-added-notification">
+  <%# @user.friend.user.pet each do || %>
+  <%# end %>
+
+</div>
+T
