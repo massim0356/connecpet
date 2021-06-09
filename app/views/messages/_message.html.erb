@@ -1,8 +1,8 @@
 <div class="message">
   <div class="created-at text-center">
-    <%# unless @messages[-1].created_at == message.created_at  %>
+    <% unless messages[messages.length - 1].sender == message.sender %>
   <%= message.created_at.year %>/<%= message.created_at.month %>/<%= message.created_at.day %>
-  <%#end %>
+  <% end %>
 </div>
   <div class="message-container <%= viewer == message.sender ? "right-bubble p-2 align-items-end" : "left-bubble p-2" %>" id="message-<%= message.id %>">
     <div class="message-content-div">
