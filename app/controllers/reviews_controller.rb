@@ -1,24 +1,26 @@
 class ReviewsController < ApplicationController
 
   def new
-    @petsitting = Petsitting.find(params[:petsitting_id])
+    @pet_sitting = PetSitting.find(params[:pet_sitting_id])
     @review = Review.new
   end
 
   def create
   @review = Review.new(review_params)
-  @petsitting = Petsitting.find(params[:petsitting_id])
-  @review.petsitting = @petsitting
+  @pet_sitting = PetSitting.find(params[:pet_sitting_id])
+  @review.pet_sitting = @pet_sitting
+  @review.user = current_user
+  authorize @review
    if @review.save
-    redirect_to petsitting_path(@petsitting)
+    redirect_to pet_sitting_path(@pet_sitting)
    else
-    render :petsitting_path
+    render :pet_sitting_path
   end
 end
 
   private
 
   def review_params
-    params.require(:reviews).permit(:stars, :content, :petsitting_id, :user_id)
+    params.require(:review).permit(:stars, :content, :pet_sitting_id)
   end
 end

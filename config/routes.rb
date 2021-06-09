@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :pets, only:[:new, :create]
   resources :pet_sittings, only:[:index, :show, :new, :create] do
     resources :bookings, only:[:create]
+    resources :reviews, only:[:create]
   end
   resources :bookings, only:[:index, :update]
   resources :announcements, only:[:index, :new, :create]

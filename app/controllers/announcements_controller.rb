@@ -3,13 +3,15 @@ class AnnouncementsController < ApplicationController
 
   def index
     @announcements = policy_scope(Announcement)
-
+    #change this to confirm the booking
+    @bookings = current_user.bookings
     # @announcement = policy_scope(Announcement).where(user: current_user)
     # @announcements_as_owner = policy_scope(Announcement).where(announcement: current_user.pets)
   end
 
   def new
-    @annoucement = Announcement.new
+    @announcement = Announcement.new
+    set_pet
     authorize @announcement
   end
 
@@ -28,8 +30,8 @@ class AnnouncementsController < ApplicationController
   private
 
   def set_pet
-    @user = User.find(params[:user_id])
-    @pet = @user.pet
+    @user = current_user
+    @pet = @user.pets
   end
 
   def announcement_params

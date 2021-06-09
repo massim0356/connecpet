@@ -11,6 +11,7 @@ class PetSittingsController < ApplicationController
     @pet_sitting = PetSitting.find(params[:id])
     authorize @pet_sitting
     @booking = Booking.new
+    @review = Review.new
     # to access photo, @pet_sitting.user because the pet sitting belongs to the user
   end
 

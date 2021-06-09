@@ -1,0 +1,5 @@
+<div class="star-rating">
+  <% 5.times do |i| %>
+    <input type="radio" name="review[stars]" value="<%= i + 1 %>" <%= "checked" if i == 2 %> />
+  <% end %>
+</div>

@@ -1,0 +1,35 @@
+<div class="bookings">
+  <% @bookings.each do |booking| %>
+    <div class="card-notification-booking py-2 px-3 d-flex align-items-center">
+      <div class="notification-petsitting-info align-items-center text-center p-1">
+        <%= cl_image_tag(booking.pet_sitting.user.photo.key, class: "avatar-announcement")%>
+        <div class="notification-sitter-name p-1 d-flex justify-content-center">
+          <%= booking.pet_sitting.user.first_name %>
+          <%= booking.pet_sitting.user.last_name %>
+        </div>
+      </div>
+      <div class="notification-info p-1">
+        <p><b>Status: </b><%= booking.status %></p><br>
+        <div class="notification-fixed-date d-flex justify-content-between">
+          <p><b>Start date: </b><%= booking.start_date %></p>
+          <p><b>End date: </b><%= booking.end_date %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="friends-confirmation">
+<!--   <%# @user.friend.user.pet each do |booking| %>
+
+  aaccept, decline, cancel
+  <%# end %>
+
+ -->
+
+
+</div>
+<div class="pet-added-notification">
+  <%# @user.friend.user.pets each do |pet| %>
+  <%# end %>
+
+</div>
