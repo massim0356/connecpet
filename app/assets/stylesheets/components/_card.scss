@@ -5,7 +5,7 @@
 hr {
   border: 0;
   clear:both;
-  display:block;
+  display: block;
   width: 96%;
   background-color:#2C2C2C;
   height: 1px;
@@ -70,16 +70,18 @@ hr {
   height: 300px;
   width: 300px;
   padding: 20px;
+  object-fit: cover;
 }
 
 @media only screen and (max-width: 576px) {
   #some-div {
     padding-left: 0 !important;
     padding-right: 0 !important;
+    margin-top: -45px;
   }
 
-  .back-button-div {
-    display: none;
+  #back-button-div {
+    display: none !important;
   }
 
   hr {
@@ -91,10 +93,6 @@ hr {
     max-width: 500px;
     margin-bottom: 0px !important;
     margin-top: 0px;
-  }
-
-  .user-info {
-    margin-left: 20px;
   }
 
   .card-pet {
