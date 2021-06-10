@@ -4,6 +4,14 @@
   margin-top: 30px;
 }
 
+.container-announcements .announcements-title {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+
+}
+
 .render-announcement {
   margin: auto 0;
   max-width: 600px;
