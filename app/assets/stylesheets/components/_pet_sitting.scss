@@ -197,6 +197,13 @@
   color: black;
 }
 
+.petsitting-review-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 
 //media queries
 @media(max-width: 576px) {
