@@ -8,7 +8,7 @@
 }
 
 #images img {
-  width: 300px;
+  width: 200px;
   padding-top: 30px;
 }
 
@@ -19,6 +19,7 @@
 @media only screen and (max-width: 576px) {
   #homepage {
   min-height: 500px;
+  margin-top: -30px;
   }
   .dropdown {
     display: none;
