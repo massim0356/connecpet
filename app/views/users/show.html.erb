@@ -31,7 +31,7 @@
       </div>
     <% else %>
     <h6 class="label"><strong><%= @user.first_name %>'s Pet(s)</strong></h6>
-    <div class="profile-pet d-flex justify-content-around">
+    <div class="profile-pet d-flex flex-column justify-content-around">
       <%= render "pets/pets" %>
     <% end %>
     </div>
