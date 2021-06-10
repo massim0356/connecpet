@@ -7,19 +7,16 @@
     <div id="main-container" class="d-flex flex-row flex-wrap justify-content-center align-items-start mb-5 mt-5">
       <div class="d-flex flex-column">
         <div id ="some-div" class="d-flex flex-column flex-wrap justify-content-center align-items-between pl-5 pr-5">
-          <div class="profile d-flex flex-row align-items-center justify-content-between mt-3">
+          <div class="profile d-flex flex-row align-items-center justify-content-between m-3">
             <%=cl_image_tag(@user.photo.key) %>
             <%= render "users/user_fr_status" %>
-            <% if @user == current_user %>
-              <%= link_to new_announcement_path do  %>
-              <div class="btn btn-flt">Lost Your Pet?</div>
-             <% end %>
-            <% end %>
           </div>
-        <div class="user-info d-flex flex-column">
-       <h5><strong><%= @user.first_name %> <%= @user.last_name %></strong></h5>
-      <p><small><em>lives in</em>: <%= @user.city %></small></p>
-      "<%= @user.bio %>"
+          <div class="user-info d-flex flex-column">
+            <h5><strong><%= @user.first_name %> <%= @user.last_name %></strong></h5>
+            <p><small><em> <i class="fas fa-map-marker-alt pr-1"></i></em> <%= @user.city %></small></p>
+          <div class="user-bio p-3">
+        "<%= @user.bio %>"
+      </div>
     </div>
    </div>
   </div>
