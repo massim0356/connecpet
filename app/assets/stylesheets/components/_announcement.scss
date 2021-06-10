@@ -83,13 +83,14 @@ border-bottom: 1px solid #ccc;
 
 @media(max-width: 576px) {
   .card-announcement {
-    max-width: 500px !important;
+    width: 500px !important;
     margin: 0 !important;
     padding: 10px !important;
   }
   .container-announcements {
     padding: 0 !important;
     margin: 0 !important;
+    justify-content: center;
   }
 }
 
@@ -102,14 +103,14 @@ border-bottom: 1px solid #ccc;
 // ↓ Go back and forth between pages ↓
 
 .area {
-  width: 900px;
+  max-width: 900px;
   margin: auto;
   flex-wrap: wrap;
   display: flex;
 }
 
 .tab_class {
-  width: calc(100%/5);
+  width: calc(100%/2);
   height: 50px;
   background-color: white;
   color: #a5a8a6;
