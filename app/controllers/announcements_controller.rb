@@ -18,7 +18,7 @@ class AnnouncementsController < ApplicationController
     authorize @announcement
     @announcement.user = current_user
     if @announcement.save
-      redirect_to announcements_path
+      redirect_to users_path
     else
       render :new
     end
