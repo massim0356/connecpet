@@ -1,5 +1,10 @@
 <%= link_to user_path(friend) do %>
   <%= cl_image_tag(friend.photo.key, class: "avatar-large") %>
+  <% if friend.online? %>
+    <span class="logged-in-index">●</span>
+  <% else %>
+    <span class="logged-out-index">●</span>
+  <% end %>
 <% end  %>
 <div class="notification-content">
   <b><%= friend.first_name %></b>
