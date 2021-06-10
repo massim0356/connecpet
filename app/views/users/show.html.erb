@@ -9,15 +9,7 @@
         <div id ="some-div" class="d-flex flex-column flex-wrap justify-content-center align-items-between">
           <div class="profile d-flex flex-row align-items-center justify-content-between m-3">
             <%=cl_image_tag(@user.photo.key) %>
-              <% if @user.pet_sitter? %>
-             <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1623309469/a_jzel9g.png", alt: "petsitter", id: "badge-ps" %>
-              <% else %>
-              <% if @user == current_user %>
-                <%= link_to new_pet_sitting_path do %>
-                 <div class="btn btn-flat">Become a Petsitter</div>
-                 <% end %>
-            <% end %>
-        <% end %>
+            <%= render "pet_sittings/user_pet_sitting" %>
           <div id="buttons" class="d-flex flex-row align-items-center"></div>
             <%= render "users/user_fr_status" %>
           </div>
