@@ -1,5 +1,17 @@
 #main-container {
-  width: 700px;
+  max-width: 500px;
+}
+
+#some-div {
+  max-width: 500px;
+}
+
+#badge-ps {
+  border-radius: 0;
+  width: 80px;
+  margin-left: -270px;
+  margin-top: -55px;
+  height: auto;
 }
 
 hr {
@@ -16,7 +28,7 @@ hr {
 }
 
 .profile {
-  width: 600px;
+  width: 500px;
   line-height: 25px;
   background-color: white;
   border-radius: 8px;
@@ -91,6 +103,14 @@ hr {
   hr {
     max-width: 100%;
   }
+
+  #badge-ps {
+  border-radius: 0;
+  width: 80px;
+  margin-left: -110px;
+  margin-top: -55px;
+  height: auto;
+}
 
   .user-info-show {
     max-width: 300px;
