@@ -26,6 +26,9 @@
     <div class="card-user-info d-flex align-items-end">
       <div class="card-user-name d-flex align-items-center">
         <%= user.photo.attached? ? cl_image_tag(user.photo.key, class: "card-user-avatar") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "card-user-avatar") %>
+          <% if user.pet_sitter? %>
+            <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1623309469/a_jzel9g.png", alt: "petsitter", id: "badge-ps-index" %>
+          <% end %>
         <div class="name-text d-flex">
           <h2><%= user.first_name %> <%= user.last_name %></h2>
         </div>
