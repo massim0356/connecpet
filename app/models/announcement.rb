@@ -1,3 +1,4 @@
 class Announcement < ApplicationRecord
-  belongs_to :pet
+  belongs_to :user
+  has_one_attached :photo
 end
