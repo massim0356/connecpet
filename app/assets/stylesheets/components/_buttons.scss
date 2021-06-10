@@ -2,9 +2,15 @@
   background-color: #37C8AB;
   color: white;
   border-radius: 16px;
-  transition-duration: 0.3s;
   text-decoration: none !important;
   min-width: 80px;
   margin: 20px;
   font-size: 14px;
+}
+
+#btn-flat {
+  background-color: white;
+  color: #37C8AB;
+  border-radius: 16px;
+  border: 1px solid #37C8AB;
 }
