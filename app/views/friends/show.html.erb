@@ -1,13 +1,18 @@
-    <div id="back-button-div">
-      <%= link_to friends_path do %>
-        <i class="fas fa-angle-left"></i>
-      <% end %>
-    </div>
+<div id="back-button-div">
+  <%= link_to friends_path do %>
+    <i class="fas fa-angle-left"></i>
+  <% end %>
+</div>
 <div class="container" id="chatroom">
   <div class="d-flex flex-column justify-content-center align-items-center" id="box">
     <div id="messages" data-user-id="<%= @friend.id %>">
       <div class="message-top text-center">
         <%= cl_image_tag(@friend.photo.key, class: "avatar-large") %>
+        <% if @friend.online? %>
+          <span class="logged-in">● Online</span>
+        <% else %>
+          <span class="logged-out">● Offline</span>
+        <% end %>
         <h6><b><%= @friend.first_name %></b></br>
         <small><%= @friend.city %></small></br>
       <small><%= @friend.first_name %> has <%= @friend.pets.count %> pet(s)</small></h6>

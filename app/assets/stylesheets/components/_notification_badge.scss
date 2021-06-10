@@ -27,3 +27,19 @@ span.notification-badge-messages {
   background-color: #e52727;
   color: white;
 }
+
+.logged-in {
+  color: green;
+}
+.logged-out {
+  color: red;
+}
+
+.logged-in-index {
+  color: green;
+  font-size: 30px;
+}
+.logged-out-index {
+  color: red;
+  font-size: 15px;
+}
