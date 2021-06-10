@@ -1,14 +1,22 @@
-<% @announcements.each do |announcement| %>
-  <div class="card-announcement py-2 px-3 d-flex align-items-center">
-        <!-- pic or img -->
-    <div class="announcement-info d-flex justify-content-center mt-3">
-      <%= announcement.title %>
-      <div class="event-info d-flex">
-        <%= announcement.date %>
-        <%= announcement.location %>
-      </div>
-      <%= announcement.content %>
-    </div>
+<div class="announcements-title mt-2 mb-2">
+    <h4>Events near you</h4>
   </div>
-<% end %>
-
+<div class="container-announcements">
+  <% @announcements.each do |announcement| %>
+    <div class="banner-card-announcement">
+      <%= announcement.photo.attached? ? cl_image_tag(announcement.photo.key) : cl_image_tag("https://cdn.dribbble.com/users/879147/screenshots/4761916/pet_owners_page.jpg?compress=1&resize=800x600") %>
+      <div class="banner-card-announcement-infos">
+        <%= cl_image_tag(announcement.user.photo.key, class: "banner-card-announcement-user") %>
+        <b><%= announcement.title %></b>
+        <small>Event held by <%= announcement.user.first_name %></small>
+        <div class="banner-card-announcement-infos">
+          <b><%= announcement.date %></b>
+          <div class="announcement-location d-flex justify-content-start">
+            <i class="fas fa-map-marker-alt pr-1"></i><small><%= announcement.location %></small>
+          </div>
+        </div>
+        <%= announcement.content %>
+      </div>
+    </div>
+  <% end %>
+</div>
