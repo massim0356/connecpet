@@ -6,16 +6,18 @@
   <div class="d-flex justify-content-center mb-5">
     <div id="main-container" class="d-flex flex-row flex-wrap justify-content-center align-items-start mb-5 mt-5">
       <div class="d-flex flex-column">
-        <div id ="some-div" class="d-flex flex-column flex-wrap justify-content-center align-items-between pl-5 pr-5">
+        <div id ="some-div" class="d-flex flex-column flex-wrap justify-content-center align-items-between">
           <div class="profile d-flex flex-row align-items-center justify-content-between m-3">
             <%=cl_image_tag(@user.photo.key) %>
             <%= render "users/user_fr_status" %>
           </div>
-          <div class="user-info d-flex flex-column">
+          <div class="user-info-show d-flex flex-column ml-3">
+            <div class="pl-3">
             <h5><strong><%= @user.first_name %> <%= @user.last_name %></strong></h5>
             <p><small><em> <i class="fas fa-map-marker-alt pr-1"></i></em> <%= @user.city %></small></p>
-          <div class="user-bio p-3">
-        "<%= @user.bio %>"
+          </div>
+          <div class="user-bio text-left p-3">
+        <%= @user.bio %>
       </div>
     </div>
    </div>
