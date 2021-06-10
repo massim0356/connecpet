@@ -11,11 +11,20 @@
 .btn:hover {
   color: white;
   opacity: 70%;
+  text-decoration: none !important;
 }
 
-#btn-flat {
+.btn-clear {
   background-color: white;
   color: #37C8AB;
   border-radius: 16px;
   border: 1px solid #37C8AB;
+}
+
+#fr-request {
+  margin-right: 20px;
+  font-size: 14px;
+  text-decoration: none !important;
+  padding: 6px 12px;
+  border-radius: 16px;
 }

@@ -1,14 +1,14 @@
 <% if current_user.requested_friends.include?(@user) %>
-  <button class="btn btn-flat"> Pending </button>
+  <button id="fr-request"class="btn btn-flat"> Pending </button>
 <% elsif current_user.pending_friends.include?(@user) %>
   <%= link_to "Cancel Request", friend_cancel_request_path(@user), method: :delete, class: "btn btn-flat" %>
 <% elsif current_user.friends_with?(@user) %>
-  <button class="btn btn-flat"> Unfriend </button>
+  <button id="fr-request" class="btn btn-flat"> Unfriend </button>
 <% else %>
   <% unless @user == current_user %>
   <div class="mt-2">
     <%= simple_form_for @user, url: friend_request_friendship_path(@user), method: "post" do |f| %>
-      <%= f.submit 'Friend Request +', class: 'btn btn-flat', id: 'btn-flat' %>
+      <%= f.submit 'Friend Request +', class: 'btn-clear', id: 'fr-request' %>
     <% end %>
   </div>
   <% end %>
