@@ -29,17 +29,21 @@ span.notification-badge-messages {
 }
 
 .logged-in {
-  color: green;
+  color: #729b6c;
 }
 .logged-out {
-  color: red;
+  color: #e52727;
 }
 
 .logged-in-index {
-  color: green;
-  font-size: 30px;
+  color: #729b6c;
+  font-size: 40px;
+  position: absolute;
+  bottom: -15px;
+  right: -5px;
 }
+
 .logged-out-index {
-  color: red;
-  font-size: 15px;
+  color: #e52727;
+  font-size: 50px;
 }
