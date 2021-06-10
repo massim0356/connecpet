@@ -24,7 +24,11 @@
       </div>
       <% if @user.pet_sitter? %>
         <%= link_to pet_sitting_path do %>
-          <div class="btn btn-flat">See <%= @user.first_name %>'s Petsitting Profile</div>
+        <% if @user != current_user %>
+          <div class="btn btn-flat"><%= @user.first_name %>'s Petsitting Service</div>
+          <% else %>
+          <div class="btn btn-flat">My Petsitting Service</div>
+          <% end %>
         <% end %>
       <% end %>
     </div>
