@@ -22,6 +22,11 @@
           <div class="user-bio text-left p-3">
         <%= @user.bio %>
       </div>
+      <% if @user.pet_sitter? %>
+      <%= link_to pet_sitting_path do %>
+        <p>See <%= @user.first_name %>' Petsitting Profile</p>
+        <% end %>
+      <% end %>
     </div>
    </div>
   </div>
