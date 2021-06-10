@@ -5,13 +5,10 @@
 hr {
   border: 0;
   clear:both;
-  display:block;
+  display: block;
   width: 96%;
   background-color:#2C2C2C;
   height: 1px;
-}
-
-.label {
 }
 
 .slogan {
@@ -22,7 +19,7 @@ hr {
   width: 600px;
   line-height: 25px;
   background-color: white;
-  padding: 20px;
+  border-radius: 8px;
 }
 
 .profile img {
@@ -33,12 +30,12 @@ hr {
 }
 
 .card-petsittings img {
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 375px;
+  max-height: 375px;
 }
 .petsitter-img {
-  max-height: 400px;
-  min-width: 400px;
+  max-height: 375px;
+  min-width: 375px;
   border-radius: 8px;
 }
 .card-petsittings-info {
@@ -70,36 +67,45 @@ hr {
   height: 300px;
   width: 300px;
   padding: 20px;
+  object-fit: cover;
 }
 
 @media only screen and (max-width: 576px) {
+  #another-div {
+    max-width: 375px;
+    justify-content: center;
+  }
+
   #some-div {
     padding-left: 0 !important;
     padding-right: 0 !important;
+    margin-top: -45px;
+    align-items: flex-start;
+    padding-right: 0;
   }
 
-  .back-button-div {
-    display: none;
+  #back-button-div {
+    display: none !important;
   }
 
   hr {
     max-width: 100%;
   }
 
+  .user-info-show {
+    max-width: 300px;
+  }
+
   #main-container {
     padding: 0;
-    max-width: 500px;
+    max-width: 400px;
     margin-bottom: 0px !important;
     margin-top: 0px;
   }
 
-  .user-info {
-    margin-left: 20px;
-  }
-
   .card-pet {
     border: none;
-    width: 400px;
+    max-width: 375px;
     img {
      height: 200px;
      width: 200px;
@@ -107,10 +113,10 @@ hr {
   }
 
   .profile {
-    max-width: 400px;
+    max-width: 350px;
     border: none;
-    padding-right: 0 !important;
     padding-top: 0;
+    padding-bottom: 0;
     img {
       width: 150px;
       height: 150px;
