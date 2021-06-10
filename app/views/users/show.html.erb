@@ -26,12 +26,12 @@
 <hr>
   <div class="d-flex flex-column justify-content-center align-items-center">
     <% if @user == current_user && @user.pets.empty? %>
-      <div class="card-pet flex-row align-items-start justify-content-start mb-3">
+      <div class="card-pet flex-column align-items-start justify-content-center mb-3">
         <h6 class="mb-0">Add your first pet!</h6>
       </div>
     <% else %>
     <h6 class="label"><strong><%= @user.first_name %>'s Pet(s)</strong></h6>
-    <div class="profile-pet d-flex justify-content-around">
+    <div class="profile-pet d-flex flex-column justify-content-around">
       <%= render "pets/pets" %>
     <% end %>
     </div>

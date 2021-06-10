@@ -23,12 +23,10 @@ h1 {
   width: 100%;
   max-width: 400px;
   min-width: 300px;
-}
 
-.card-user > img {
-  height: 330px;
-  width: 100%;
+  img {
   object-fit: cover;
+  }
 }
 
 .card-user .card-user-info {
