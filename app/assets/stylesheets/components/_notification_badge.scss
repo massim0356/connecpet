@@ -8,8 +8,8 @@ span.notification-badge {
 }
 
 span.notification-badge-mobile {
-  position: relative;
-  top: -18px;
+  position: absolute;
+  top: 0px;
   right: 16px;
   font-size: .5em;
   border-radius: 50%;

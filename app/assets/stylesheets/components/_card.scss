@@ -1,5 +1,10 @@
 #main-container {
   max-width: 500px;
+  margin-top: -50px;
+}
+
+#become {
+  margin-right: -130px !important;
 }
 
 #badge-ps-index {
@@ -16,8 +21,8 @@
 #badge-ps {
   border-radius: 0;
   width: 80px;
-  margin-left: -270px;
-  margin-top: -55px;
+  margin-left: -180px;
+  margin-bottom: -70px;
   height: auto;
 }
 
@@ -107,6 +112,10 @@ hr {
     display: none !important;
   }
 
+  #become {
+    margin-left: -50px !important;
+  }
+
   hr {
     max-width: 100%;
   }
@@ -120,8 +129,8 @@ hr {
   #badge-ps {
   border-radius: 0;
   width: 80px;
-  margin-left: -110px;
-  margin-top: -55px;
+  margin-left: -100px;
+  margin-bottom: -70px;
   height: auto;
 }
 
