@@ -1,9 +1,9 @@
-<div class="render-announcement">
-    <div class="container-announcements d-flex flex-column justify-content-center">
-      <%= render "announcements/announcement" %>
-      <%= Announcement.update_all(read: true) %>
-    </div>
-    <%= link_to new_announcement_path do %>
-        <div class="btn btn-flat">Add a new event</div>
-    <% end %>
+<div class="render-announcement mb-5">
+  <div class="container-announcements d-flex flex-column justify-content-center">
+    <%= render "announcements/announcement" %>
+    <% Announcement.update_all(read: true) %>
+  </div>
+  <%= link_to new_announcement_path, class:"btn btn-flat", id:"announcements-button" do %>
+    Add a new event
+  <% end %>
 </div>

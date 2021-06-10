@@ -31,6 +31,6 @@ class AnnouncementsController < ApplicationController
   end
 
   def announcement_params
-    params.require(:announcement).permit(:date, :content, :location, :title, :user_id)
+    params.require(:announcement).permit(:date, :content, :location, :title, :user_id, :photo)
   end
 end
