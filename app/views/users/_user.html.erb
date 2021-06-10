@@ -5,7 +5,7 @@
         <div class="carousel-inner">
           <% user.pet_photos.each_with_index do |key, index| %>
             <div class="carousel-item <%= 'active' if index.zero? %>">
-              <%= cl_image_tag key, alt: "pet", style: "height: 330px; width: 100%; border-top-left-radius: 8px; border-top-right-radius: 8px;"%>
+              <%= cl_image_tag key, alt: "pet", style: "height: 250px; width: 100%; border-top-left-radius: 8px; border-top-right-radius: 8px;"%>
             </div>
           <% end %>
         </div>
