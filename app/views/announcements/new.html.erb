@@ -5,6 +5,7 @@
     <%= f.input :content %>
     <%= f.input :location %>
     <%= f.input :title %>
+    <%= f.input :photo, as: :file, inline_label: 'photo', label: false %>
     <%= f.submit 'Add your event!', class: 'btn btn-flat' %>
   <% end %>
 </div>

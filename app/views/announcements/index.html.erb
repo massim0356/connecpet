@@ -1,16 +1,9 @@
-<div class="area pt-3">
-  <input type="radio" name="tab_name" id="tab1" checked>
-  <label class="tab_class" for="tab1">Lost pets</label>
-  <div class="content_class">
+<div class="render-announcement">
     <div class="container-announcements d-flex flex-column justify-content-center">
       <%= render "announcements/announcement" %>
+      <%= Announcement.update_all(read: true) %>
     </div>
-  </div>
-  <input type="radio" name="tab_name" id="tab2" checked>
-  <label class="tab_class" for="tab2">Notification</label>
-  <div class="content_class">
-    <div class="container-notification d-flex flex-column justify-content-center">
-      <%= render "announcement" %>
-    </div>
-  </div>
+    <%= link_to new_announcement_path do %>
+        <div class="btn btn-flat">Add a new event</div>
+    <% end %>
 </div>

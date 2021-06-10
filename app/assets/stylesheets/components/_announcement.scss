@@ -1,24 +1,13 @@
-// .announcement-background {
-//    width: 100%;
-// }
+
+.render-announcement {
+  margin: auto 0;
+}
 
 .container-announcements {
   margin: 0 auto;
-  max-width: 600px;
-  // display: grid;
-  // grid-template-columns: 1fr;
-  // justify-content: space-around;
-  // flex-grow: 1;
-  // padding: 16px;
+  max-width: 620px;
 
-  // grid-gap: 20px;
-  // border-right: 2px solid;
-  // border-left: 2px solid;
-  // border-bottom: 2px solid;
-  // border-top: 2px solid;
-  // border-color: #ccc;
 }
-
 
 .card-announcement {
   max-width: 600px;
@@ -32,39 +21,24 @@ border-bottom: 1px solid #ccc;
 }
 
 
-.announcement-user-name {
-  font-size: 15px;
-}
+// @media(max-width: 576px) {
+//   .card-notification-booking {
+//     max-width: 500px !important;
+//     margin: 0 !important;
+//     padding: 10px !important;
+//   }
+//   .container-notification {
+//     max-width: 500px;
+//     padding: 0 !important;
+//     margin: 0 !important;
+//   }
+// }
 
-.announcement-user-info {
-  margin-right: 60px;
-  max-width: 174px;
-}
 
-.announcement-info {
-  max-width: 357px;
-  padding: 10px;
 
-  p {
-    font-size: 15px;
-    line-height: 25px;
-  }
-}
 
-.pet-info {
-  max-width: 180px;
-  text-align: center;
-  margin-right: 0;
 
-  img {
-    margin-bottom: 10px;
-  }
-}
 
-.pet-name {
-  margin-top: 10px;
-  font-size: 15px;
-}
 
 // media query
 
@@ -81,18 +55,18 @@ border-bottom: 1px solid #ccc;
 //   }
 // }
 
-@media(max-width: 576px) {
-  .card-announcement {
-    width: 500px !important;
-    margin: 0 !important;
-    padding: 10px !important;
-  }
-  .container-announcements {
-    padding: 0 !important;
-    margin: 0 !important;
-    justify-content: center;
-  }
-}
+// @media(max-width: 576px) {
+//   .card-announcement {
+//     width: 500px !important;
+//     margin: 0 !important;
+//     padding: 10px !important;
+//   }
+//   .container-announcements {
+//     padding: 0 !important;
+//     margin: 0 !important;
+//     justify-content: center;
+//   }
+// }
 
 // @media(max-width: 480px) {
 //   .card-announcement {
@@ -100,48 +74,3 @@ border-bottom: 1px solid #ccc;
 //   }
 // }
 
-// ↓ Go back and forth between pages ↓
-
-.area {
-  max-width: 900px;
-  margin: auto;
-  flex-wrap: wrap;
-  display: flex;
-}
-
-.tab_class {
-  width: calc(100%/2);
-  height: 50px;
-  background-color: white;
-  color: #a5a8a6;
-  font-weight: bold;
-  line-height: 50px;
-  font-size: 20px;
-  text-align: center;
-  display: block;
-  float: left;
-  order: -1;
-  // border-color: #ccc;
-  // border-left: 2px solid;
-
-}
-
-input[name="tab_name"] {
-  display: none;
-}
-
-input:checked + .tab_class {
-  background-color: white;
-  color: black;
-  // border-color: #ccc;
-  // border-left: 2px solid;
-}
-
-.content_class {
-  display: none;
-  width: 70%;
-}
-
-input:checked + .tab_class + .content_class {
-  display: block;
-}
