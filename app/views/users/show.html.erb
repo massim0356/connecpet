@@ -12,6 +12,7 @@
               <% if @user.pet_sitter? %>
              <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1623309469/a_jzel9g.png", alt: "petsitter", id: "badge-ps" %>
             <% end %>
+            <div id="buttons" class="d-flex flex-row align-items-center"></div>
             <%= render "users/user_fr_status" %>
             <%= link_to new_pet_sitting_path do %>
             <div class="btn btn-flat">Become a petsitter</div>
@@ -25,35 +26,13 @@
           <div class="user-bio-show text-left p-3">
         <%= @user.bio %>
       </div>
-      <% if @user.pet_sitter? %>
-        <%= link_to pet_sitting_path do %>
-        <% if @user != current_user %>
-          <div class="btn btn-flat"><%= @user.first_name %>'s Petsitting Service</div>
-          <% else %>
-          <div class="btn btn-flat">My Petsitting Service</div>
-          <% end %>
-        <% end %>
-      <% end %>
+      <%= render "pet_sittings/pet_sitter" %>
     </div>
    </div>
   </div>
 <hr>
   <div class="d-flex flex-column justify-content-center align-items-center">
-    <% if @user == current_user && @user.pets.empty? %>
-      <div class="card-pet flex-column align-items-start justify-content-center mb-3">
-        <h6 class="mb-0">Add your first pet!</h6>
-      </div>
-    <% else %>
-    <h6 class="label"><strong><%= @user.first_name %>'s Pet(s)</strong></h6>
-    <div class="profile-pet d-flex flex-column justify-content-around">
-      <%= render "pets/pets" %>
-    <% end %>
-    </div>
-    <% if @user == current_user %>
-      <%= link_to new_pet_path do %>
-        <div class="btn btn-flat">Add Your Pet</div>
-        <% end %>
-    <% end %>
+    <%= render "pets/pets_card" %>
   </div>
 </div>
 </div>
