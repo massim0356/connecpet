@@ -17,23 +17,22 @@
   <p><i>Petsitter</i></br>
   <i class="fas fa-map-marker-alt pr-1"></i><small><%= @pet_sitting.user.city %></small></p>
 </div>
-<%= link_to friend_path(@pet_sitting.user) do %>
-  <i class="far fa-comment fa-2x ml-2 pr-4 pt-3 mt-12" id="petsitter-message-bubble"></i>
-<% end %>
-<div class="price-section d-flex justify-content-center mb-10">
+<div class="price-section mb-10">
+  <%= link_to friend_path(@pet_sitting.user) do %>
+    <i class="far fa-comment fa-2x" id="petsitter-message-bubble"></i>
+  <% end %>
   <div class="petsitting-price">
-    <h1 class="yen-sign"><b>¥</b></h1>
-    <p><%= @pet_sitting.price %> <small>per day</small></p>
+    <p class="yen-sign"><b>¥</b></p>
+    <p><b><%= @pet_sitting.price %> </b><small>per day</small></p>
   </div>
 </div>
 </div>
 <small>___________________________________________</small>
 <div class="user-bio mt-2 pl-4 pr-4">
-  <h5><b><i><%= @pet_sitting.user.first_name %></b> says..</i></h5>
   <%= @pet_sitting.description %>
 </div>
 <small>___________________________________________</small>
-<h5 class="booking-title pt-10 mt-20"><b>Make a booking!</b></h5>
+<h5 class="booking-title"><b>Make a booking!</b></h5>
 <div class="booking-wrapper mt-20 mb-20" style="background-image: url(https://res.cloudinary.com/bdmaecloud/image/upload/v1623242934/FINAL_FINAL_BACKGROUND_FOR_BOOKING_edbgev.png)">
   <div class="booking-section text-center">
     <%= render "bookings/booking_form", pet_sitting: @pet_sitting, booking: @booking %>

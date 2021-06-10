@@ -69,6 +69,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  text-align: center;
 }
 
 
@@ -87,12 +88,15 @@
 
 .price-section {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
-  height: 30%;
-  display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 160px;
+  height: 140px;
+  margin-right: 20px;
+  padding-bottom: 10px;
 }
+
 
 .petsitting-price {
   border-radius: 2rem;
@@ -104,11 +108,18 @@
   margin-top: 20px;
   height: 50px;
   width: 130px;
-  box-shadow: 0 0px 12px rgba(0,0,0,0.2);
+
+}
+
+.booking-title {
+  display: flex;
+  margin-top: 20px;
+  padding-top: 20px;
 }
 
 .booking-wrapper {
   background-position: 20%, 40%;
+  padding-top: 20px;
 }
 
 .form-group .review_content {
@@ -116,13 +127,6 @@
 }
 
 
-.petsitting-price:hover {
-  color: black;
-  cursor: pointer;
-  transition: 0.2s ease-out;
-  transform: translateY(-8px);
-  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
-}
 
 .yen-sign {
   padding-right: 10px;
