@@ -10,11 +10,17 @@
           <div class="profile d-flex flex-row align-items-center justify-content-between m-3">
             <%=cl_image_tag(@user.photo.key) %>
             <%= render "users/user_fr_status" %>
-          <div class="user-info-show d-flex flex-column ml-5">
+           <div class="user-info-show d-flex flex-column ml-5">
             <h5><strong><%= @user.first_name %> <%= @user.last_name %></strong></h5>
             <p><small><em> <i class="fas fa-map-marker-alt pr-1"></i></em> <%= @user.city %></small></p>
           <div class="user-bio p-3">
         <%= @user.bio %>
+          </div>
+          <div class="user-info d-flex flex-column">
+            <h5><strong><%= @user.first_name %> <%= @user.last_name %></strong></h5>
+            <p><small><em> <i class="fas fa-map-marker-alt pr-1"></i></em> <%= @user.city %></small></p>
+          <div class="user-bio p-3">
+        "<%= @user.bio %>"
       </div>
     </div>
    </div>
