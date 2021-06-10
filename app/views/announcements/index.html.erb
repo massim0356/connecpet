@@ -1,5 +1,6 @@
 <div class="render-announcement">
   <div class="container-announcements d-flex flex-column justify-content-center">
     <%= render "announcements/announcement" %>
+    <%= Announcement.update_all(read: true) %>
   </div>
 </div>
