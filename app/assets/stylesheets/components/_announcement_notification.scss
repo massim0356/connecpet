@@ -1,4 +1,5 @@
 .card-notification-booking {
+  max-width: 500px;
   border: 1px solid #ccc;
   border-bottom: none;
   background-color: white;
@@ -10,9 +11,28 @@
 
 .container-notification {
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: space-around;
-  flex-grow: 1;
-  padding: 16px;
+  max-width: 500px;
+
+  // display: grid;
+  // grid-template-columns: 1fr;
+  // justify-content: space-around;
+  // flex-grow: 1;
+  // padding: 16px;
+}
+
+.notification-info {
+  max-width: 300px;
+}
+
+@media(max-width: 576px) {
+  .card-notification-booking {
+    max-width: 500px !important;
+    margin: 0 !important;
+    padding: 10px !important;
+  }
+  .container-notification {
+    max-width: 500px;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
 }
