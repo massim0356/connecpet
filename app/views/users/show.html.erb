@@ -11,12 +11,15 @@
             <%=cl_image_tag(@user.photo.key) %>
               <% if @user.pet_sitter? %>
              <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1623309469/a_jzel9g.png", alt: "petsitter", id: "badge-ps" %>
+              <% else %>
+              <% if @user == current_user %>
+                <%= link_to new_pet_sitting_path do %>
+                 <div class="btn btn-flat">Become a Petsitter</div>
+                 <% end %>
             <% end %>
-            <div id="buttons" class="d-flex flex-row align-items-center"></div>
-            <%= render "users/user_fr_status" %>
-            <%= link_to new_pet_sitting_path do %>
-            <div class="btn btn-flat">Become a petsitter</div>
         <% end %>
+          <div id="buttons" class="d-flex flex-row align-items-center"></div>
+            <%= render "users/user_fr_status" %>
           </div>
           <div class="user-info-show d-flex flex-column ml-3 text-left">
             <div class="pl-3">
@@ -26,7 +29,7 @@
           <div class="user-bio-show text-left p-3">
         <%= @user.bio %>
       </div>
-      <%= render "pet_sittings/pet_sitter" %>
+      <%= render "pet_sittings/user_pet_sitter" %>
     </div>
    </div>
   </div>
