@@ -2,7 +2,10 @@
   <%= link_to announcements_path do %>
     <i class="fas fa-bell"></i>
     <% if Announcement.any? %>
-      <span class="notification-badge-mobile badge badge-danger"><%= Announcement.count %></span>
+      <% count =  Announcement.where(read: false).count %>
+      <% unless count.zero? %>
+        <span class="notification-badge-mobile badge badge-danger"><%= count %></span>
+      <% end %>
     <% end %>
   <% end %>
   <%= link_to users_path do %>
