@@ -22,7 +22,8 @@ hr {
   width: 600px;
   line-height: 25px;
   background-color: white;
-  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
 .profile img {
@@ -74,6 +75,11 @@ hr {
 }
 
 @media only screen and (max-width: 576px) {
+  #another-div {
+    max-width: 400px;
+    justify-content: center;
+  }
+
   #some-div {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -88,16 +94,20 @@ hr {
     max-width: 100%;
   }
 
+  .user-info-show {
+    max-width: 300px;
+  }
+
   #main-container {
     padding: 0;
-    max-width: 500px;
+    max-width: 400px;
     margin-bottom: 0px !important;
     margin-top: 0px;
   }
 
   .card-pet {
     border: none;
-    width: 400px;
+    max-width: 375px;
     img {
      height: 200px;
      width: 200px;
@@ -105,10 +115,11 @@ hr {
   }
 
   .profile {
-    max-width: 400px;
+    max-width: 350px;
     border: none;
     padding-right: 0 !important;
     padding-top: 0;
+    padding-bottom: 0;
     img {
       width: 150px;
       height: 150px;
