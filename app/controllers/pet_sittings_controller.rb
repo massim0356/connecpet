@@ -8,7 +8,8 @@ class PetSittingsController < ApplicationController
 
   # if your booking form is in the show, you should make the instance variable in the show you dumbo
   def show
-    @pet_sitting = PetSitting.find(params[:id])
+    @user = User.find(params[:id])
+    @pet_sitting = @user.pet_sittings.first
     authorize @pet_sitting
     @booking = Booking.new
     @review = Review.new
