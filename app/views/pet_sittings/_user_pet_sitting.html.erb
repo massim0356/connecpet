@@ -1,0 +1,8 @@
+<% if @user.pet_sitter? %>
+  <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1623309469/a_jzel9g.png", alt: "petsitter", id: "badge-ps-current" %>
+  <% if @user == current_user %>
+    <%= link_to new_pet_sitting_path do %>
+     <div class="btn btn-flat">Become a Petsitter</div>
+     <% end %>
+  <% end %>
+<% end %>
