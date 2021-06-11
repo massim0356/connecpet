@@ -13,24 +13,24 @@
           <div class="my-3">
             <b><%= announcement.date.strftime("%A, %d %b %l:%M %p") %></b>
             <div class="announcement-location">
-              <i class="fas fa-map-marker-alt pr-1"></i><small><%= announcement.location %></small>
+              <i class="fas fa-map-marker-alt pr-1 ml-3"></i><small><%= announcement.location %></small>
             </div>
           </div>
           <%= announcement.content %>
         </div>
         <% unless current_user.announcements.include?(announcement) %>
           <%= simple_form_for [announcement, Registration.new] do |f| %>
-            <%= f.button :button, class: "btn btn-flat", id:"announcements-button" do %>
-              Join event
+            <%= f.button :button, class: "btn-join text-center" do %>
+              Join Event
             <% end %>
           <% end %>
         <% else %>
-          <div class="rounded-pill border p-2">Event joined</div>
+          <button class="btn-joined text-center">Joined Event</button>
         <% end %>
-      </div>
-      <div data-toggle="modal" data-target="#invite-modal-<%= announcement.id %>">
-        <i class="far fa-share-square"></i>
-        <%= render "announcements/invite_modal", announcement: announcement %>
+        <div class="modal-share",  data-toggle="modal" data-target="#invite-modal-<%= announcement.id %>">
+          <i class="far fa-share-square ml-3"></i>
+          <%= render "announcements/invite_modal", announcement: announcement %>
+        </div>
       </div>
     </div>
   <% end %>
