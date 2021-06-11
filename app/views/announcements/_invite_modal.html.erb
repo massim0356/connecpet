@@ -1,0 +1,28 @@
+<div class="modal fade" id="invite-modal-<%= announcement.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Share With a Friend</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% current_user.friends.each do |user| %>
+          <div class="card-user-info d-flex align-items-end">
+            <div class="card-user-name d-flex align-items-center">
+              <%= user.photo.attached? ? cl_image_tag(user.photo.key, class: "card-user-avatar") : cl_image_tag("https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg", class: "card-user-avatar") %>
+              <div class="name-text d-flex">
+                <h2><%= user.first_name %> <%= user.last_name %></h2>
+              </div>
+            </div>
+            <%= simple_form_for [ user, Message.new ] do |f| %>
+              <%= f.input :content, as: :hidden, input_html: {value: "Join me in #{announcement.location} for #{announcement.content} on #{announcement.date.strftime("%A, %d %b %l:%M %p")}"} %>
+              <%= f.submit "Share", :class => "btn btn-clear", :id => "message-button" %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

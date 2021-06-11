@@ -28,6 +28,10 @@
           <div class="rounded-pill border p-2">Event joined</div>
         <% end %>
       </div>
+      <div data-toggle="modal" data-target="#invite-modal-<%= announcement.id %>">
+        <i class="far fa-share-square"></i>
+        <%= render "announcements/invite_modal", announcement: announcement %>
+      </div>
     </div>
   <% end %>
 </div>
