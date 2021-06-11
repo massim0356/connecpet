@@ -18,8 +18,14 @@
           </div>
           <%= announcement.content %>
         </div>
-        <%= link_to new_announcement_path, class:"btn btn-flat", id:"announcements-button" do %>
-          Join event
+        <% unless current_user.announcements.include?(announcement) %>
+          <%= simple_form_for [announcement, Registration.new] do |f| %>
+            <%= f.button :button, class: "btn btn-flat", id:"announcements-button" do %>
+              Join event
+            <% end %>
+          <% end %>
+        <% else %>
+          <div class="rounded-pill border p-2">Event joined</div>
         <% end %>
       </div>
     </div>
