@@ -1,7 +1,11 @@
 #homepage-content {
-  min-height: 600px;
+  max-height: 100%;
   font-family: "Arvo", serif;
   position: relative;
+}
+
+.slogan {
+  margin-top: 30px;
 }
 
 .container-home {
@@ -16,6 +20,7 @@
 #logo-home {
   width: 200px;
   height: auto;
+  margin-bottom: 20px;
 }
 
 .footer {
@@ -31,12 +36,16 @@
 
 @media only screen and (max-width: 576px) {
   #homepage-content {
-    min-height: 500px;
-    margin-top: 50px;
+    max-height: 100%;
+    margin-top: 40px;
   }
- #logo-home {
-  margin-bottom: 20px;
- }
+
+  .container-home {
+    margin-top: 40px;
+  }
+  .slogan {
+    margin-top: 30px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
