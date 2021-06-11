@@ -1,6 +1,7 @@
-#homepage {
+#homepage-content {
   min-height: 600px;
   font-family: "Arvo", serif;
+  position: relative;
 }
 
 .container-home {
@@ -12,27 +13,30 @@
   padding-top: 30px;
 }
 
+#logo-home {
+  width: 200px;
+  height: auto;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  font-size: 10px;
+  color: #7E7E7E;
+}
+
 [class*="col-"] {
   width: 100%;
 }
 
 @media only screen and (max-width: 576px) {
-  #homepage {
-  min-height: 500px;
+  #homepage-content {
+    min-height: 500px;
+    margin-top: 50px;
   }
-  .dropdown {
-    display: none;
-  }
-  .nav-item {
-    display: none;
-  }
-  #navbarSupportedContent {
-    display: none !important;
-  }
-
-  .navbar {
-    border: none;
-  }
+ #logo-home {
+  margin-bottom: 20px;
+ }
 }
 
 @media screen and (min-width: 1200px) {
@@ -42,5 +46,5 @@
 
   #homepage {
   min-height: 700px;
-}
+  }
 }

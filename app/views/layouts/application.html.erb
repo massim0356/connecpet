@@ -12,10 +12,12 @@
     <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
     <%= render 'shared/ios_pwa_links' %>
   </head>
-  <body class= "<%= "home" if params[:controller] == 'pages' && params[:action] == 'home' %>">
+  <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <%= render 'shared/mobile_navbar' %>
+      <% unless params[:controller] == 'pages' && params[:action] == 'home' %>
+       <%= render 'shared/mobile_navbar' %>
+      <% end %>
   </body>
 </html>
