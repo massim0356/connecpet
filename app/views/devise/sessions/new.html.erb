@@ -1,4 +1,5 @@
-<h2 class="text-center">Log in</h2>
+<div class="d-flex flex-column align-items-center mt-5">
+<%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1623041320/logo-3_w2thb5.png", alt: "logo", id: "logo-home" %>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
@@ -16,5 +17,7 @@
     <%= f.button :submit, "Log in" %>
   </div>
 <% end %>
-
+</div>
+<div class="text-center">
 <%= render "devise/shared/links" %>
+</div>

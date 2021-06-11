@@ -2,7 +2,7 @@
 @import url('http://fonts.cdnfonts.com/css/segoe-ui-4');
 
 
-$body-font: 'Arvo', serif;
+$body-font: 'Segoe';
 $headers-font: 'Titan One', cursive;
 
 p {
@@ -10,6 +10,3 @@ p {
   margin-bottom: 0 !important;
 }
 
-h1, h2 {
-  font-family: $headers-font;
-}

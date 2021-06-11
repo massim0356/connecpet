@@ -15,7 +15,18 @@
 }
 
 .simple_form {
+  max-width: 400px;
+  padding-top: 10px;
   margin: 20px;
+
+  .form-control {
+    display: inline-block;
+    justify-content: center;
+  }
+  .form-actions {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .container-new-pet {
