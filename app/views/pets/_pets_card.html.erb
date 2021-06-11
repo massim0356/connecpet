@@ -9,6 +9,7 @@
     <% end %>
     </div>
     <% if @user == current_user %>
+    <div class="d-flex flex-column justify-content-center p-3">
       <%= link_to new_pet_path do %>
         <div class="btn btn-flat">Add Your Pet</div>
         <% end %>

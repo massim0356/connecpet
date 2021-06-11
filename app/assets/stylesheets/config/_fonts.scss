@@ -6,5 +6,10 @@ $body-font: 'Arvo', serif;
 $headers-font: 'Titan One', cursive;
 
 p {
+  font-family: $body-font;
   margin-bottom: 0 !important;
+}
+
+h1, h2 {
+  font-family: $headers-font;
 }

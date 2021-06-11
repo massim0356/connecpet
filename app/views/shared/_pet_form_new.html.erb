@@ -1,4 +1,3 @@
-<div class="container-new-pet">
   <%= simple_form_for pet do |f| %>
     <%= f.input :pet_name %>
     <%= f.input :birthdate, as: :date, start_year: Date.today.year, end_year: Date.today.year - 25, order: [:year, :month, :day] %>
@@ -8,6 +7,5 @@
     <%= f.input :photo, as: :file, inline_label: 'photo', label: false %>
     <%= f.submit 'Add your pet', class: 'btn btn-flat' %>
   <% end %>
-</div>
 
 
