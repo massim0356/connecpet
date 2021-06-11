@@ -2,16 +2,16 @@
   <div id="homepage-content">
     <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1623041320/logo-3_w2thb5.png", alt: "logo", id: "logo-home" %>
       <div class="container-home text-center">
-        <div class="slogan mb-3">
+        <div id="images" class="d-flex justify-content-center align-items-center">
+          <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1623164573/sd_ombxmo.png", alt: "cats" %>
+        </div>
+          <div class="slogan mb-3">
         <p><strong>Connecting Pets</br>
             Connecting People</strong></p>
         </div>
       <div class="connect-button mt-3">
       <%= link_to 'Connect Now', users_path, class: "btn btn-flat", id: "button" %>
     </div>
-        <div id="images" class="d-flex justify-content-center align-items-center">
-          <%= image_tag "https://res.cloudinary.com/dzwpbkn3u/image/upload/v1623164573/sd_ombxmo.png", alt: "cats" %>
-        </div>
     </div>
 </div>
   <div class="footer d-flex flex-column text-center mb-3">
