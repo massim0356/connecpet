@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :pet_sittings, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :registrations
+  has_many :announcements, through: :registrations
   has_many :bookings_as_owner, through: :pet_sittings, source: :bookings
   has_one_attached :photo, dependent: :destroy
   before_destroy :destroy_messages
@@ -39,7 +41,7 @@ class User < ApplicationRecord
       pet.photo.key
     end
   end
-  
+
   def pet_sitter?
     pet_sittings.any?
   end

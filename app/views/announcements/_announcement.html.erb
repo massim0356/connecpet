@@ -1,21 +1,32 @@
 <div class="announcements-title mt-2 mb-2">
-    <h4>Events near you</h4>
-  </div>
+  <h4>Events near you</h4>
+</div>
 <div class="container-announcements">
   <% @announcements.each do |announcement| %>
     <div class="banner-card-announcement">
       <%= announcement.photo.attached? ? cl_image_tag(announcement.photo.key) : cl_image_tag("https://cdn.dribbble.com/users/879147/screenshots/4761916/pet_owners_page.jpg?compress=1&resize=800x600") %>
       <div class="banner-card-announcement-infos">
         <%= cl_image_tag(announcement.user.photo.key, class: "banner-card-announcement-user") %>
-        <b><%= announcement.title %></b>
-        <small>Event held by <%= announcement.user.first_name %></small>
-        <div class="banner-card-announcement-infos">
-          <b><%= announcement.date %></b>
-          <div class="announcement-location d-flex justify-content-start">
-            <i class="fas fa-map-marker-alt pr-1"></i><small><%= announcement.location %></small>
+        <div class='w-50'>
+          <b><%= announcement.title %></b>
+          <p><em><small>Event held by <%= announcement.user.first_name %></small></em></p>
+          <div class="my-3">
+            <b><%= announcement.date.strftime("%B %y, %-l%P") %></b>
+            <div class="announcement-location">
+              <i class="fas fa-map-marker-alt pr-1"></i><small><%= announcement.location %></small>
+            </div>
           </div>
+          <%= announcement.content %>
         </div>
-        <%= announcement.content %>
+        <% unless current_user.announcements.include?(announcement) %>
+          <%= simple_form_for [announcement, Registration.new] do |f| %>
+            <%= f.button :button, class: "btn btn-flat", id:"announcements-button" do %>
+              Join event
+            <% end %>
+          <% end %>
+        <% else %>
+          <div class="rounded-pill border p-2">Event joined</div>
+        <% end %>
       </div>
     </div>
   <% end %>
