@@ -11,7 +11,7 @@
           <b><%= announcement.title %></b>
           <p><em><small>Event held by <%= announcement.user.first_name %></small></em></p>
           <div class="my-3">
-            <b><%= announcement.date.strftime("%B %y, %-l%P") %></b>
+            <b><%= announcement.date.strftime("%A, %d %b %l:%M %p") %></b>
             <div class="announcement-location">
               <i class="fas fa-map-marker-alt pr-1"></i><small><%= announcement.location %></small>
             </div>
