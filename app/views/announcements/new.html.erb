@@ -1,7 +1,7 @@
 <div class="container">
   <p>New event</p>
   <%= simple_form_for @announcement do |f| %>
-    <%= f.input :date %>
+    <%= f.input :date, html5: true %>
     <%= f.input :content %>
     <%= f.input :location %>
     <%= f.input :title %>
@@ -9,4 +9,3 @@
     <%= f.submit 'Add your event!', class: 'btn btn-flat' %>
   <% end %>
 </div>
-

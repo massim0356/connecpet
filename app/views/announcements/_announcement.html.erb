@@ -1,6 +1,6 @@
 <div class="announcements-title mt-2 mb-2">
-    <h4>Events near you</h4>
-  </div>
+  <h4>Events near you</h4>
+</div>
 <div class="container-announcements">
   <% @announcements.each do |announcement| %>
     <div class="banner-card-announcement">
@@ -10,7 +10,7 @@
         <b><%= announcement.title %></b>
         <small>Event held by <%= announcement.user.first_name %></small>
         <div class="banner-card-announcement-infos">
-          <b><%= announcement.date %></b>
+          <b><%= announcement.date.strftime("%B %y, %-l%P") %></b>
           <div class="announcement-location d-flex justify-content-start">
             <i class="fas fa-map-marker-alt pr-1"></i><small><%= announcement.location %></small>
           </div>
