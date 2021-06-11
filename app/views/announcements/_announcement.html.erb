@@ -7,15 +7,20 @@
       <%= announcement.photo.attached? ? cl_image_tag(announcement.photo.key) : cl_image_tag("https://cdn.dribbble.com/users/879147/screenshots/4761916/pet_owners_page.jpg?compress=1&resize=800x600") %>
       <div class="banner-card-announcement-infos">
         <%= cl_image_tag(announcement.user.photo.key, class: "banner-card-announcement-user") %>
-        <b><%= announcement.title %></b>
-        <small>Event held by <%= announcement.user.first_name %></small>
-        <div class="banner-card-announcement-infos">
-          <b><%= announcement.date.strftime("%B %y, %-l%P") %></b>
-          <div class="announcement-location d-flex justify-content-start">
-            <i class="fas fa-map-marker-alt pr-1"></i><small><%= announcement.location %></small>
+        <div class='w-50'>
+          <b><%= announcement.title %></b>
+          <p><em><small>Event held by <%= announcement.user.first_name %></small></em></p>
+          <div class="my-3">
+            <b><%= announcement.date.strftime("%B %y, %-l%P") %></b>
+            <div class="announcement-location">
+              <i class="fas fa-map-marker-alt pr-1"></i><small><%= announcement.location %></small>
+            </div>
           </div>
+          <%= announcement.content %>
         </div>
-        <%= announcement.content %>
+        <%= link_to new_announcement_path, class:"btn btn-flat", id:"announcements-button" do %>
+          Join event
+        <% end %>
       </div>
     </div>
   <% end %>

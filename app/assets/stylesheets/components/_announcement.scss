@@ -71,12 +71,11 @@ border-bottom: 1px solid #ccc;
 .banner-card-announcement .banner-card-announcement-infos {
   padding: 10px;
   display: flex;
-  // justify-content: space-between;
-  // align-items: flex-end;
-  display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
   position: relative;
   height: auto;
+  padding-bottom: 16px;
 }
 
 .banner-card-announcement-infos .banner-card-announcement-user {
