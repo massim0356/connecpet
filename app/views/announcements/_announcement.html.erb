@@ -20,17 +20,17 @@
         </div>
         <% unless current_user.announcements.include?(announcement) %>
           <%= simple_form_for [announcement, Registration.new] do |f| %>
-            <%= f.button :button, class: "btn btn-flat", id:"announcements-button" do %>
+            <%= f.button :button, class: "btn-join", id:"announcements-button" do %>
               Join event
             <% end %>
           <% end %>
         <% else %>
-          <div class="rounded-pill border p-2">Event joined</div>
+          <div class="btn btn-join">Joined</div>
         <% end %>
-      </div>
-      <div data-toggle="modal" data-target="#invite-modal-<%= announcement.id %>">
-        <i class="far fa-share-square"></i>
-        <%= render "announcements/invite_modal", announcement: announcement %>
+        <div class="modal-share",  data-toggle="modal" data-target="#invite-modal-<%= announcement.id %>">
+          <i class="far fa-share-square"></i>
+          <%= render "announcements/invite_modal", announcement: announcement %>
+        </div>
       </div>
     </div>
   <% end %>

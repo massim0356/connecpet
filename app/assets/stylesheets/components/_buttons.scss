@@ -9,7 +9,8 @@
 }
 
 .btn:hover {
-  color: white;
+  background-color: white;
+  color: #37C8AB;
   opacity: 70%;
   text-decoration: none !important;
 }
@@ -34,3 +35,18 @@
   color: white;
   border: none;
 }
+
+.btn-join {
+  background-color: white;
+  color: #2C2C2C;
+  border: 1px solid #2C2C2C;
+  border-radius: 16px;
+  text-decoration: none !important;
+  min-width: 80px;
+  font-size: 14px;
+}
+
+.btn-join:hover {
+  color: #2c2c2c;
+}
+
