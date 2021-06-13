@@ -86,6 +86,12 @@ border-bottom: 1px solid #ccc;
   border-radius: 50%;
 }
 
+#new-announcement {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+}
 
 // @media(max-width: 576px) {
 //   .card-notification-booking {
