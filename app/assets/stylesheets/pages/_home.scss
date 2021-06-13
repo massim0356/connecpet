@@ -1,7 +1,5 @@
 #homepage-content {
-  max-height: 100%;
   font-family: "Arvo", serif;
-  position: relative;
 }
 
 .slogan {
@@ -24,8 +22,7 @@
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
+  margin-top:100px;
   font-size: 10px;
   color: #7E7E7E;
 }
@@ -36,7 +33,6 @@
 
 @media only screen and (max-width: 576px) {
   #homepage-content {
-    max-height: 100%;
     margin-top: 40px;
   }
 
