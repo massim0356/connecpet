@@ -1,7 +1,6 @@
 #homepage-content {
-  max-height: 700px;
   font-family: "Arvo", serif;
-  position: relative;
+  height: calc(100vh - 70px);
 }
 
 .slogan {
@@ -9,7 +8,7 @@
 }
 
 .container-home {
-  margin-top: 60px;
+  flex-grow: 1;
 }
 
 #images img {
@@ -24,8 +23,6 @@
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
   font-size: 10px;
   color: #7E7E7E;
 }
@@ -36,7 +33,6 @@
 
 @media only screen and (max-width: 576px) {
   #homepage-content {
-    max-height: 700px;
     margin-top: 40px;
   }
 
@@ -45,15 +41,5 @@
   }
   .slogan {
     margin-top: 30px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .container-home {
-    margin-top: 100px;
-  }
-
-  #homepage {
-  min-height: 700px;
   }
 }
