@@ -22,10 +22,11 @@
     <% @messages.where(receiver: current_user).update_all(read: true) %>
   <% end %>
 </div>
-<%= simple_form_for [ @friend, @message ], remote: true, html: { class: "send-message"} do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message" %>
-  <%= f.submit "Send", :class => "btn btn-flat", :id => "message-button" %>
-<% end %>
-</div>
+  <div>
+  <%= simple_form_for [ @friend, @message ], remote: true, html: { class: "send-message"} do |f| %>
+    <%= f.input :content, label: false, placeholder: "Message" %>
+    <%= f.submit "Send", :class => "btn btn-flat", :id => "message-button" %>
+  <% end %>
+  </div>
 </div>
 </div>
