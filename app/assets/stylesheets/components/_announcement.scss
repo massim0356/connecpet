@@ -14,17 +14,16 @@
 
 .render-announcement {
   margin: auto 0;
-  max-width: 600px;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
 .container-announcements {
-  width: 100%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -71,7 +70,7 @@ border-bottom: 1px solid #ccc;
 .banner-card-announcement .banner-card-announcement-infos {
   padding: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-end;
   position: relative;
   height: auto;
@@ -86,6 +85,12 @@ border-bottom: 1px solid #ccc;
   border-radius: 50%;
 }
 
+#new-announcement {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+}
 
 // @media(max-width: 576px) {
 //   .card-notification-booking {
@@ -146,4 +151,3 @@ border-bottom: 1px solid #ccc;
 //     grid-template-columns: 1fr;
 //   }
 // }
-

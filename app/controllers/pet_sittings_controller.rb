@@ -3,17 +3,14 @@ class PetSittingsController < ApplicationController
     users = policy_scope(User)
     users = users.near([current_user.latitude, current_user.longitude], 100)
     @pet_sittings = policy_scope(PetSitting).where(user: users.map(&:id))
-    # order by closest pet sitter?
   end
 
-  # if your booking form is in the show, you should make the instance variable in the show you dumbo
   def show
-    @user = User.find(params[:id])
-    @pet_sitting = @user.pet_sittings.first
+    @pet_sitting = PetSitting.find(params[:id])
+    @user = @pet_sitting.user
     authorize @pet_sitting
     @booking = Booking.new
     @review = Review.new
-    # to access photo, @pet_sitting.user because the pet sitting belongs to the user
   end
 
   def new

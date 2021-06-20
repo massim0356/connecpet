@@ -1,11 +1,16 @@
 #homepage-content {
   min-height: 600px;
-  font-family: "Arvo", serif !important;
   position: relative;
+  font-family: "Arvo", serif;
+  height: calc(100vh - 70px);
+}
+
+.slogan {
+  margin-top: 30px;
 }
 
 .container-home {
-  margin-top: 60px;
+  flex-grow: 1;
 }
 
 .slogan {
@@ -20,11 +25,10 @@
 #logo-home {
   width: 200px;
   height: auto;
+  margin-bottom: 20px;
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
   font-size: 10px;
   color: #7E7E7E;
 }
@@ -35,20 +39,13 @@
 
 @media only screen and (max-width: 576px) {
   #homepage-content {
-    min-height: 500px;
+    margin-top: 40px;
+  }
+
+  .container-home {
     margin-top: 50px;
   }
- #logo-home {
-  margin-bottom: 20px;
- }
-}
-
-@media screen and (min-width: 1200px) {
-  .container-home {
-    margin-top: 100px;
-  }
-
-  #homepage {
-  min-height: 700px;
+  .slogan {
+    margin-top: 30px;
   }
 }

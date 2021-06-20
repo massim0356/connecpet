@@ -3,7 +3,7 @@
     <i class="fas fa-angle-left"></i>
   <% end %>
 </div>
-<div class="container" id="chatroom">
+<div class="container mb-5" id="chatroom">
   <div class="d-flex flex-column justify-content-center align-items-center" id="box">
     <div id="messages" data-user-id="<%= @friend.id %>">
       <div class="message-top text-center">
@@ -22,10 +22,11 @@
     <% @messages.where(receiver: current_user).update_all(read: true) %>
   <% end %>
 </div>
-<%= simple_form_for [ @friend, @message ], remote: true, html: { class: "send-message"} do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message" %>
-  <%= f.submit "Send", :class => "btn btn-flat", :id => "message-button" %>
-<% end %>
-</div>
+  <div>
+  <%= simple_form_for [ @friend, @message ], remote: true, html: { class: "send-message"} do |f| %>
+    <%= f.input :content, label: false, placeholder: "Message" %>
+    <%= f.submit "Send", :class => "btn btn-flat", :id => "message-button" %>
+  <% end %>
+  </div>
 </div>
 </div>
