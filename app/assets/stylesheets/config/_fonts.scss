@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo&family=Titan+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+
 $body-font: 'Roboto', sans-serif;
 $headers-font: 'Titan One', cursive;
 
 p {
+  font-family: $body-font;
   margin-bottom: 0 !important;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
 
 h6 {
   font-family: $body-font;

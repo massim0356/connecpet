@@ -1,4 +1,6 @@
 #homepage-content {
+  min-height: 600px;
+  position: relative;
   font-family: "Arvo", serif;
   height: calc(100vh - 70px);
 }
@@ -9,6 +11,10 @@
 
 .container-home {
   flex-grow: 1;
+}
+
+.slogan {
+  font-family: "Arvo", serif !important;
 }
 
 #images img {
