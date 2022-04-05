@@ -4,8 +4,15 @@
   position: relative;
 }
 
+
 .slogan {
   margin-top: 30px;
+}s
+
+.container-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .container-home {
@@ -20,12 +27,12 @@
 #logo-home {
   width: 200px;
   height: auto;
-  margin-bottom: 20px;
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  padding: 0 20px;
   font-size: 10px;
   color: #7E7E7E;
 }
@@ -46,13 +53,13 @@
   .slogan {
     margin-top: 30px;
   }
+
+  .footer p {
+    line-height: 12px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
-  .container-home {
-    margin-top: 100px;
-  }
-
   #homepage {
   min-height: 700px;
   }
